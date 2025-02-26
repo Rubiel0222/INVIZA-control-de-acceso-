@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+}
+
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f0f8f4; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegación fija */
+#templatemo_nav_top {
+    
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    background-color: #090a09; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#templatemo_nav_top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+#templatemo_nav_top .navbar-sa-brand {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+#templatemo_nav_top a {
+    color: white;
+    text-decoration: none;
+}
+
+#templatemo_nav_top a:hover {
+    color: #0b0c0b; 
+}
+
+/* Encabezado fijo */
+header {
+    background-color: #2d2e2d; 
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(14, 13, 13, 0.1);
+}
+
+header .logo img {
+    width: 80px;
+    height: auto;
+}
+
+header .title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    flex-grow: 1;
+    color: #fff;
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header .time {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Contenedor centrado (Login o contenido principal) */
+.login-container {
+    margin-top: 120px; 
+    background-color: #ffffff;
+    padding: 35px 50px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    width: 450px;
+    text-align: center;
+    flex-shrink: 0;
+    max-width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+    transform: translateY(-5px); /* Efecto hover para animación */
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: #388e3c;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 25px;
+    border-radius: 50%;
+    border: 4px solid #388e3c;
+}
+
+/* Estilo de inputs y botones */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 12px 0;
+    border: 1px solid #388e3c;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #81c784; /* Color cuando el input está en foco */
+    outline: none;
+}
+
+button {
+    background-color: #388e3c;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #2e7d32;
+    transform: scale(1.05); /* Sutil aumento de tamaño en el hover */
+}
+
+.forgot-password {
+    margin-top: 20px;
+}
+
+.forgot-password a {
+    color: #388e3c;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+

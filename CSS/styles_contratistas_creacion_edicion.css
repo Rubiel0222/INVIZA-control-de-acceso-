@@ -1,0 +1,225 @@
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fondo más suave */
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: #232423; /* Verde oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    
+}
+
+header .logo img {
+    width: 50px;
+    border-radius: 5px; /* Bordes redondeados para el logo */
+}
+
+header .title {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    flex: 1;
+    letter-spacing: 1px; /* Espaciado entre letras */
+    color: #fff; /* Texto en blanco */
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+}
+
+header .actions .time {
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+header .actions button {
+    background-color: #119e11;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header .actions button:hover {
+    background-color: #1cac1c; /* Cambio de color al pasar el mouse */
+}
+
+/* Contenedor principal */
+.container {
+    padding: 30px;
+    background-color: #d9dfd7; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Estilo de los encabezados */
+h2 {
+    font-size: 32px;
+    color: #0b0c0c;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase; 
+}
+
+/* Estilo de los campos de búsqueda y botones */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-header .search {
+    display: flex;
+    align-items: center;
+}
+
+.table-header .search input {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.table-header .search input:focus {
+    border-color: #0e0f0f;
+    outline: none;
+}
+
+.table-header .add-button {
+    background-color: #1d920d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.table-header .add-button:hover {
+    background-color: #168c0e; /* Hover más oscuro */
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+th {
+    background-color: #2dac42;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+    background-color: #f1f1f1;
+}
+
+tr:hover td {
+    background-color: #f0f0f0; /* Efecto hover para filas */
+}
+
+/* Estilo de los botones */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.buttons button {
+    background-color: #2e8b57;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #247a43; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilo de la paginación */
+.pagination {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination select {
+    margin-left: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.pagination button {
+    background-color: #0da50d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.pagination button:hover {
+    background-color: #c7c4c4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

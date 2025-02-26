@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Accesos - Visitas > Creación y edición > Edición</title>
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+<link rel="stylesheet" href="css/templatemo.css">
+<link rel="stylesheet" href="css/fontawesome.css">
+<link rel="stylesheet" href="css/fontawesome.min.css">
+<link rel="stylesheet" href="css/slick-theme.css">
+<link rel="stylesheet" href="css/slick.min.css">
+<link rel="stylesheet" href="CSS/templatemo.min.css">
+    <link rel="stylesheet" href="CSS/styles_visitas_edicion.css">
+    <script src="JS/visitas creacion y edicion-edicion.js" defer></script> <!-- Enlace al archivo script.js -->
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeElement = document.getElementById("current-time");
+            timeElement.textContent = now.toLocaleTimeString();
+        }
+
+    </script>
+    <style>
+        body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+    background-size: cover;
+        }
+     
+    </style>
+</head>
+</header>
+<nav class="navbar navbar-expand-lg bg-dark navbar-light" id="templatemo_nav_top">
+    <div class="container text-light">        
+        <div class="w-1000 d-flex justify-content-between">
+            <div>
+                <i class="fa fa-envelope mx-2"></i>
+                <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">infoINVIZA.com</a>
+                <i class="fa fa-phone mx-2"></i>
+                <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+            </div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored">
+                        <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i>
+                    </a>
+                    <a class="text-light" href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram fa-sm fa-fw me-2"></i>
+                    </a>
+                    <a class="text-light" href="https://www.twitter.com" target="_blank">
+                        <i class="fab fa-twitter fa-sm fa-fw me-2"></i>
+                    </a>
+                </div>
+              </div>
+        </div>
+    </div>
+</nav>
+   </header>
+<body>
+
+    <!-- Encabezado superior -->
+    <div class="header">
+        <img src="IMAGENES/logo_inviza.jpg" alt="Logo Inviza.jpg">
+        <h1>Control de Accesos</h1>
+        <div class="time">
+            <span id="current-time"></span>
+            <button onclick="window.location.href='pagina principal.html'">pagina principal</button>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main">
+        <h2>Visitas > Creación y edición > Edición</h2>
+
+        <div class="form-container">
+            <form>
+
+                <!-- Documento -->
+                <div class="form-group">
+                    <label for="documento">Documento:</label>
+                    <input type="text" id="documento" name="documento" placeholder="Número de identificación">
+                </div>
+
+                <!-- Nombres -->
+                <div class="form-group">
+                    <label for="nombres">Nombres:</label>
+                    <input type="text" id="nombres" name="nombres" placeholder="Ingrese nombres">
+                </div>
+
+                <!-- Apellidos -->
+                <div class="form-group">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Ingrese apellidos">
+                </div>
+
+                <!-- Fecha de inicio -->
+                <div class="form-group">
+                    <label for="fecha-inicio">Fecha de inicio:</label>
+                    <input type="datetime-local" id="fecha-inicio" name="fecha-inicio">
+                </div>
+
+                <!-- Estado -->
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <select id="estado" name="estado">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
+
+                <!-- ARL Checkbox -->
+                <div class="form-group">
+                    <label for="arl-checkbox">ARL:</label>
+                    <input type="checkbox" id="arl-checkbox" name="arl-checkbox"> Seleccionar
+                </div>
+
+                <!-- ARL -->
+                <div class="form-group">
+                    <label for="arl">Registro ARL:</label>
+                    <input type="text" id="arl" name="arl" placeholder="Ingrese ARL">
+                </div>
+
+                <!-- Cantidad de ingresos permitidos -->
+                <div class="form-group">
+                    <label for="ingresos">Cantidad de ingresos permitidos:</label>
+                    <input type="number" id="ingresos" name="ingresos" placeholder="Ingrese número de ingresos">
+                </div>
+
+                <!-- Empresa de origen -->
+                <div class="form-group">
+                    <label for="empresa-origen">Empresa de origen:</label>
+                    <input type="text" id="empresa-origen" name="empresa-origen" placeholder="Ingrese empresa de origen">
+                </div>
+
+                <!-- Observaciones -->
+                <div class="form-group">
+                    <label for="observaciones">Observaciones:</label>
+                    <textarea id="observaciones" name="observaciones" rows="4" placeholder="Escriba observaciones"></textarea>
+                </div>
+
+                <!-- Botones -->
+                <div class="form-actions">
+                    <button type="submit">Guardar información</button>
+                    <button type="button" class="btn-back" onclick="window.location.href='visitas_creacion.html'">Regresar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <footer>
+        <!--inicio pie de página-->
+        <footer class="bg-dark" id="templatemo_footer">
+            <div class="container text-light">
+                <div class="row">
+                    <div class="col-md-4 pt-0">
+                        <h2 class="text-light bg-dark pb-3 light-logo">INVIZA control de acceso</h2>
+                        <p>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Local Principal - Madrid, Colombia
+                        </p>
+                        <p>
+                            <i class="fa fa-envelope mx-2"></i>
+                            <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">contacto: INVIZA@gmail.com</a>
+                        </p>
+                        <p>
+                            <i class="fa fa-phone mx-2"></i>
+                            <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 bg-dark py-3">
+                <div class="container">
+                    <div class="row pt-2">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2024 - ProdArt | Diseñado por: Rubiel Quintero - David Andres Correa
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+       
+</body>
+
+</html>

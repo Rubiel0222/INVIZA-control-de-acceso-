@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+}
+
+/* Estilo del body */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f4f7f6; /* Fondo suave y claro */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: #191a19; /* Verde oscuro */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    width: 60px; /* Tamaño más equilibrado para el logo */
+}
+
+header .title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+    letter-spacing: 1px;
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header .actions .time {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+header .actions button {
+    background-color: #229c12;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+header .actions button:hover {
+    background-color: #b6b2b2; /* Rojo más oscuro al hacer hover */
+}
+
+/* Contenedor principal */
+.container {
+    padding: 30px;
+    background-color: #e8f5e9; /* Verde suave para fondo */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 80px; /* Para dejar espacio bajo el encabezado fijo */
+}
+
+/* Estilo del formulario */
+.form-container {
+    width: 70%;
+    margin: auto;
+    border: 2px solid #ccc; /* Bordes grises suaves */
+    padding: 30px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+.form-container input[type="text"] {
+    width: 100%;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    border: 1px solid #0f0f0f;
+    border-radius: 8px;
+    background-color: #fafafa;
+    color: #333;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.form-container input[type="text"]:disabled {
+    background-color: #f0f0f0;
+    color: #888;
+    cursor: not-allowed;
+}
+
+
+/* Contenedor de botones */
+.form-container .button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-container .button-container button {
+    background-color: #17a00b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-container .button-container button:hover {
+    background-color: #858884;
+    transform: scale(1.05); /* Sutil aumento al hacer hover */
+}
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario - INVIZA</title>
+    <link rel="stylesheet" href="CSS/styles_registro_de_usuario.css">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/fontawesome.min.css">
+    <script src="JS/registro_usuario.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        #templatemo_nav_top {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+            background-color: #2c3e50;
+        }
+
+        .register-container {
+            margin-top: 80px; /* Espacio para separar el contenedor de registro de la barra de navegación */
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(10, 9, 9, 0.2);
+            border-radius: 20px;
+            width: 400px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <style>
+        body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+    background-size: cover;
+        }
+     
+    </style>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg bg-dark text-light" id="templatemo_nav_top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="contact-info">
+                <i class="fa fa-envelope me-2"></i>
+                <a class="text-light text-decoration-none" href="publicidad.html">infoinviza.com</a>
+                <i class="fa fa-phone ms-3 me-2"></i>
+                <a class="text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+            </div>
+            <div class="social-links">
+                <a class="text-light me-2" href="https://fb.com/templatemo" target="_blank" rel="sponsored">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="text-light me-2" href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="text-light" href="https://www.twitter.com" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Contenedor de registro -->
+    <div class="register-container">
+        <h2>Registro de Usuario</h2>
+        <img src="IMAGENES/logo_inviza.jpg" alt="Logo de INVIZA" class="logo-img">
+
+        <form id="registerForm" class="register-form">
+            <input type="text" name="fullName" placeholder="Nombre Completo" required>
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
+            <input type="text" name="username" placeholder="Nombre de Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <input type="password" name="confirmPassword" placeholder="Confirmar Contraseña" required>
+            <button type="submit">Registrar</button>
+        </form>
+
+        <div class="login-link">
+            <p>¿Ya tienes cuenta? <a href="inicio_sesion.html">Inicia sesión aquí</a></p>
+        </div>
+    </div>
+
+    <!-- Script para el formulario -->
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita el envío normal del formulario
+            alert('Registro exitoso'); // Muestra un mensaje de éxito
+            window.location.href = 'inicio_sesion.html'; // Redirige a la página de inicio de sesión
+        });
+    </script>
+</body>
+
+</html>
+
+

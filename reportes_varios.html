@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVIZA Control de Accesos</title>
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/templatemo.css">
+    <link rel="stylesheet" href="CSS/styles_reportes_varios.css">
+    <style>
+        body {
+            font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+            margin: 1px;
+            padding:1px;
+            background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+                
+
+        .modules-grid {
+            display: flex;
+            gap: 15px; /* Espacio entre los módulos */
+            
+          
+        }
+
+        .module-item {
+            background-color: rgba(229, 236, 230, 0.8); /* Fondo blanco con transparencia */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+            transition: transform 1.0s;
+        }
+
+        .module-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .module-item img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .module-item span {
+            display: block;
+            font-size: 25px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación superior -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-1000 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">infoINVIZA.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored">
+                        <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i>
+                    </a>
+                    <a class="text-light" href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram fa-sm fa-fw me-2"></i>
+                    </a>
+                    <a class="text-light" href="https://www.twitter.com" target="_blank">
+                        <i class="fab fa-twitter fa-sm fa-fw me-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado principal -->
+    <header>
+        <div class="logo">
+            <img src="IMAGENES/logo_inviza.jpg" alt="Logo de INVIZA">
+        </div>
+        <div class="title">
+            INVIZA CONTROL DE ACCESOS
+        </div>
+        <div class="actions">
+            <div class="time" id="currentTime"></div>
+            <button onclick="window.location.href='pagina_inicial.html'">Página inicial</button>
+        </div>
+    </header>  
+    <div class="container">
+        <h1>Módulos Principales</h1>                          
+            <div class="module-item">
+                <a href="reportes-turnos.html">
+                    <img src="IMAGENES/reportes (1).jpg" width="50" alt="Reportes">
+                    <span>Reportes Turnos</span>
+                </a>
+            </div>
+            <div class="module-item">
+                <a href="reportes movimientos funcionarios.html">
+                    <img src="IMAGENES/contacto.png" width="50" alt="Contacto">
+                    <span>Reportes Funcionarios</span>
+                </a>
+            </div>
+            <div class="module-item">
+                <a href="reportes movimientos de vehiculos.html">
+                    <img src="IMAGENES/vehiculo.jpg" width="50" alt="Vehículos">
+                    <span>Reportes Vehículos</span>
+                </a>
+            </div>
+           
+        </div>
+    
+       
+       
+       
+       
+    </div>
+
+    <!-- Script para la hora actual -->
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('currentTime').textContent = `${hours}:${minutes}`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+
+    <!-- Pie de página -->
+    <footer>
+        <!--inicio pie de página-->
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="bg-dark" id="templatemo_footer">
+            <div class="container text-light">
+                <div class="row">
+                    <div class="col-md-4 pt-0">
+                        <h2 class="text-light bg-dark pb-3 light-logo">INVIZA control de acceso</h2>
+                        <p>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Local Principal - Madrid, Colombia
+                        </p>
+                        <p>
+                            <i class="fa fa-envelope mx-2"></i>
+                            <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">contacto: INVIZA@gmail.com</a>
+                        </p>
+                        <p>
+                            <i class="fa fa-phone mx-2"></i>
+                            <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 bg-dark py-3">
+                <div class="container">
+                    <div class="row pt-2">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2024 - ProdArt | Diseñado por: Rubiel Quintero - David Andres Correa
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+                                                                        
+</body>
+</html>

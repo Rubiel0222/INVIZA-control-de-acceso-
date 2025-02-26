@@ -1,0 +1,134 @@
+body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/logo_inviza.jpg') no-repeat center center fixed; /* Fondo con imagen */
+    background-size: cover;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Encabezado superior */
+.header {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con transparencia */
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+    height: 50px;
+    border-radius: 5px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header .time {
+    display: flex;
+    align-items: center;
+}
+
+.header .time span {
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.header button {
+    background-color: #32a80e; /* Botón verde */
+    color: #eaf1ea;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.header button:hover {
+    background-color: #e6e6e6;
+}
+
+/* Contenedor principal */
+.main {
+    padding: 20px;
+}
+
+.main h2 {
+    text-align: center;
+    color: #050e05;
+}
+
+/* Formulario */
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #040f04;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+}
+
+/* Botones */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    background-color: #0a960a; /* Botón verde */
+    color: rgb(231, 225, 225);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-actions button:hover {
+    background-color: #d5dbd5;
+}
+
+.form-actions .btn-back {
+    background-color: #0eaa28; /* Botón verde */
+    color: #ebe5e5;
+}
+
+.form-actions .btn-back:hover {
+    background-color: #bbbbbb;
+}

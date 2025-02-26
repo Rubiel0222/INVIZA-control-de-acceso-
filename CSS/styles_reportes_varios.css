@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/logo_inviza.jpg') no-repeat center center fixed; /* Fondo con imagen */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+}
+
+
+/* Encabezado */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(12, 14, 13);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(236, 233, 233, 0.1); 
+}
+
+header .logo img {
+    width: 80px;
+    border-radius: 5px;
+}
+
+header .title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+    color: white;
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+}
+header .actions button {
+    background-color: #0db13e; /* Botón azul de marca */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+header .actions .access-button {
+    
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+header .actions .access-button:hover {
+    background-color: #075c0a; 
+}
+
+header .actions .time {
+    margin-right: 20px;
+    font-size: 18px;
+    color: white;
+}
+
+header .actions .back-button {
+    background-color: #49e535; 
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Contenido principal */
+.container {  
+    flex: 1; 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Barra lateral con módulos */
+.sidebar {
+    width: 20%;
+    background-color: #0f0e0e;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
+}
+
+.sidebar h1 {
+    font-size: 20px;
+    color: #0e0f0f;
+    margin-bottom: 20px;
+}
+
+.module {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.module-item { 
+    background-color: #fff; 
+       border: 2px solid #111111; 
+    border-radius: 8px; 
+   
+    cursor: pointer; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .module-item:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 10px rgba(236, 240, 238, 0.1);
+ } 
+ .module-item img {
+     width: 100px; 
+     margin-bottom: 10px;
+     } 
+  .module-item span { 
+    display: block; 
+    font-size: 18px; 
+    color: #0c0a0a; 
+    font-weight: 500;
+ }
+.module img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.module span {
+    font-size: 16px;
+    color: #0e0f0f;
+}
+
+h1 {
+    color: #2e8b57;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+ul {
+     list-style-type: none; /* Eliminar viñetas */
+      padding-left: 0; 
+    } 
+   
+   
+   

@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef3ee;
+    /* Fondo verde claro */
+}
+/*estilos  generales  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+}
+
+
+
+/* Encabezado */
+
+header {
+    background-color: #212221;
+      color: rgb(226, 217, 217);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    width: 80px;
+}
+header .actions button {
+    background-color: #0db13e; /* Botón azul de marca */
+    color: white;
+    border: none;
+    padding: 8px 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+header .title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+}
+
+header .actions .time {
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+header .actions .back-button {
+    background-color: rgb(255, 255, 255);
+    color: #080c0a;
+    border: 2px solid rgb(19, 13, 13);
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+/* Sección principal */
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #030504;
+    font-size: 24px;
+}
+
+
+/* Tabla */
+
+.table-container {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    /* Borde negro alrededor de la tabla */
+}
+
+.table-container th,
+.table-container td {
+    background-color: #e6ece6;
+    border: 2px solid black;
+    /* Borde negro en cada celda */
+    padding: 10px;
+    text-align: left;
+}
+
+.table-container th {
+    background-color: #098609;
+    color: rgb(238, 232, 232);
+}
+
+
+/* Botón para agregar horario */
+
+.add-button {
+    display: inline-block;
+    background-color: #0b960b;
+    color: rgb(235, 227, 227);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+
+/* Fila de opciones (búsqueda, paginación, etc.) */
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.options .search-bar input {
+    padding: 5px;
+    width: 200px;
+}
+
+.options .pagination {
+    display: flex;
+    align-items: center;
+}
+
+.options .pagination select {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.options .pagination button {
+    padding: 5px 10px;
+    background-color: #2bad11;
+    color: rgb(240, 234, 234);
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+

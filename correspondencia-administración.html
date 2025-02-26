@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correspondencia > Administración</title>
+    <link rel="stylesheet" href="CSS/templatemo.css">
+    <link rel="stylesheet" href="CSS/templatemo.min.css">
+    <link rel="stylesheet" href="CSS/slick-theme.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/templatemo.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <link rel="stylesheet" href="CSS/templatemo.min.css">
+    <link rel="stylesheet" href="CSS/styles_correspondencia_administracion.css">    
+    <script src="JS/correspondencia-administracion.js" defer></script>
+</head>
+<style>
+    body {
+font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+margin: 0;
+padding: 0;
+background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+background-size: cover;
+    }
+ 
+</style>
+<nav class="navbar navbar-expand-lg bg-dark navbar-light" id="templatemo_nav_top">
+       <div class="w-d-flex justify-content-between">
+               <i class="fa fa-envelope mx-2"></i>
+               <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">infoINVIZA.com</a>
+               <i class="fa fa-phone mx-2"></i>
+               <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+           </div>
+                   <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored">
+                       <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i>
+                   </a>
+                   <a class="text-light" href="https://www.instagram.com" target="_blank">
+                       <i class="fab fa-instagram fa-sm fa-fw me-2"></i>
+                   </a>
+                   <a class="text-light" href="https://www.twitter.com" target="_blank">
+                       <i class="fab fa-twitter fa-sm fa-fw me-2"></i>
+                   </a>
+               </div>
+             </div>
+       </div>                                                                                                       
+       </div>
+</nav>
+<body>
+    <!-- Encabezado de la interfaz -->
+    <header>
+        <div class="logo">
+            <img src="IMAGENES/logo_inviza.jpg" alt="Logo de Inviza">
+        </div>
+        <div class="title">
+            Control de Accesos
+        </div>
+        <div class="actions">
+            <div class="time" id="currentTime">
+                <!-- La hora actual se insertará aquí con JavaScript -->
+            </div>
+            <button onclick="window.location.href='pagina principal.html'">Página Principal</button>
+        </div>
+    </header>
+
+    <!-- Contenedor principal de la interfaz -->
+    <div class="container">
+        <h2 style="text-align: center; color: #121312;">Correspondencia > Administración</h2>
+
+        <!-- Encabezado de la tabla con búsqueda y opción para agregar correspondencia -->
+        <div class="table-header" style="margin-bottom: 20px;">
+            <div class="search">
+                <input type="text" placeholder="Buscar..." id="searchInput" style="padding: 8px; border-radius: 5px; width: 200px;">
+                <button onclick="searchFunction()" style="background-color: #18830a; color: white; padding: 8px 12px; border: none; border-radius: 5px; cursor: pointer;">🔍</button>
+            </div>
+            <div>
+                <label for="showRows">Mostrar:</label>
+                <select id="showRows" onchange="updateRows()" style="padding: 5px; margin-left: 10px; border-radius: 5px;">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+                <button class="add-button" onclick="addCorrespondence()" style="background-color: #0dac0d; color: white; border: none; padding: 8px 15px; cursor: pointer; border-radius: 5px; margin-left: 10px;">
+                    Agregar Correspondencia
+                </button>
+            </div>
+        </div>
+
+        <!-- Tabla de correspondencia -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Info Correspondencia</th>
+                    <th>Responsable</th>
+                    <th>Destino</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="correspondenceTableBody">
+                <!-- Aquí se pueden agregar filas dinámicamente -->
+                <tr>
+                    <td contenteditable="true">1</td>
+                    <td contenteditable="true">Correspondencia A</td>
+                    <td contenteditable="true">Responsable 1</td>
+                    <td contenteditable="true">Destino A</td>
+                    <td>
+                        <button class="edit-button" style="background-color: #32c41f; color: white; padding: 5px 10px; border: none; cursor: pointer; border-radius: 5px;">Editar</button>
+                        <button class="delete-button" style="background-color: #1cdd3c; color: white; padding: 5px 10px; border: none; cursor: pointer; border-radius: 5px;">Borrar</button>
+                        <button class="save-button" style="display: none; background-color: #3498db; color: white; padding: 5px 10px; border: none; cursor: pointer; border-radius: 5px;">Guardar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td contenteditable="true">2</td>
+                    <td contenteditable="true">Correspondencia B</td>
+                    <td contenteditable="true">Responsable 2</td>
+                    <td contenteditable="true">Destino B</td>
+                    <td>
+                        <button class="edit-button" style="background-color: #37c524; color: white; padding: 5px 10px; border: none; cursor: pointer; border-radius: 5px;">Editar</button>
+                        <button class="delete-button" style="background-color: #1dc934; color: white; padding: 5px 10px; border: none; cursor: pointer; border-radius: 5px;">Borrar</button>
+                        <button class="save-button" style="display: none; background-color: #3498db; color: white; padding: 5px 10px; border: none; cursor: pointer; border-radius: 5px;">Guardar</button>
+                    </td>
+                </tr>
+                <!-- Puedes agregar más filas aquí -->
+            </tbody>
+        </table>
+
+        <!-- Paginación -->
+        <div class="pagination" style="margin-top: 20px; display: flex; justify-content: flex-end;">
+            <label for="pageNumber" style="color: #e2ece7;">Página:</label>
+            <select id="pageNumber" style="margin-left: 10px; padding: 5px; border-radius: 5px;">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <button onclick="goToPage()" style="background-color: #36c223; color: white; padding: 8px 15px; border: none; cursor: pointer; border-radius: 5px; margin-left: 10px;">Ir a página</button>
+        </div>
+    </div>
+
+    <!-- Script para mostrar la hora actual -->
+    <script>
+        // Función para actualizar la hora actual
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('currentTime').textContent = `${hours}:${minutes}`;
+        }
+
+        setInterval(updateTime, 1000); // Actualiza la hora cada segundo
+    </script>
+<footer>
+   <!--inicio pie pagina-->
+   <br><br><br><br><br><br><br>
+   <footer class="bg-dark" id="templatemo_footer">           
+            <div class=" text-light col-md-4 pt-0">       
+                <h2 class="text-light bg-dark pb-3 light-logo">INVIZA control de acceso</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt fa-fw"></i>
+                        Local Principal - Madrid, Colombia
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-envelope mx-2"></i>
+                        <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">contacto: INVIZA@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-phone mx-2"></i>
+                        <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-100 bg-dark py-3">    
+            <div class="row pt-2"> 
+                <p class="text-left text-light"> 
+                    Copyright &copy; 2024 - ProdArt | Diseñado por: Rubiel Quintero - David Andres Correa
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+  </body>
+</html>
+

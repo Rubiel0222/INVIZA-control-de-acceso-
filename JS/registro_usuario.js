@@ -1,28 +1,35 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const registerForm = document.getElementById('registerForm');
-    const approveButton = document.getElementById('approveButton');
-    const disapproveButton = document.getElementById('disapproveButton');
 
-    registerForm.addEventListener('submit', function(event) {
+    registerForm.addEventListener('submit', function (event) {
         event.preventDefault(); // Evita el envío predeterminado del formulario
 
-        const fullName = document.getElementById('fullName').value;
-        const email = document.getElementById('email').value;
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirmPassword').value;
+        const nombre_apellido = document.getElementById('nombre_apellido').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const usuario = document.getElementById('usuario').value.trim();
+        const password = document.getElementById('password').value.trim();
 
-        // Validación básica
-        if (fullName && email && username && password === confirmPassword) {
-            alert('Registro exitoso');
-            approveButton.disabled = false;
-            disapproveButton.disabled = true;
-            window.location.href = 'inicio.html'; // Redirigir a la página de inicio
+        // Validación básica en el lado del cliente
+        if (nombre_apellido && email && usuario && password) {
+            const formData = new FormData(registerForm); // Automáticamente recoge los campos del formulario
+
+            fetch('usuarios.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data); // Muestra el mensaje del servidor (éxito o error)
+                    if (data.includes("Registro exitoso")) {
+                        window.location.href = 'inicio_sesion.html'; // Redirige si el registro fue exitoso
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error en el registro. Por favor, intenta nuevamente.');
+                });
         } else {
-            alert('Error en el registro. Por favor, revisa los campos.');
-            approveButton.disabled = true;
-            disapproveButton.disabled = false;
+            alert('Error: Todos los campos son obligatorios.');
         }
     });
 });
-

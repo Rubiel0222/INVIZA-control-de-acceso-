@@ -1,0 +1,180 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+}
+
+/* Fondo y estilo general del body */
+body {
+    background-color: #e6f9e6; /* Fondo verde claro más suave */
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333; /* Color de texto oscuro para mayor legibilidad */
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #2e8b57; /* Verde oscuro */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    width: 80px;
+    height: auto;
+}
+
+header .title {
+    font-size: 28px;
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .actions .time {
+    font-size: 18px;
+    margin-right: 25px;
+}
+
+header .actions .access {
+    background-color: #ffffff;
+    color: #2e8b57;
+    border: 2px solid #ffffff;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+header .actions .access:hover {
+    background-color: #34b34a; /* Verde más brillante */
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Barra lateral izquierda con funcionalidades */
+.sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+    text-align: center;
+    font-size: 22px;
+    color: #2e8b57;
+    margin-bottom: 25px;
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.sidebar .menu li {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar .menu li:hover {
+    background-color: #eaf9e2;
+    color: #34b34a;
+    transform: translateX(5px);
+}
+
+.sidebar .menu li img {
+    width: 24px;
+    margin-right: 12px;
+}
+
+/* Sección principal con módulos */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.modules {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.module {
+    background-color: #ffffff;
+    border: 2px solid #2e8b57;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.module:hover {
+    background-color: #eaf9e2;
+    transform: translateY(-2px);
+}
+
+.module img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+/* Estilos del footer */
+/* Estilos del footer */
+footer {
+    background-color: #057418; /* Verde oscuro */
+    color: #e1ebe4; /* Color claro para el texto */
+    text-align: center;
+    padding: 10px 20px; /* Reducción del padding */
+    margin-top: 30px;
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    font-weight: 300;
+    border-top: 2px solid #34b34a; /* Línea delgada en la parte superior */
+    letter-spacing: 1px; /* Espaciado de letras para un toque moderno */
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Ajuste de estilos en pantallas pequeñas */
+@media (max-width: 768px) {
+    footer {
+        font-size: 12px; /* Tamaño de fuente más pequeño en dispositivos móviles */
+        padding: 8px 15px; /* Reducción adicional del padding */
+    }
+}

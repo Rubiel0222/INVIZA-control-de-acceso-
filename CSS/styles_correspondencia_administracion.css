@@ -1,0 +1,156 @@
+body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Fondo suave para todo el cuerpo */
+    color: #333; /* Color de texto principal */
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: #1a1b1b; /* Verde oscuro */
+    color: #ffffff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+header .logo img {
+    width: 50px;
+    border-radius: 50%; /* Logo circular */
+}
+
+header .title {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    flex: 1;
+    letter-spacing: 1px;
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+}
+
+header .actions .time {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+header .actions button {
+    background-color: #21a310;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+header .actions button:hover {
+    background-color: #949793; /* Verde más oscuro */
+}
+
+/* Contenedor principal */
+.container {
+    padding: 30px;
+    background-color: #edf5ed; /* Verde brillante */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(231, 227, 227, 0.897); /* Sombra suave */
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #10c41f; /* Verde intenso */
+    border-radius: 8px;
+    overflow: hidden; /* Esquinas redondeadas */
+}
+
+td {
+    background-color: #e2e9e2; /* Fondo claro para celdas */
+    border: 1px solid #0c0b0b;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+td:hover {
+    background-color: #e3ece3; /* Efecto al pasar el ratón */
+}
+
+.table-header .search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-header .search input {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #0a0909;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.table-header .search input:focus {
+    border-color: #2e8b57; /* Verde al enfocar */
+    outline: none;
+}
+
+.table-header .add-button {
+    background-color: #0dac0d; /* Verde brillante */
+    color: #ffffff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.table-header .add-button:hover {
+    background-color: #0b9a0b; /* Verde más oscuro */
+    opacity: 0.9;
+}
+
+/* Estilo de la paginación */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.pagination select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #131111;
+    background-color: #e8f0e9;
+    margin-left: 10px;
+}
+
+.pagination select:hover {
+    border-color: #2e8b57; /* Verde al pasar el ratón */
+}

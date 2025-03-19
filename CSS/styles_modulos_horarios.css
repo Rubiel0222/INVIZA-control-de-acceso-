@@ -1,0 +1,124 @@
+body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed; /* Fondo con imagen */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(26, 25, 25, 0.7); /* Fondo negro transparente */
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.logo img {
+    width: 80px;
+    height: auto;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+}
+.actions {
+    display: flex;
+    align-items: center;
+}
+.actions .time {
+    margin-right: 20px;
+    font-size: 18px;
+}
+.actions button {
+    background-color: #16ad39;
+    color: #000000; /* Letra negra */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.actions button:hover {
+    background-color: #218838;
+}
+.container {
+    width: 90%;
+    max-width: 5000px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+h1, h2 {
+    color: #000;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.add-button {
+    background-color: #16ad39;
+    color: #e9e3e3;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.add-button:hover {
+    background-color: #218838;
+    color: #ffffff;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #16ad39;
+    color: #ffffff;
+    font-weight: bold;
+}
+td {
+    background-color: #f8f9fa;
+}
+.actions button {
+    background-color: #16ad39;
+    color: #e4dfdf;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.actions button:hover {
+    background-color: #218838;
+    color: #ffffff;
+}
+.footer-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex;
+    flex-wrap: wrap;
+}
+footer {
+    width: 100%;    
+    color: #ffffff;
+    padding: 15px;
+    text-align: flex;
+}

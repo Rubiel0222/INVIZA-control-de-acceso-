@@ -1,0 +1,173 @@
+body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/logo_inviza.jpg') no-repeat center center fixed; /* Fondo con imagen */
+    background-size: cover;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Encabezado */
+header {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con transparencia */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    width: 80px;
+}
+
+header .title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+}
+header .actions button {
+    background-color: #0db13e; /* Botón azul de marca */
+    color: rgb(238, 233, 233);
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+}
+
+header .actions .access-button,
+header .actions .back-button {
+    background-color: #fff;
+    color: #101011;
+    border: 2px solid #000000;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header .actions .access-button:hover,
+header .actions .back-button:hover {
+    background-color: #d8d8d8;
+    color: #fff;
+}
+
+header .actions .time {
+    margin-right: 20px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Contenido principal */
+.container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Barra lateral con módulos */
+.sidebar {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.module {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.module:hover {
+    transform: scale(1.05);
+}
+
+.module img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.module span {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Sección derecha (contenedor de la foto y módulos principales) */
+.main-content {
+    width: 80%;
+    text-align: center;
+}
+
+.user-photo {
+    float: right;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    border: 2px solid #333;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin-top: -30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #0c0c0c;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Módulos principales (centrados en dos filas de cinco columnas) */
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+}
+
+.module-item {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.module-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.module-item img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.module-item span {
+    display: block;
+    font-size: 16px;
+    color: #333;
+}

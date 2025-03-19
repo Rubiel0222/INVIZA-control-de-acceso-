@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Accesos - Movimiento de Sucesos en Tiempo Real</title>
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+<link rel="stylesheet" href="css/templatemo.css">
+<link rel="stylesheet" href="css/fontawesome.css">
+<link rel="stylesheet" href="css/fontawesome.min.css">
+<link rel="stylesheet" href="css/slick-theme.css">
+<link rel="stylesheet" href="css/slick.min.css">
+<link rel="stylesheet" href="CSS/templatemo.min.css">
+    <link rel="stylesheet" href="CSS/styles_movimientos_de_acceso.css">
+    <script src="JS/mivimientos de sucesos en tiempo  real.js" defer></script> <!-- Enlace al archivo script.js -->
+</head>
+<style>
+    body {
+font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+margin: 0;
+padding: 0;
+background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+background-size: cover;
+    }
+ 
+</style>
+</header>
+<nav class="navbar navbar-expand-lg bg-dark navbar-light" id="templatemo_nav_top">
+    <div class="container text-light">        
+        <div class="w-1000 d-flex justify-content-between">
+            <div>
+                <i class="fa fa-envelope mx-2"></i>
+                <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">infoINVIZA.com</a>
+                <i class="fa fa-phone mx-2"></i>
+                <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+            </div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored">
+                        <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i>
+                    </a>
+                    <a class="text-light" href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram fa-sm fa-fw me-2"></i>
+                    </a>
+                    <a class="text-light" href="https://www.twitter.com" target="_blank">
+                        <i class="fab fa-twitter fa-sm fa-fw me-2"></i>
+                    </a>
+                </div>
+              </div>
+        </div>
+    </div>
+</nav>
+   </header>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <img src="IMAGENES/logo_inviza.jpg" alt="Logo de INVIZA.jpg">
+        </div>
+        <div class="title">
+            Control de Accesos
+        </div>
+        <div class="actions">
+            <div class="time" id="currentTime"></div>
+            <button onclick="window.location.href='pagina principal.html'">Página Principal</button>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="container">
+               <!-- Tabla de sucesos en tiempo real -->
+        <div class="container"> 
+            <h1>Movimiento de Sucesos > En Tiempo Real</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Datos R</th>
+                        <th>Fecha</th>
+                        <th>Observación</th>
+                        <th>Puerta</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">1</td>
+                        <td contenteditable="true">Usuario 1</td>
+                        <td contenteditable="true">2024-10-16 12:00</td>
+                        <td contenteditable="true">Ingreso autorizado</td>
+                        <td contenteditable="true">Puerta 1</td>
+                        <td>
+                            <button>Editar</button>
+                            <button>Borrar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="true">2</td>
+                        <td contenteditable="true">Usuario 2</td>
+                        <td contenteditable="true">2024-10-16 12:05</td>
+                        <td contenteditable="true">Ingreso denegado</td>
+                        <td contenteditable="true">Puerta 2</td>
+                        <td>
+                            <button>Editar</button>
+                            <button>Borrar</button>
+                        </td>
+                    </tr>
+                    <!-- Más filas pueden añadirse aquí -->
+                </tbody>
+            </table>
+            <!-- Fila inferior con opciones -->
+            <div class="options">
+                <div>
+                    <input type="text" placeholder="Buscar...">
+                    <button class="go-button">Buscar</button>
+                </div>
+                <div>
+                    Mostrar
+                    <select>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                    </select> filas por página
+                </div>
+                <div>
+                    Página
+                    <select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <button class="go-button">Ir</button>
+                </div>
+            </div>
+        </div>
+                                                                                                                                                                                                                                                                                                   
+                                                
+                                                                
+    </div>
+
+    <!-- Script para la hora actual -->
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('currentTime').textContent = `${hours}:${minutes}`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+    <footer>
+        <!--inicio pie pagina-->
+        <br><br><br><br><br><br><br><br><br>
+        <footer class="bg-dark" id="templatemo_footer">
+            <div class="container text-light">
+                <div class="row">
+                    <div class="col-md-4 pt-0">
+                        <h2 class="text-light bg-dark pb-3 light-logo">INVIZA control de acceso</h2>
+                        <p>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Local Principal - Madrid, Colombia
+                        </p>
+                        <p>
+                            <i class="fa fa-envelope mx-2"></i>
+                            <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">contacto: INVIZA@gmail.com</a>
+                        </p>
+                        <p>
+                            <i class="fa fa-phone mx-2"></i>
+                            <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 bg-dark py-3">
+                                   <div class="row pt-2">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2024 - ProdArt | Diseñado por: Rubiel Quintero - David Andres Correa
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+    </body>
+
+</html>

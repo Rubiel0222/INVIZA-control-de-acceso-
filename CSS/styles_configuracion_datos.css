@@ -1,0 +1,78 @@
+header {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con transparencia */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+header .title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+}
+header .actions button {
+    background-color: #0db13e; 
+    color: rgb(16, 16, 16);
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+.container {
+    background: rgba(236, 232, 232, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+   
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 5px;
+  
+}
+
+.table .btn {
+    width: 75px;
+    background-color: rgb(23, 151, 8);
+    color: white;
+}
+
+.table .btn:hover {
+    background-color: rgb(223, 217, 217);
+    color: rgb(229, 235, 229);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

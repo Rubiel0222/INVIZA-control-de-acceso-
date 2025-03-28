@@ -1,0 +1,1 @@
+SELECT * FROM `inviza`.`usuarios` LIMIT 1000;

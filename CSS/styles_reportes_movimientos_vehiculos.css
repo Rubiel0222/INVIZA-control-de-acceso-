@@ -1,0 +1,175 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/logo_inviza.jpg') no-repeat center center fixed; /* Fondo con imagen */
+    background-size: cover;
+    color: #050805; /* Color de texto principal */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Encabezado superior */
+.header {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con transparencia */
+    color: #fff; /* Texto blanco para contraste */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #101110;
+}
+
+.header img {
+    height: 50px;
+    border-radius: 5px; /* Suavizado de bordes */
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 1px 1px 3px #101110; 
+}
+
+.header .time {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.header .time span {
+    margin-right: 15px;
+}
+
+.header button {
+    background-color: #089208;
+    color: #e4ebe4;
+    padding: 10px 20px;
+    border: 2px solid #0d0e0d;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header button:hover {
+    background-color: #c3cec3;
+    color: #1a9e0e;
+}
+
+/* Sección principal */
+.main {
+    
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 90px); /* Altura dinámica menos la altura del encabezado */
+}
+
+.main h2 {
+    color: #033103; /* Verde oscuro para texto */
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Formulario */
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    max-width: 500px;
+    width: 100%;
+}
+
+.form-group {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #033103;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #033103;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #050805;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #077c07;
+    outline: none;
+    box-shadow: 0 0 5px rgba(7, 124, 7, 0.5); /* Resalta el campo activo */
+}
+
+/* Grupo de casillas */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #033103;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+/* Botones */
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio uniforme entre botones */
+}
+
+.button-group button {
+    background-color: #0b8f0b;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-group button:hover {
+    background-color: #056105;
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Sombra al pasar sobre el contenedor */
+.form-container:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Quitar viñetas */
+ul {
+    list-style-type: none; /* Eliminar viñetas */
+    padding-left: 0;
+}
+
+li {
+    margin: 10px 0; /* Espaciado entre elementos de la lista */
+}

@@ -1,0 +1,154 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+}
+
+/* Encabezado */
+header {
+    background-color: #1c1d1c; /* Fondo negro con transparencia */
+    color: rgb(231, 223, 223);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+header .actions button {
+    background-color: #0db13e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+header .logo img {
+    width: 80px;
+    border-radius: 5px;
+}
+
+header .title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+    color: #fff;/* Fondo negro transparente */
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+}
+
+header .actions .time {
+    margin-right: 20px;
+    font-size: 18px;
+    color: #fff;
+}
+
+header .actions .back-button {
+    background-color: #129e12; /* Fondo verde para el botón */
+    color: #000; 
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+header .actions .back-button:hover {
+    background-color: #248f44;
+    color: #fff;
+}
+
+
+.container {    
+    padding: 20px;
+   
+   }
+
+/* Títulos */
+h1 {
+    color: #070e0a;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: #0b8b16;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+td {
+    background-color: #dbe3dc; /* Fondo blanco para celdas */
+    border: 1px solid #111010;
+    padding: 12px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+td:hover {
+    background-color: #f4f4f4;
+}
+
+/* Fila inferior con opciones */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.options input[type="text"] {
+    padding: 8px 12px;
+    width: 220px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.options select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.options .go-button {
+    background-color: #129e12;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.options .go-button:hover {
+    background-color: #248f44;
+}

@@ -1,0 +1,201 @@
+body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/logo_inviza.jpg') no-repeat center center fixed; /* Fondo con imagen */
+    background-size: cover;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Encabezado superior */
+.header {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con transparencia */
+    color: #f1f1f1; /* Blanco suave */
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.header img {
+    height: 50px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.header .time {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #f1f1f1; /* Blanco suave */
+}
+
+.header .time span {
+    margin-right: 20px;
+}
+
+.header button {
+    background-color: #16910b; 
+    color: #fff;
+    padding: 12px 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.header button:hover {
+    background-color: #45a745;
+    transform: scale(1.05);
+}
+
+/* Contenedor principal */
+.main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.main h2 {
+    text-align: center;
+    color: #020502;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de la tabla */
+.table-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Búsqueda */
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    padding: 10px;
+    border: 1px solid #004d00;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 250px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-container input:focus {
+    border-color: #16910b;
+}
+
+.search-container button {
+    background-color: #088608;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #45a745;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #078107;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+th {
+    background-color: #088608;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Paginación y opciones */
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-container select {
+    padding: 10px;
+    border: 1px solid #067a06;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.pagination-container select:focus {
+    border-color: #16910b;
+}
+
+.pagination-container button {
+    background-color: #0a910a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-container button:hover {
+    background-color: #45a745;
+}
+
+.pagination-container button:active {
+    transform: scale(0.98); /* Efecto de presión en el botón */
+}
+
+/* Añadir registro */
+.add-record {
+    background-color: #098f09;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-record:hover {
+    background-color: #45a745;
+}

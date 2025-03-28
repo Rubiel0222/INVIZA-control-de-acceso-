@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registro>
+    <usuario>
+        <nombre>Nombre Completo</nombre>
+        <correo>Correo Electrónico</correo>
+        <nombreUsuario>Nombre de Usuario</nombreUsuario>
+        <contrasena>Contraseña</contrasena>
+        <confirmarContrasena>Confirmar Contraseña</confirmarContrasena>
+    </usuario>
+</registro>

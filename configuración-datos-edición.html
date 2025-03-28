@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo > Control de Ingreso</title>
+    <link rel="stylesheet" href="CSS/styles_configuracion_datos_edicion.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+<link rel="stylesheet" href="css/slick-theme.css">
+<link rel="stylesheet" href="css/templatemo.css">
+<link rel="stylesheet" href="css/fontawesome.css">
+<link rel="stylesheet" href="css/fontawesome.min.css">
+<link rel="stylesheet" href="css/slick-theme.css">
+<link rel="stylesheet" href="css/slick.min.css">
+<link rel="stylesheet" href="CSS/templatemo.min.css">
+<script src="JS/configuracion_datos_edicion.js" defer></script>
+</head>
+<style>
+    body {
+font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+margin: 0;
+padding: 0;
+background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+background-size: cover;
+    }
+ 
+</style>
+<body>
+
+<!-- Barra de navegación -->
+<nav class="navbar bg-dark text-light">
+    <div class="container d-flex justify-content-between">
+        <div>
+            <i class="fa fa-envelope mx-2"></i>
+            <a class="text-light text-decoration-none" href="publicidad.html">infoINVIZA.com</a>
+            <i class="fa fa-phone mx-2"></i>
+            <a class="text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+          
+            <a class="text-light" href="https://fb.com/templatemo" target="_blank">
+                <i class="fab fa-facebook-f fa-sm fa-fw mx-2"></i>
+            </a>
+            <a class="text-light" href="https://www.instagram.com" target="_blank">
+                <i class="fab fa-instagram fa-sm fa-fw mx-2"></i>
+            </a>
+            <a class="text-light" href="https://www.twitter.com" target="_blank">
+                <i class="fab fa-twitter fa-sm fa-fw mx-2"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Encabezado de la página -->
+<header class="d-flex align-items-center justify-content-between p-3 bg-green-dark text-white">
+    <div class="logo">
+        <img src="IMAGENES/logo_inviza.jpg" alt="Logo de Inviza" class="rounded-circle" style="width: 50px;">
+    </div>
+    <h1 class="title text-center flex-grow-1">Control de Accesos</h1>
+    <div class="actions d-flex align-items-center">
+        <div id="currentTime" class="time px-3"></div>
+        <button class="btn btn-light" onclick="window.location.href='pagina principal.html'">pagina principal</button>
+    </div>
+</header>
+
+<!-- Contenido principal -->
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Configuración > Datos > Edición</h2>
+
+    <!-- Formulario -->
+    <form id="dataForm" class="p-4 shadow">
+        <div class="form-group">
+            <label for="tipoVisualizacion">Tipo visualización:</label>
+            <select id="tipoVisualizacion" name="tipoVisualizacion" class="form-control">
+                <option value="opcion1">Opción 1</option>
+                <option value="opcion2">Opción 2</option>
+                <option value="opcion3">Opción 3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="etiqueta">Etiqueta:</label>
+            <input type="text" id="etiqueta" name="etiqueta" class="form-control" placeholder="Registro de etiqueta" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Registro de nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="activo">Activo:</label>
+            <select id="activo" name="activo" class="form-control">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="campoObligatorio">Campo obligatorio:</label>
+            <select id="campoObligatorio" name="campoObligatorio" class="form-control">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="tipo" class="form-control">
+                <option value="tipo1">Tipo 1</option>
+                <option value="tipo2">Tipo 2</option>
+                <option value="tipo3">Tipo 3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="apareceEnImpresion">Aparece en impresión:</label>
+            <select id="apareceEnImpresion" name="apareceEnImpresion" class="form-control">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="orden">Orden:</label>
+            <input type="text" id="orden" name="orden" class="form-control" placeholder="Registro de orden" required>
+        </div>
+
+        <div class="form-group">
+            <label for="style">Style (atributo):</label>
+            <input type="text" id="style" name="style" class="form-control" placeholder="Registro de style">
+        </div>
+
+        <div class="form-group">
+            <label for="valores">Valores:</label>
+            <input type="text" id="valores" name="valores" class="form-control" placeholder="Valores separados por espacios">
+        </div>
+    </form>
+        <p class="text-center text-muted mt-3">Los valores de selección múltiple siempre van separados por espacio</p>
+    <!-- Botones -->
+    <div class="buttons d-flex justify-content-center mt-4">
+        <button class="btn btn-success mx-2" type="button" onclick="guardarInformacion()">Guardar Información</button>
+        <button class="btn btn-secondary mx-2" type="button" onclick="window.location.href='pagina principal.html'">Regresar</button>
+    </div>
+</div>
+<footer>
+    <!--inicio pie pagina-->
+    <br>
+    <footer class="bg-dark" id="templatemo_footer">
+     <div class="container text-light">
+         <div class="row">
+             <div class="col-md-4 pt-0">       
+                 <h2 class="text-light bg-dark pb-3 light-logo">INVIZA control de acceso</h2>
+                 <div class="contact-info">
+                     <div class="contact-item">
+                         <i class="fas fa-map-marker-alt fa-fw"></i>
+                         Local Principal - Madrid, Colombia
+                     </div>
+                     <div class="contact-item">
+                         <i class="fa fa-envelope mx-2"></i>
+                         <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">contacto: INVIZA@gmail.com</a>
+                     </div>
+                     <div class="contact-item">
+                         <i class="fa fa-phone mx-2"></i>
+                         <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+                     </div>
+                 </div>        
+     <div class="w-100 bg-dark py-3"> 
+                     <div class="row pt-2"> 
+                 <p class="text-left text-light"> 
+                     Copyright &copy; 2024 - ProdArt | Diseñado por: Rubiel Quintero - David Andres Correa
+                 </p>
+     </div>     
+ </footer>
+<!-- Script para mostrar la hora actual -->
+<script>
+    function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        document.getElementById('currentTime').textContent = `${hours}:${minutes}`;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+</script>
+
+</body>
+</html>
+

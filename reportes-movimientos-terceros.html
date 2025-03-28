@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Accesos - Reportes > Movimientos > Terceros</title>
+    <link rel="stylesheet" href="CSS/styles_reportes_movimientos_terceros.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/templatemo.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <link rel="stylesheet" href="CSS/templatemo.min.css">
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeElement = document.getElementById("current-time");
+            timeElement.textContent = now.toLocaleTimeString();
+        }
+
+        setInterval(updateTime, 1000);
+    </script>
+    <style>
+        body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+    background-size: cover;
+        }
+     
+    </style>
+</head>
+</header>
+<nav class="navbar navbar-expand-lg bg-dark navbar-light" id="templatemo_nav_top">
+    <div class="container text-light">        
+        <div class="w-1000 d-flex justify-content-between">
+            <div>
+                <i class="fa fa-envelope mx-2"></i>
+                <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">infoINVIZA.com</a>
+                <i class="fa fa-phone mx-2"></i>
+                <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+            </div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored">
+                        <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i>
+                    </a>
+                    <a class="text-light" href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram fa-sm fa-fw me-2"></i>
+                    </a>
+                    <a class="text-light" href="https://www.twitter.com" target="_blank">
+                        <i class="fab fa-twitter fa-sm fa-fw me-2"></i>
+                    </a>
+                </div>
+              </div>
+        </div>
+    </div>
+</nav>
+   </header>
+
+<body>
+
+    <!-- Encabezado superior -->
+    <div class="header">
+        <img src="IMAGENES/logo_inviza.jpg" alt="Logo Inviza">
+        <h1>Control de Accesos</h1>
+        <div class="time">
+            <span id="current-time"></span>
+            <button onclick="window.location.href='pagina_inicial.html'">Menú Principal</button>
+        </div>
+    </div>
+
+   
+    <div class="main">
+        <div class="form-container">
+            <h2>Reportes > Movimientos > Terceros</h2>
+
+            <!-- Formulario de ingreso de datos -->
+            <form>
+                <div class="form-group">
+                    <label for="fecha-inicial">Fecha inicial:</label>
+                    <input type="datetime-local" id="fecha-inicial" name="fecha-inicial">
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha-final">Fecha final:</label>
+                    <input type="datetime-local" id="fecha-final" name="fecha-final">
+                </div>
+
+                <div class="form-group">
+                    <label for="empresa">Empresa:</label>
+                    <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
+                </div>
+
+                <div class="form-group">
+                    <label for="sucursal">Sucursal:</label>
+                    <input type="text" id="sucursal" name="sucursal" placeholder="Sucursal donde se realizó el movimiento">
+                </div>
+
+                <div class="form-group">
+                    <label for="inmueble">Inmueble:</label>
+                    <input type="text" id="inmueble" name="inmueble" placeholder="Inmueble relacionado">
+                </div>
+
+                <div class="form-group">
+                    <label for="cedula">Cédula:</label>
+                    <input type="text" id="cedula" name="cedula" placeholder="Número de cédula del visitante">
+                </div>
+
+                <!-- Desplegable para opciones de informes -->
+                <div class="dropdown-group">
+                    <select id="seleccionar" name="seleccionar">
+                        <option value="">Seleccionar</option>
+                        <option value="excel">Generar informe en Excel</option>
+                        <option value="areas">Generar informe con áreas de más visitas</option>
+                        <option value="usuarios">Generar informe con usuario con más visitas</option>
+                        <option value="visitantes">Generar informe con visitante con más visitas</option>
+                    </select>
+                </div>
+
+                <!-- Botones -->
+                <div class="button-group">
+                    <button type="submit">Generar Informe</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <!--inicio pie pagina-->      
+        <footer class="bg-dark" id="templatemo_footer">
+         <div class="container text-light">
+             <div class="row">
+                 <div class="col-md-4 pt-0">       
+                     <h2 class="text-light bg-dark pb-3 light-logo">INVIZA control de acceso</h2>
+                     <div class="contact-info">
+                         <div class="contact-item">
+                             <i class="fas fa-map-marker-alt fa-fw"></i>
+                             Local Principal - Madrid, Colombia
+                         </div>
+                         <div class="contact-item">
+                             <i class="fa fa-envelope mx-2"></i>
+                             <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">contacto: INVIZA@gmail.com</a>
+                         </div>
+                         <div class="contact-item">
+                             <i class="fa fa-phone mx-2"></i>
+                             <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="w-100 bg-dark py-3"> 
+             <div class="container"> 
+                 <div class="row pt-2"> 
+                     <p class="text-left text-light"> 
+                         Copyright &copy; 2024 - ProdArt | Diseñado por: Rubiel Quintero - David Andres Correa
+                     </p>
+                 </div>
+             </div>
+         </div>
+     </footer>
+  
+    </body>
+
+</html>
+

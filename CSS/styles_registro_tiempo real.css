@@ -1,0 +1,149 @@
+/* Estilos globales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/logo_inviza.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+}
+
+/* Contenedor general */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 25px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    width: 80px;
+    border-radius: 5px;
+}
+
+header .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #eff0f1;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 20px;
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .actions .time {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+header .actions button {
+    background-color: #0db13e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+header .actions button:hover {
+    background-color: #218838;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 70%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #45a049;
+}
+
+/* Estadísticas */
+.stats {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td {
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+td:hover {
+    background-color: #f4f4f4;
+}
+
+td img {
+    width: 80px;
+    height: auto; /* Ajusta la altura automáticamente según la proporción de la imagen */
+}
+
+
+
+

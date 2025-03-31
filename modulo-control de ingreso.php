@@ -41,10 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Procesar la imagen Base64
         if (!empty($foto_base64)) {
-            $foto_base64 = str_replace('data:image/jpeg;base64,', '', $foto_base64);
+            $foto_base64 = str_replace('data:image/jpg;base64,', '', $foto_base64);
             $foto_base64 = str_replace(' ', '+', $foto_base64);
             $fotoDecodificada = base64_decode($foto_base64);
-            $nombreArchivo = 'uploads/' . uniqid() . '.jpeg';
+            $nombreArchivo = 'uploads/' . uniqid() . '.jpg';
 
             // Crear la carpeta 'uploads' si no existe
             if (!is_dir('uploads')) {

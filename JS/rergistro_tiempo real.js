@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return response.json();
             })
             .then(data => {
-                console.log("Datos recibidos:", data); // Depuración: Verifica los datos en la consola
+                console.log("Archivo cargado correctamente:", data); // Depuración: Verifica los datos en la consola
                 const tabla = document.getElementById("inviza/visitantes-table");
                 tabla.innerHTML = ""; // Limpia el contenido de la tabla antes de agregar los nuevos datos
 
@@ -18,7 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     const row = document.createElement("tr");
                     row.innerHTML = `
                         <td>${visitor.id}</td>
-                        <td><img src="${visitor.foto || 'placeholder.jpeg'}" alt="Foto" width="80"></td>
+                        <td>
+                            <div style="position: relative; text-align: center;">
+                                <img src="${visitor.foto || 'placeholder.jpeg'}" alt="Foto" width="80">
+                                <button onclick="darSalida(${visitor.id})" 
+                                    style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); 
+                                    background-color: black; color: white; border: none; cursor: pointer; padding: 3px;">
+                                    X
+                                </button>
+                            </div>
+                        </td>
                         <td>${visitor.numero_documento}</td>
                         <td>${visitor.tipo_documento}</td>
                         <td>${visitor.nombres_apellidos}</td>
@@ -38,6 +47,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("Error al cargar visitantes:", error);
                 alert("Hubo un problema al cargar los datos. Por favor, verifica la conexión.");
             });
+    }
+
+    // Función para registrar la salida de un visitante
+    function darSalida(id) {
+        if (confirm("¿Estás seguro de dar salida a este visitante?")) {
+            fetch("actualizar_registro.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `accion=dar_salida&id=${id}`,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Hora de salida registrada correctamente.");
+                    cargarVisitantes(); // Actualiza la tabla
+                } else {
+                    alert("Error: " + data.error);
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        }
     }
 
     // Actualiza los datos cada 5 segundos

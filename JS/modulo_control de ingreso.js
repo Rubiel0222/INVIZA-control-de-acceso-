@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // **Actualizar la Hora Actual**
+    // *Actualizar la Hora Actual*
     function updateTime() {
         const now = new Date();
         const hours = String(now.getHours()).padStart(2, '0');
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateTime, 1000);
     updateTime();
 
-    // **Captura de Foto desde la Cámara**
+    // *Captura de Foto desde la Cámara*
     const video = document.getElementById('video');
     const photoPreview = document.getElementById('photoPreview');
     const captureButton = document.getElementById('captureButton');

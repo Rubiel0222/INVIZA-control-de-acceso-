@@ -81,9 +81,8 @@
 
     <!-- Contenido principal -->
      <br><br><br><br><br><br>
-    <div class="main">
+     <div class="main">
         <h2>Visitas > Creación y edición</h2>
-
         <div class="table-container">
             <!-- Búsqueda y paginación -->
             <div class="search-container">
@@ -96,19 +95,20 @@
                 </select>
                 <button class="add-record">Agregar nuevo registro</button>
             </div>
-
             <!-- Tabla -->
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombres</th>
-                        <th>Apellidos</th>
-                        <th>Fecha inicio</th>
-                        <th>Fecha fin</th>
+                        <th>ID Visitas</th>
+                        <th>ID Usuario</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Estado Visita</th>
                         <th>Sucursal</th>
-                        <th>Estado</th>
-                        <th>ARL</th>
+                        <th>Fecha Ingreso</th>
+                        <th>ID Zona</th>
+                        <th>Hora Ingreso</th>
+                        <th>Número Documento</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -116,13 +116,15 @@
                     <!-- Ejemplo de fila -->
                     <tr>
                         <td>1</td>
-                        <td contenteditable="true">Juan Carlos</td>
-                        <td contenteditable="true">Pérez Gómez</td>
-                        <td contenteditable="true">2024-10-15 08:00</td>
-                        <td contenteditable="true">2024-10-15 17:00</td>
+                        <td contenteditable="true">123</td>
+                        <td contenteditable="true">2025-04-01 08:00</td>
+                        <td contenteditable="true">2025-04-01 17:00</td>
+                        <td contenteditable="true">activa</td>
                         <td contenteditable="true">Empresa ABC</td>
-                        <td contenteditable="true">Activo</td>
-                        <td contenteditable="true">Sí</td>
+                        <td contenteditable="true">2025-04-01</td>
+                        <td contenteditable="true">1</td>
+                        <td contenteditable="true">2025-04-01 08:00</td>
+                        <td contenteditable="true">789456123</td>
                         <td>
                             <button class="edit-button">Editar</button>
                             <button class="delete-button">Borrar</button>
@@ -133,7 +135,6 @@
                     <!-- Añadir más filas según los datos -->
                 </tbody>
             </table>
-
             <!-- Paginación -->
             <div class="pagination-container">
                 <div>
@@ -151,7 +152,8 @@
         </div>
     </div>
     <footer>
-        <!--inicio pie de página-->
+    
+     <!--inicio pie de página-->
         <br><br><br><br><br><br><br>
         <footer class="bg-dark" id="templatemo_footer">
             <div class="container text-light">

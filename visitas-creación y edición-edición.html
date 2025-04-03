@@ -74,84 +74,76 @@
     <!-- Contenido principal -->
     <div class="main">
         <h2>Visitas > Creación y edición > Edición</h2>
-
         <div class="form-container">
-            <form>
-
+            <form action="visitas_creacion_edicion_edicion.php" method="POST">
                 <!-- Documento -->
                 <div class="form-group">
                     <label for="documento">Documento:</label>
-                    <input type="text" id="documento" name="documento" placeholder="Número de identificación">
+                    <input type="text" id="documento" name="documento" placeholder="Número de identificación" required>
                 </div>
-
                 <!-- Nombres -->
                 <div class="form-group">
                     <label for="nombres">Nombres:</label>
-                    <input type="text" id="nombres" name="nombres" placeholder="Ingrese nombres">
+                    <input type="text" id="nombres" name="nombres" placeholder="Ingrese nombres" required>
                 </div>
-
                 <!-- Apellidos -->
                 <div class="form-group">
                     <label for="apellidos">Apellidos:</label>
-                    <input type="text" id="apellidos" name="apellidos" placeholder="Ingrese apellidos">
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Ingrese apellidos" required>
                 </div>
-
                 <!-- Fecha de inicio -->
                 <div class="form-group">
-                    <label for="fecha-inicio">Fecha de inicio:</label>
-                    <input type="datetime-local" id="fecha-inicio" name="fecha-inicio">
+                    <label for="fecha_inicio">Fecha de inicio:</label>
+                    <input type="datetime-local" id="fecha_inicio" name="fecha_inicio" required>
                 </div>
-
-                <!-- Estado -->
+                <!-- Fecha de fin -->
                 <div class="form-group">
-                    <label for="estado">Estado:</label>
-                    <select id="estado" name="estado">
-                        <option value="activo">Activo</option>
-                        <option value="inactivo">Inactivo</option>
+                    <label for="fecha_fin">Fecha de fin:</label>
+                    <input type="datetime-local" id="fecha_fin" name="fecha_fin">
+                </div>
+               <!-- Estado de visita -->
+                <div class="form-group">
+                    <label for="estado_visita">Estado de visita:</label>
+                    <select id="estado_visita" name="estado_visita">
+                        <option value="activa">Activa</option>
+                        <option value="finalizada">Finalizada</option>
                     </select>
                 </div>
-
                 <!-- ARL Checkbox -->
                 <div class="form-group">
-                    <label for="arl-checkbox">ARL:</label>
-                    <input type="checkbox" id="arl-checkbox" name="arl-checkbox"> Seleccionar
+                    <label for="arl_checkbox">ARL:</label>
+                    <input type="checkbox" id="arl_checkbox" name="arl_checkbox"> Seleccionar
                 </div>
-
-                <!-- ARL -->
-                <div class="form-group">
-                    <label for="arl">Registro ARL:</label>
-                    <input type="text" id="arl" name="arl" placeholder="Ingrese ARL">
-                </div>
-
                 <!-- Cantidad de ingresos permitidos -->
                 <div class="form-group">
                     <label for="ingresos">Cantidad de ingresos permitidos:</label>
                     <input type="number" id="ingresos" name="ingresos" placeholder="Ingrese número de ingresos">
                 </div>
-
                 <!-- Empresa de origen -->
                 <div class="form-group">
-                    <label for="empresa-origen">Empresa de origen:</label>
-                    <input type="text" id="empresa-origen" name="empresa-origen" placeholder="Ingrese empresa de origen">
+                    <label for="empresa_origen">Empresa de origen:</label>
+                    <input type="text" id="empresa_origen" name="empresa_origen" placeholder="Ingrese empresa de origen">
                 </div>
-
                 <!-- Observaciones -->
                 <div class="form-group">
                     <label for="observaciones">Observaciones:</label>
                     <textarea id="observaciones" name="observaciones" rows="4" placeholder="Escriba observaciones"></textarea>
                 </div>
-
+                <!-- ID Zona -->
+                <div class="form-group">
+                    <label for="id_zona">ID Zona:</label>
+                    <input type="number" id="id_zona" name="id_zona" placeholder="Ingrese ID de la zona">
+                </div>
                 <!-- Botones -->
                 <div class="form-actions">
                     <button type="submit">Guardar información</button>
                     <button type="button" class="btn-back" onclick="window.location.href='visitas_creacion.html'">Regresar</button>
                 </div>
-
             </form>
         </div>
     </div>
-    <footer>
-        <!--inicio pie de página-->
+    
+    <!--inicio pie de página-->
         <footer class="bg-dark" id="templatemo_footer">
             <div class="container text-light">
                 <div class="row">

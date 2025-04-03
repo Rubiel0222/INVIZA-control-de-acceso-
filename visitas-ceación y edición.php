@@ -29,13 +29,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("issssssss", $id_usuario, $fecha_inicio, $fecha_fin, $estado_visita, $sucursal, $fecha_ingreso, $id_zona, $hora_ingreso, $numero_documento);
 
-    if ($stmt->execute() === TRUE) {
+    if ($stmt->execute()) {
         echo "Visita creada exitosamente.";
     } else {
-        echo "Error al crear visita: " . $conn->error;
+        echo "Error al crear visita: " . $stmt->error;
     }
 
     $stmt->close();
+}
+
+// Recuperar datos para mostrarlos en la tabla
+$result = $conn->query("SELECT * FROM visitas");
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>
+            <td>{$row['id_visitas']}</td>
+            <td contenteditable='true'>{$row['id_usuario']}</td>
+            <td contenteditable='true'>{$row['fecha_inicio']}</td>
+            <td contenteditable='true'>{$row['fecha_fin']}</td>
+            <td contenteditable='true'>{$row['estado_visita']}</td>
+            <td contenteditable='true'>{$row['sucursal']}</td>
+            <td contenteditable='true'>{$row['fecha_ingreso']}</td>
+            <td contenteditable='true'>{$row['id_zona']}</td>
+            <td contenteditable='true'>{$row['hora_ingreso']}</td>
+            <td contenteditable='true'>{$row['numero_documento']}</td>
+            <td>
+                <button class='edit-button'>Editar</button>
+                <button class='delete-button'>Borrar</button>
+                <button class='movements-button'>Movimientos</button>
+                <button class='save-button' style='display: none;'>Guardar</button>
+            </td>
+        </tr>";
+    }
 }
 
 $conn->close();

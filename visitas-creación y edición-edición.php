@@ -12,43 +12,31 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Procesar el formulario cuando se envíe
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// Procesar los datos del formulario cuando se envíe
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Capturar los datos del formulario
     $documento = $_POST["documento"] ?? null;
     $nombres = $_POST["nombres"] ?? null;
     $apellidos = $_POST["apellidos"] ?? null;
-    $fecha_inicio = $_POST["fecha-inicio"] ?? null;
-    $estado = $_POST["estado"] ?? null;
-    $arl_checkbox = isset($_POST["arl-checkbox"]) ? 1 : 0; // 1 si está seleccionado
-    $arl = $_POST["arl"] ?? null;
+    $fecha_inicio = $_POST["fecha_inicio"] ?? null;
+    $fecha_fin = $_POST["fecha_fin"] ?? null;
+    $estado_visita = $_POST["estado_visita"] ?? null;
+    $arl_checkbox = isset($_POST["arl_checkbox"]) ? 1 : 0;
     $ingresos = $_POST["ingresos"] ?? null;
-    $empresa_origen = $_POST["empresa-origen"] ?? null;
+    $empresa_origen = $_POST["empresa_origen"] ?? null;
     $observaciones = $_POST["observaciones"] ?? null;
+    $id_zona = $_POST["id_zona"] ?? null;
 
-    // Validar que el campo obligatorio "documento" esté presente
-    if (empty($documento)) {
-        echo "El número de documento es obligatorio.";
+    // Validación básica de datos requeridos
+    if (empty($documento) || empty($nombres) || empty($apellidos) || empty($fecha_inicio)) {
+        echo "Los campos obligatorios no pueden estar vacíos.";
         exit;
     }
 
-    // Insertar los datos en la tabla correspondiente
-    $stmt = $conn->prepare("INSERT INTO visitas_edicion 
-        (documento, nombres, apellidos, fecha_inicio, estado, arl_checkbox, arl, ingresos, empresa_origen, observaciones) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param(
-        "sssssisiss",
-        $documento,
-        $nombres,
-        $apellidos,
-        $fecha_inicio,
-        $estado,
-        $arl_checkbox,
-        $arl,
-        $ingresos,
-        $empresa_origen,
-        $observaciones
-    );
+    // Insertar los datos en la tabla 'visitas'
+    $stmt = $conn->prepare("INSERT INTO visitas (documento, nombres, apellidos, fecha_inicio, fecha_fin, estado_visita, arl_checkbox, ingresos, empresa_origen, observaciones, id_zona) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssisisss", $documento, $nombres, $apellidos, $fecha_inicio, $fecha_fin, $estado_visita, $arl_checkbox, $ingresos, $empresa_origen, $observaciones, $id_zona);
 
     if ($stmt->execute()) {
         echo "Información guardada exitosamente.";

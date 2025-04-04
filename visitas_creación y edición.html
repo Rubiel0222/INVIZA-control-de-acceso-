@@ -86,7 +86,7 @@
         <div class="table-container">
             <!-- Búsqueda y paginación -->
             <div class="search-container">
-                <input type="text" placeholder="Buscar...">
+                <input type="text" placeholder="Buscar..." id="search">
                 <button><img src="search-icon.png" alt="Buscar" style="height: 20px;"></button>
                 <select id="page">
                     <option value="1">Página 1</option>
@@ -94,6 +94,8 @@
                     <option value="3">Página 3</option>
                 </select>
                 <button class="add-record">Agregar nuevo registro</button>
+                <button type="button" class="btn-back" onclick="window.location.href='visitas-creación y edición edición.html'">Regresar</button>
+
             </div>
             <!-- Tabla -->
             <table>
@@ -132,7 +134,7 @@
                             <button class="save-button" style="display: none;">Guardar</button>
                         </td>
                     </tr>
-                    <!-- Añadir más filas según los datos -->
+                    <!-- Más filas según los datos -->
                 </tbody>
             </table>
             <!-- Paginación -->
@@ -150,7 +152,18 @@
                 </div>
             </div>
         </div>
+        <!-- Formulario para envíos POST -->
+        <div class="form-container">
+            <form action="visitas-creación y edición-edición.php" method="POST">
+                <input type="hidden" name="id_visitas" value="">
+                <input type="hidden" name="id_usuario" value="">
+                <input type="hidden" name="fecha_ingreso" value="">
+                <input type="hidden" name="hora_ingreso" value="">
+                <!-- Agrega otros campos ocultos según sea necesario -->
+            </form>
+        </div>
     </div>
+        
     <footer>
     
      <!--inicio pie de página-->

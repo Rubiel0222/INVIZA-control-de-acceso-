@@ -87,30 +87,28 @@
             <!-- Búsqueda y paginación -->
             <div class="search-container">
                 <input type="text" placeholder="Buscar..." id="search">
-                <button><img src="search-icon.png" alt="Buscar" style="height: 20px;"></button>
+                <!-- Botón Buscar sin imagen -->
+                <button type="button">Buscar</button>
                 <select id="page">
                     <option value="1">Página 1</option>
                     <option value="2">Página 2</option>
                     <option value="3">Página 3</option>
                 </select>
-                <button class="add-record">Agregar nuevo registro</button>
-                <button type="button" class="btn-back" onclick="window.location.href='visitas-creación y edición edición.html'">Regresar</button>
-
+                <!-- Botón Agregar nuevo registro corregido -->
+                <button class="add-record" onclick="window.location.href='visitas-Creación y edición-edición.html'">Agregar nuevo registro</button>
             </div>
-            <!-- Tabla -->
+    
+            <!-- Tabla principal -->
             <table>
                 <thead>
                     <tr>
                         <th>ID Visitas</th>
-                        <th>ID Usuario</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
                         <th>Fecha Inicio</th>
                         <th>Fecha Fin</th>
-                        <th>Estado Visita</th>
-                        <th>Sucursal</th>
-                        <th>Fecha Ingreso</th>
-                        <th>ID Zona</th>
-                        <th>Hora Ingreso</th>
-                        <th>Número Documento</th>
+                        <th>Estado</th>
+                        <th>Arl</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -118,25 +116,21 @@
                     <!-- Ejemplo de fila -->
                     <tr>
                         <td>1</td>
-                        <td contenteditable="true">123</td>
+                        <td contenteditable="true">Juan</td>
+                        <td contenteditable="true">Pérez</td>
                         <td contenteditable="true">2025-04-01 08:00</td>
                         <td contenteditable="true">2025-04-01 17:00</td>
-                        <td contenteditable="true">activa</td>
-                        <td contenteditable="true">Empresa ABC</td>
-                        <td contenteditable="true">2025-04-01</td>
-                        <td contenteditable="true">1</td>
-                        <td contenteditable="true">2025-04-01 08:00</td>
-                        <td contenteditable="true">789456123</td>
+                        <td contenteditable="true">Activo</td>
+                        <td contenteditable="true">ARL Segura</td>
                         <td>
                             <button class="edit-button">Editar</button>
                             <button class="delete-button">Borrar</button>
-                            <button class="movements-button">Movimientos</button>
-                            <button class="save-button" style="display: none;">Guardar</button>
                         </td>
                     </tr>
                     <!-- Más filas según los datos -->
                 </tbody>
             </table>
+    
             <!-- Paginación -->
             <div class="pagination-container">
                 <div>
@@ -152,19 +146,9 @@
                 </div>
             </div>
         </div>
-        <!-- Formulario para envíos POST -->
-        <div class="form-container">
-            <form action="visitas-creación y edición-edición.php" method="POST">
-                <input type="hidden" name="id_visitas" value="">
-                <input type="hidden" name="id_usuario" value="">
-                <input type="hidden" name="fecha_ingreso" value="">
-                <input type="hidden" name="hora_ingreso" value="">
-                <!-- Agrega otros campos ocultos según sea necesario -->
-            </form>
-        </div>
     </div>
-        
-    <footer>
+    
+        <footer>
     
      <!--inicio pie de página-->
         <br><br><br><br><br><br><br>

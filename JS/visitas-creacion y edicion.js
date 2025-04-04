@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Función para actualizar la hora actual
+    // Actualizar la hora actual
     function updateTime() {
         const now = new Date();
         const timeElement = document.getElementById("current-time");
@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateTime, 1000);
     updateTime();
 
-    // Obtener referencias a los elementos de la interfaz
+    // Referencias a elementos de la interfaz
     const searchInput = document.querySelector('.search-container input[type="text"]');
     const searchButton = document.querySelector('.search-container button');
     const addRecordButton = document.querySelector('.add-record');
     const tableBody = document.querySelector('table tbody');
 
-    // Validar elementos antes de agregar eventos
+    // Validar existencia de elementos antes de agregar eventos
     if (searchInput && searchButton && addRecordButton && tableBody) {
-        // Función de búsqueda
+        // Búsqueda en la tabla
         searchButton.addEventListener('click', function (event) {
             event.preventDefault();
             const query = searchInput.value.toLowerCase();
@@ -27,13 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
             rows.forEach(row => {
                 const cells = row.querySelectorAll('td');
                 const rowData = Array.from(cells).map(cell => cell.textContent.toLowerCase());
-                const matches = rowData.some(data => data.includes(query));
-
-                row.style.display = matches ? '' : 'none';
+                row.style.display = rowData.some(data => data.includes(query)) ? '' : 'none';
             });
         });
 
-        // Función para agregar un nuevo registro
+        // Agregar un nuevo registro
         addRecordButton.addEventListener('click', function (event) {
             event.preventDefault();
 
@@ -48,14 +46,13 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append("id_zona", "2");
             formData.append("hora_ingreso", "2025-04-01 08:00:00");
 
-            fetch("visitas-creación y edición.php", {
+            fetch("visitas-creación-y-edición.php", {
                 method: "POST",
                 body: formData
             })
             .then(response => response.text())
             .then(data => {
                 alert(data);
-                // Agregar fila a la tabla si se registra correctamente
                 const newRow = document.createElement('tr');
                 newRow.innerHTML = `
                     <td>Nuevo</td>
@@ -78,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => console.error("Error:", error));
         });
 
-        // Función para manejar los botones en las filas
+        // Manejo de acciones en las filas
         tableBody.addEventListener('click', function (event) {
             if (event.target.tagName === 'BUTTON') {
                 const button = event.target;

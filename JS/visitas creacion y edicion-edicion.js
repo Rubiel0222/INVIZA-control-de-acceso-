@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (data.includes("Información guardada con éxito")) { // Verificar el mensaje del servidor
                     alert("Información guardada correctamente.");
                     formElement.reset(); // Limpia el formulario tras el guardado exitoso
-                    window.location.href = 'visitas_creación y edición.html'; // Redirige después de guardar
+                    window.location.href = 'visitas-creación-y-edición.html'; // Redirige después de guardar
                 } else {
-                    alert("Error: " + data); // Muestra cualquier mensaje de error del servidor
+                    alert("Error del servidor: " + data); // Muestra cualquier mensaje de error del servidor
                 }
             })
             .catch(error => {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Función para regresar a la página anterior
         backButton.addEventListener('click', function () {
-            window.location.href = 'visitas_creación y edición.html'; // Página de regreso
+            window.location.href = 'visitas-creación-y-edición.html'; // Página de regreso
         });
     } else {
         console.error("Error: Elementos del formulario no encontrados.");

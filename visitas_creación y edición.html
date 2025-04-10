@@ -78,7 +78,6 @@
             <button onclick="window.location.href='pagina principal.html'">Página Principal</button>
         </div>
     </div>
-
     <!-- Contenido principal -->
      <br><br><br><br><br><br>
      <div class="main">
@@ -95,14 +94,13 @@
                     <option value="3">Página 3</option>
                 </select>
                 <!-- Botón Agregar nuevo registro corregido -->
-                <button class="add-record" onclick="window.location.href='visitas-Creación y edición-edición.html'">Agregar nuevo registro</button>
-            </div>
-    
+                <button class="add-record" onclick="window.location.href='visitas-Creación-y-edición-edición.html'">Agregar nuevo registro</button>
+            </div>    
             <!-- Tabla principal -->
             <table>
                 <thead>
                     <tr>
-                        <th>ID Visitas</th>
+                        <th>Documento</th>
                         <th>Nombres</th>
                         <th>Apellidos</th>
                         <th>Fecha Inicio</th>
@@ -111,11 +109,8 @@
                         <th>Arl</th>
                         <th>Acciones</th>
                     </tr>
-                </thead>
-                <tbody>
-                    <!-- Ejemplo de fila -->
                     <tr>
-                        <td>1</td>
+                        <td contenteditable="true">7895462</td>
                         <td contenteditable="true">Juan</td>
                         <td contenteditable="true">Pérez</td>
                         <td contenteditable="true">2025-04-01 08:00</td>
@@ -127,6 +122,17 @@
                             <button class="delete-button">Borrar</button>
                         </td>
                     </tr>
+                </thead>
+                <tbody>
+                    <!-- Los registros se generarán dinámicamente desde la base de datos -->
+                    <?php listarVisitas($conn); ?>
+                </tbody>
+            </table>
+            </div>
+            
+                <tbody>
+                    <!-- Ejemplo de fila -->
+                    
                     <!-- Más filas según los datos -->
                 </tbody>
             </table>

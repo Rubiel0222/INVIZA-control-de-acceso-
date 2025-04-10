@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "express": "^5.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
@@ -8,12 +9,15 @@
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "babel-loader": "^10.0.0",
+    "nodemon": "^3.1.9",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.1"
   },
   "scripts": {
-    "start": "webpack serve --mode development",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "start-webpack": "webpack serve --mode development",
     "build": "webpack --mode production"
   }
 }

@@ -132,3 +132,11 @@ body {
 .form-actions .btn-back:hover {
     background-color: #bbbbbb;
 }
+
+/* Encapsulación de estilos específicos */
+.pagina-actual input,
+.pagina-actual button {
+    /* Estilos específicos solo para esta página */
+    font-size: 14px;
+    border-color: #050505;
+}

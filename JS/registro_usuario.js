@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+
     const registerForm = document.getElementById('registerForm');
 
     registerForm.addEventListener('submit', function (event) {
@@ -25,4 +25,4 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Error al procesar el registro. Intenta nuevamente.');
             });
     });
-});
+});document.addEventListener('DOMContentLoaded', function () {

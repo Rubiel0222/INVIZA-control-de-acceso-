@@ -10,48 +10,52 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateTime, 1000); // Actualiza cada segundo
     updateTime(); // Llama la función al cargar la página
 
-    // Obtener referencias a los elementos del formulario
-    const formElement = document.querySelector('form'); // Referencia al formulario
-    const saveButton = document.querySelector('button[type="submit"]');
-    const backButton = document.querySelector('.btn-back');
+    // Referencias a los elementos clave
+    const formElement = document.querySelector('form'); // Formulario principal o de edición
+    const saveButton = document.querySelector('button[type="submit"]'); // Botón para guardar
+    const backButton = document.querySelector('.btn-back'); // Botón para regresar
+    const agregarButton = document.getElementById('btn-agregar'); // Botón para agregar nuevo registro
 
-    if (formElement && saveButton && backButton) {
-        // Función para enviar información al servidor
+    // Función para enviar información al servidor desde el formulario de edición
+    if (formElement && saveButton) {
         saveButton.addEventListener('click', function (event) {
-            event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+            event.preventDefault(); // Evita el envío predeterminado del formulario
 
             const formData = new FormData(formElement); // Capturar los datos del formulario
 
-            fetch("visitas-creación y edición-edición.php", { // Ruta del archivo PHP
-                method: "POST", // Método POST para enviar los datos
+            fetch("guardar-datos.php", { // Ruta del archivo PHP para guardar datos
+                method: "POST",
                 body: formData
             })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Error en la respuesta del servidor");
-                }
-                return response.text(); // Obtener texto de la respuesta
-            })
+            .then(response => response.text())
             .then(data => {
-                if (data.includes("Información guardada con éxito")) { // Verificar el mensaje del servidor
+                if (data.includes("Información guardada con éxito")) {
                     alert("Información guardada correctamente.");
-                    formElement.reset(); // Limpia el formulario tras el guardado exitoso
-                    window.location.href = 'visitas-creación-y-edición.html'; // Redirige después de guardar
+                    formElement.reset(); // Limpia el formulario tras el guardado
+                    window.location.href = 'visitas-creación-y-edición.html'; // Redirige a la página principal
                 } else {
-                    alert("Error del servidor: " + data); // Muestra cualquier mensaje de error del servidor
+                    alert("Error del servidor: " + data);
                 }
             })
             .catch(error => {
-                console.error("Error al enviar los datos:", error);
-                alert("Ocurrió un error al intentar guardar la información. Por favor, inténtalo nuevamente.");
+                console.error("Error al guardar la información:", error);
+                alert("Hubo un problema al guardar la información. Intenta de nuevo.");
             });
         });
+    }
 
-        // Función para regresar a la página anterior
+    // Función para regresar a la página principal desde cualquier acción
+    if (backButton) {
         backButton.addEventListener('click', function () {
             window.location.href = 'visitas-creación-y-edición.html'; // Página de regreso
         });
-    } else {
-        console.error("Error: Elementos del formulario no encontrados.");
+    }
+
+    // Función para redirigir al formulario de edición al hacer clic en "Agregar nuevo registro"
+    if (agregarButton) {
+        agregarButton.addEventListener('click', function (event) {
+            event.preventDefault(); // Previene cualquier acción predeterminada
+            window.location.href = 'visitas-creación-y-edición-edición.html'; // Redirige al formulario de edición
+        });
     }
 });

@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Módulo > Control de Ingreso</title>
-    <link rel="stylesheet" href="css/fontawesome.min.css">
+<link rel="stylesheet" href="css/fontawesome.min.css">
 <link rel="stylesheet" href="css/slick-theme.css">
 <link rel="stylesheet" href="css/templatemo.css">
 <link rel="stylesheet" href="css/fontawesome.css">
 <link rel="stylesheet" href="css/fontawesome.min.css">
 <link rel="stylesheet" href="css/slick-theme.css">
 <link rel="stylesheet" href="css/slick.min.css">
-<link rel="stylesheet" href="CSS/templatemo.min.css">       
-      <link rel="stylesheet" href="CSS/styles_modulo_control de ingreso.css">
-    <script src="JS/modulo_control de ingreso.js" defer></script>
+<link rel="stylesheet" href="CSS/templatemo.min.css">
+<link rel="stylesheet" href="CSS/styles_modulo_control de ingreso.css">
+<script src="JS/modulo_control de ingreso.js" defer></script>
 </head>
 <style>
     body {
@@ -23,12 +23,11 @@ padding: 0;
 background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
 background-size: cover;
     }
- 
 </style>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark navbar-light" id="templatemo_nav_top">
-        <div class="container text-light">        
-            <div class="w-d-flex justify-content-between">
+        <div class="container text-light">
+        <div class="w-d-flex justify-content-between">
                     <i class="fa fa-envelope mx-2"></i>
                     <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">infoINVIZA.com</a>
                     <i class="fa fa-phone mx-2"></i>
@@ -42,9 +41,8 @@ background-size: cover;
                         <a class="text-light" href="https://www.twitter.com" target="_blank">
                             <i class="fab fa-twitter fa-sm fa-fw me-2"></i>
                         </a>
-                              
             </div>                                                                                                    
-            </div>
+        </div>
     </nav>                                                                     
     <!-- Encabezado principal con logo, título y acciones -->
     <header>
@@ -60,80 +58,81 @@ background-size: cover;
            
         </div>
     </header>
-
-    <!-- Contenedor principal con el formulario y la foto -->
     <div class="container">
         <div class="form-container">
-            <form>
+            <form action="modulo-control de ingreso.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="documentType">Documento</label>
-                    <select id="documentType">
+                    <select id="documentType" name="tipo_documento" required>
                         <option value="cc">Cédula de Ciudadanía</option>
                         <option value="ti">Tarjeta de Identidad</option>
                         <option value="ce">Cédula de Extranjería</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="documentNumber">Número de Documento</label>
-                    <input type="text" id="documentNumber" placeholder="Ingrese el número de documento">
+                    <input type="text" id="documentNumber" name="numero_documento" placeholder="Ingrese el número de documento" required>
                 </div>
-
                 <div class="form-group">
                     <label for="fullName">Nombres y Apellidos</label>
-                    <input type="text" id="fullName" placeholder="Ingrese los nombres y apellidos">
+                    <input type="text" id="fullName" name="nombres_apellidos" placeholder="Ingrese los nombres y apellidos" required>
                 </div>
-
                 <div class="form-group">
                     <label for="phone">Teléfono</label>
-                    <input type="text" id="phone" placeholder="Ingrese el número de teléfono">
+                    <input type="text" id="phone" name="telefono" placeholder="Ingrese el número de teléfono">
                 </div>
-
                 <div class="form-group">
                     <label for="vehicle">Vehículo</label>
-                    <select id="vehicle">
+                    <select id="vehicle" name="vehiculo">
                         <option value="carro">Carro</option>
                         <option value="moto">Moto</option>
                         <option value="bicicleta">Bicicleta</option>
                         <option value="ninguno">Ninguno</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="observations">Observaciones</label>
-                    <input type="text" id="observations" placeholder="Ingrese observaciones">
+                    <input type="text" id="observations" name="observaciones" placeholder="Ingrese observaciones">
                 </div>
-
                 <div class="form-group">
                     <label for="visitTo">Visita a</label>
-                    <input type="text" id="visitTo" placeholder="Ingrese la persona o lugar de visita">
+                    <input type="text" id="visitTo" name="visita_a" placeholder="Ingrese la persona o lugar de visita">
+
+                </div>
+                <div class="form-group">
+                    <label for="zona">Zona</label>
+                    <select id="zona" name="id_zona">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                    <div class="form-footer">
+                    <button type="submit">Ingresar</button>
+                    <button type="reset">Limpiar</button>
+                    <button type="button" onclick="window.location.href='registro_tiempo real.html';">Visitantes</button>
+                    <button type="button" onclick="window.location.href='funcionarios.html';">Funcionarios</button>
+                    <button type="button" onclick="window.location.href='contratistas.html';">Contratistas</button>
                 </div>
             </form>
-
-            <!-- Botones del formulario -->
-            <div class="form-footer">
-                <button>Ingresar</button>
-                <button>Limpiar</button>
-                <button>Visitantes</button>
-                <button>Funcionarios</button>
-                <button>Contratistas</button>
-            </div>
         </div>
-
-        <!-- Contenedor de la foto y botón "Tomar foto" -->
         <div class="photo-container">
-            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Foto Usuario">
-            <button>Tomar Foto</button>
+            <video id="video" autoplay></video>
+            <img id="photoPreview" alt="Foto Capturada" style="display: none;">
+            <button type="button" id="captureButton">Tomar Foto</button>
+            <input type="hidden" id="photoData" name="foto">
         </div>
     </div>
-
-    <!-- Script para mostrar la hora actual -->
+    
+        
+        <!-- Script para mostrar la hora actual -->
     <script>
         function updateTime() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             document.getElementById('currentTime').textContent = `${hours}:${minutes}`;
+
         }
         setInterval(updateTime, 1000);
         updateTime();
@@ -160,12 +159,12 @@ background-size: cover;
                          <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
                      </div>
                  </div>
-             </div>
-         </div>
+     </div>
+     </div>
      </div>
      <div class="w-100 bg-dark py-3"> 
-             <div class="row pt-2"> 
-                 <p class="text-left text-light"> 
+     <div class="row pt-2"> 
+    <p class="text-left text-light"> 
                      Copyright &copy; 2024 - ProdArt | Diseñado por: Rubiel Quintero - David Andres Correa
                  </p>
              </div>

@@ -34,7 +34,7 @@ body {
         </div>
         <div class="actions">
             <div class="time" id="currentTime"></div>
-            <button onclick="window.location.href='pagina_inicial.html'">Página Inicial</button>
+            
         </div>
     </header>
     <nav id="templatemo_nav_top">
@@ -66,11 +66,12 @@ body {
         <h2>Inicio de Sesión</h2>
         <img src="IMAGENES/logo_inviza.jpg" alt="logo_inviza">
 
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Usuario" required>
-            <input type="password" id="password" placeholder="Contraseña" required>
+        <form id="loginForm" method="POST" action="inicio secion.php">
+            <input type="text" name="username" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
             <button type="submit">Ingresar</button>
         </form>
+        
         <div class="forgot-password">
             <a href="recuperar_contrasena.html">¿Olvidaste tu contraseña?</a>
         </div>

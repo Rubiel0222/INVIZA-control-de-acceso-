@@ -1,74 +1,48 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Función para actualizar la hora actual
+    // *Actualizar la Hora Actual*
     function updateTime() {
         const now = new Date();
         const hours = String(now.getHours()).padStart(2, '0');
         const minutes = String(now.getMinutes()).padStart(2, '0');
         document.getElementById('currentTime').textContent = `${hours}:${minutes}`;
     }
-    setInterval(updateTime, 1000); // Actualiza cada segundo
-    updateTime(); // Llama la función al cargar la página
+    setInterval(updateTime, 1000);
+    updateTime();
 
-    // Obtener referencias a los elementos del formulario y botones
-    const documentType = document.getElementById('documentType');
-    const documentNumber = document.getElementById('documentNumber');
-    const fullName = document.getElementById('fullName');
-    const phone = document.getElementById('phone');
-    const vehicle = document.getElementById('vehicle');
-    const observations = document.getElementById('observations');
-    const visitTo = document.getElementById('visitTo');
-    const form = document.querySelector('form');
-    const ingresarButton = document.querySelector('.form-footer button:nth-child(1)');
-    const limpiarButton = document.querySelector('.form-footer button:nth-child(2)');
-    const visitantesButton = document.querySelector('.form-footer button:nth-child(3)');
-    const funcionariosButton = document.querySelector('.form-footer button:nth-child(4)');
-    const contratistasButton = document.querySelector('.form-footer button:nth-child(5)');
-    const photoButton = document.querySelector('.photo-container button');
-    const photo = document.querySelector('.photo-container img');
+    // *Captura de Foto desde la Cámara*
+    const video = document.getElementById('video');
+    const photoPreview = document.getElementById('photoPreview');
+    const captureButton = document.getElementById('captureButton');
+    const photoData = document.getElementById('photoData');
 
-    // Funcionalidad del botón "Ingresar"
-    ingresarButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        if (documentNumber.value && fullName.value && phone.value && visitTo.value) {
-            alert('Datos ingresados correctamente');
-            // Aquí puedes agregar lógica para enviar los datos o cualquier otra acción
-        } else {
-            alert('Por favor, complete todos los campos obligatorios');
-        }
-    });
+    // Habilitar la cámara
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then((stream) => {
+            video.srcObject = stream;
+            video.play();
+        })
+        .catch((error) => {
+            console.error("Error al acceder a la cámara:", error);
+            alert("No se puede acceder a la cámara. Verifica los permisos del navegador.");
+        });
 
-    // Funcionalidad del botón "Limpiar"
-    limpiarButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        form.reset(); // Limpia todos los campos del formulario
-    });
+    // Capturar la foto
+    captureButton.addEventListener('click', function() {
+        const canvas = document.createElement('canvas');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
 
-    // Funcionalidad del botón "Visitantes"
-    visitantesButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        // Redirigir a la página de visitantes
-        window.location.href = 'visitantes.html';
-    });
+        const context = canvas.getContext('2d');
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    // Funcionalidad del botón "Funcionarios"
-    funcionariosButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        // Redirigir a la página de funcionarios
-        window.location.href = 'funcionarios.html';
-    });
+        const imageData = canvas.toDataURL('image/jpeg'); // Usar formato JPEG
+        photoPreview.src = imageData;
+        photoPreview.style.display = 'block';
+        video.style.display = 'none';
 
-    // Funcionalidad del botón "Contratistas"
-    contratistasButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        // Redirigir a la página de contratistas
-        window.location.href = 'contratistas.html';
-    });
+        // Guardar la foto en el campo oculto
+        photoData.value = imageData;
 
-    // Funcionalidad del botón "Tomar Foto"
-    photoButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        // Simulación de toma de foto (puedes reemplazar esta parte con integración a la cámara real)
-        photo.src = 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
-        alert('Foto tomada (simulada)');
+        alert("Foto capturada con éxito.");
     });
 });

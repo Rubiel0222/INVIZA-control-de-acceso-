@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro tiempo real</title>
+    <!-- Rutas corregidas -->
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <link rel="stylesheet" href="css/templatemo.min.css">
+    <link rel="stylesheet" href="css/styles_registro_tiempo real.css">
+    <script src="JS/rergistro_tiempo real.js"></script>
+
+    <style>
+        body {
+            font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light" id="templatemo_nav_top">
+        <div class="w-100 d-flex justify-content-between">
+            <span class="navbar-sa-brand text-light">infoINVIZA</span>
+            <span class="text-light">3125843540</span>
+            <div>
+                <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="text-light" href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="text-light" href="https://www.twitter.com" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado principal -->
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo_inviza.jpg" alt="Logo de Inviza">
+        </div>
+        <div class="title editable">
+            INVIZA CONTROL DE ACCESOS
+        </div>
+        <div class="actions">
+            <div class="time" id="currentTime"></div>
+            <button onclick="window.location.href='pagina_inicial.html'">Página Inicial</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Gestión de Visitantes en Tiempo Real</h1>
+
+        <!-- Barra de búsqueda -->
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Buscar por número de documento o nombre">
+            <button onclick="searchVisitor()">Buscar</button>
+        </div>
+
+<!-- Estadísticas -->
+<div class="stats">
+    <p id="total-visitors">Visitantes ingresados hoy: 0</p>
+    <p id="pending-exit">Pendientes de días anteriores: 0</p>
+</div>
+
+<!-- Tabla de visitantes -->
+<table id="inviza/tablaVisitantes">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Foto</th>
+            <th>Número Documento</th>
+            <th>Tipo Documento</th>
+            <th>Nombres y Apellidos</th>
+            <th>Teléfono</th>
+            <th>Vehículo</th>
+            <th>Observaciones</th>
+            <th>Visita a</th>
+            <th>Hora Ingreso</th>
+            <th>Hora Salida</th>
+            <th>Fecha Ingreso</th>
+            <th>Zona</th>
+        </tr>
+    </thead>
+    <tbody id="inviza/visitantes-table">
+        <!-- Los datos se cargarán aquí dinámicamente -->
+    </tbody>
+</table>
+    </div>
+    <br> <br><br> <br><br> <br><br> <br><br> <br><br>
+    <footer class="bg-dark" id="templatemo_footer">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="text-light">INVIZA control de acceso</h2>
+                <div class=" text-light contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Local Principal - Madrid, Colombia</p>
+                    <p><i class="fa fa-envelope"></i> contacto</p>
+                    <p><i class="fa fa-phone"></i> 3125843540</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 bg-dark py-3">
+            <p class="text-light">
+                Copyright &copy; 2024 - ProdArt | Diseñado por: Rubiel Quintero - David Andres Correa
+            </p>
+        </div>
+    </footer>
+
+    <script>
+                                                                                        
+        // Recargar datos cada 5 segundos
+        setInterval(cargarVisitantes, 5000);
+        cargarVisitantes();
+
+        // Función para registrar salida
+        function registerExit(id) {
+            if (confirm("¿Estás seguro de registrar la salida?")) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState === 4 && this.status === 200) {
+                        alert("Salida registrada exitosamente.");
+                        cargarVisitantes(); // Recargar tabla
+                    }
+                };
+                xhttp.open("POST", "registrar_salida.php", true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send("id=" + id);
+            }
+        }
+
+        // Función para búsqueda de visitantes
+        function searchVisitor() {
+            var searchValue = document.getElementById("search").value.trim();
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById("visitantes-table").innerHTML = this.responseText;
+                }
+            };
+           xhttp.open("GET", "modulo-control de ingreso.php?search=" + valorBusqueda, true);
+           xhttp.send();
+        }
+    </script>
+</body>
+</html>

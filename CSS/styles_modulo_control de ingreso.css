@@ -1,13 +1,13 @@
+/* Estilos generales */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('IMAGENES/logo_inviza.jpg') no-repeat center center fixed; /* Fondo con imagen */
+    background: url('IMAGENES/logo_inviza.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-color: #f4f4f9; /* Color suave para el fondo general */
+    background-color: #f4f4f9;
 }
 
-/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -18,52 +18,41 @@ body {
 /* Encabezado */
 header {
     background-color: rgba(0, 0, 0, 0.8); 
-    padding: 8px 0;
+    padding: 15px 25px;
     color: white;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    padding: 15px 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-header .container {
-    display: flex;
-    justify-content: center; /* Centra los elementos en el contenedor */
-    align-items: center; /* Centra verticalmente los elementos */
-    max-width: 1100px;
-    margin: 0 auto;
 }
 
 header .logo img {
-    width: 80px; 
+    width: 80px;
     border-radius: 5px;
 }
 
 header .title {
-    font-size: 24px; /* Tamaño ajustado */
+    font-size: 24px;
     font-weight: bold;
-    text-align: center;
+    color: #eff0f1;
     flex-grow: 1;
-    margin: 0 20px; /* Ajuste del margen */
-    color: #eff0f1; /* Azul de marca */
+    text-align: center;
+    margin: 0 20px;
 }
 
 header .actions {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre los elementos */
+    gap: 10px;
 }
 
 header .actions .time {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #fff;
-    margin-right: 20px; /* Ajuste del margen */
 }
 
 header .actions button {
-    background-color: #0db13e; /* Botón azul de marca */
+    background-color: #0db13e;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -72,26 +61,8 @@ header .actions button {
     border-radius: 5px;
 }
 
-header .actions .access-button {
-    border: 2px solid #5a67d8; /* Botón púrpura */
-    transition: all 0.3s ease;
-}
-
-header .actions .access-button:hover {
-    background-color: #434190;
-}
-
-header .actions .back-button {
-    background-color: #fff;
-    color: #5a67d8;
-    border: 2px solid #5a67d8;
-    padding: 8px 15px;
-    transition: all 0.3s ease;
-}
-
-header .actions .back-button:hover {
-    background-color: #5a67d8;
-    color: #fff;
+header .actions button:hover {
+    background-color: #218838;
 }
 
 /* Contenedor principal */
@@ -102,7 +73,52 @@ header .actions .back-button:hover {
     gap: 20px;
 }
 
-.container .form-container {
+/* Contenedor de foto */
+.photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.photo-container video,
+.photo-container img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #000;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.photo-container img {
+    display: none;
+}
+
+#captureButton {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2ae061;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#captureButton:hover {
+    background-color: #2be472;
+}
+
+/* Formulario */
+.form-container {
     width: 60%;
     background-color: #fff;
     padding: 15px;
@@ -110,30 +126,15 @@ header .actions .back-button:hover {
     border-radius: 8px;
 }
 
-.container .photo-container {
-    width: 30%;
-    background-color: #fff;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(21, 187, 62, 0.1);
-    border-radius: 8px;
-    text-align: center;
-}
-
-.form-container .form-group,
-.photo-container .form-group {
-    margin-bottom: 15px;
-}
-
-.form-container .form-group label,
-.photo-container .form-group label {
+.form-container .form-group label {
     font-weight: bold;
-    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
 }
 
 .form-container .form-group input,
-.photo-container .form-group input,
 .form-container .form-group select,
-.photo-container .form-group select {
+.form-container .form-group textarea {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
@@ -143,9 +144,8 @@ header .actions .back-button:hover {
 }
 
 .form-container .form-group input:focus,
-.photo-container .form-group input:focus,
 .form-container .form-group select:focus,
-.photo-container .form-group select:focus {
+.form-container .form-group textarea:focus {
     border-color: #007bff;
     outline: none;
 }
@@ -171,40 +171,7 @@ header .actions .back-button:hover {
     background-color: #218838;
 }
 
-.photo-container img {
-    width: 100%;
-    max-width: 120px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.photo-container button {
-    background-color: #23b310;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    border-radius: 5px;
-}
-
-.photo-container button:hover {
-    background-color: #0fb300;
-}
-
-/* Estilo para la hora */#currentTime {
-    font-size: 1.2rem;
-    color: #fff;
-}
-
-/* Ajuste para centrar la hora y el ícono */
-header .actions {
-    justify-content: space; 
-    gap: 20px; /* Espaciado entre los elementos */
-    margin-left: 20px;
-}
-
-/* Estilo de la tabla */
+/* Estilo de tabla */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -214,16 +181,15 @@ table {
 }
 
 th {
-    background-color: #333; /* Gris oscuro para encabezados */
+    background-color: #333;
     color: #fff;
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
-    font-weight: bold;
 }
 
 td {
-    background-color: #fff; /* Fondo blanco para celdas */
+    background-color: #fff;
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
@@ -232,40 +198,4 @@ td {
 
 td:hover {
     background-color: #f4f4f4;
-}
-
-/* Contenido principal */
-.main-content {
-    text-align: center;
-    padding-left: 20px;
-}
-
-.user-photo {
-    float: right;
-    width: 150px;
-    height: 150px;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
-    border: 3px solid #333;
-    margin-bottom: 20px;
-    margin-top: -30px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-    color: #5a67d8;
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-/* Módulos principales (centrados en dos filas de cinco columnas) */
-.modules-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 20px;
-}
-
-.module-item {
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
 }

@@ -14,12 +14,12 @@ if ($conn->connect_error) {
 }
 
 // Capturar y sanitizar los datos enviados por el formulario
-$nombre_usuario = filter_input(INPUT_POST, 'nombre_usuario', FILTER_SANITIZE_STRING);
-$documento = filter_input(INPUT_POST, 'documento', FILTER_SANITIZE_STRING);
-$correo = filter_input(INPUT_POST, 'correo', FILTER_VALIDATE_EMAIL);
-$telefono = filter_input(INPUT_POST, 'telefono', FILTER_SANITIZE_STRING);
-$rol = filter_input(INPUT_POST, 'rol', FILTER_SANITIZE_STRING);
-$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+$nombre_usuario = htmlspecialchars($_POST['nombre_usuario'], ENT_QUOTES, 'UTF-8');
+$documento = htmlspecialchars($_POST['documento'], ENT_QUOTES, 'UTF-8');
+$correo = filter_var($_POST['correo'], FILTER_VALIDATE_EMAIL);
+$telefono = htmlspecialchars($_POST['telefono'], ENT_QUOTES, 'UTF-8');
+$rol = htmlspecialchars($_POST['rol'], ENT_QUOTES, 'UTF-8');
+$password = htmlspecialchars($_POST['password'], ENT_QUOTES, 'UTF-8');
 
 // Validaciones básicas en el servidor
 if (empty($nombre_usuario) || empty($documento) || empty($correo) || empty($rol) || empty($password)) {

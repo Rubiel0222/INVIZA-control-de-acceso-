@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Accesos - Visitas > Creación y edición</title>
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+<link rel="stylesheet" href="css/templatemo.css">
+<link rel="stylesheet" href="css/fontawesome.css">
+<link rel="stylesheet" href="css/fontawesome.min.css">
+<link rel="stylesheet" href="css/slick-theme.css">
+<link rel="stylesheet" href="css/slick.min.css">
+<link rel="stylesheet" href="CSS/templatemo.min.css">
+    <link rel="stylesheet" href="CSS/styles_visitas_edicion_1.css">
+    <script src="JS/visitas-creacion y edicion.js" defer></script> <!-- Enlace al archivo script.js -->
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeElement = document.getElementById("current-time");
+            timeElement.textContent = now.toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+    </script>
+    <style>
+        body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+    background-size: cover;
+        }
+     
+    </style>
+</head>
+</header>
+<style>
+    body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+    background-size: cover;
+   
+}
+</style>
+<nav class="navbar navbar-expand-lg bg-dark navbar-light" id="templatemo_nav_top">
+    <div class="container text-light">        
+        <div class="w-1000 d-flex justify-content-between">
+            <div>
+                <i class="fa fa-envelope mx-2"></i>
+                <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">infoINVIZA.com</a>
+                <i class="fa fa-phone mx-2"></i>
+                <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+            </div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored">
+                        <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i>
+                    </a>
+                    <a class="text-light" href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram fa-sm fa-fw me-2"></i>
+                    </a>
+                    <a class="text-light" href="https://www.twitter.com" target="_blank">
+                        <i class="fab fa-twitter fa-sm fa-fw me-2"></i>
+                    </a>
+                </div>
+              </div>
+        </div>
+    </div>
+</nav>
+   </header>
+<body>
+    <!-- Encabezado superior -->
+    <div class="header">
+        <img src="IMAGENES/logo_inviza.jpg" alt="Logo Inviza.jpg">
+        <h1>Control de Accesos</h1>
+        <div class="time">
+            <span id="current-time"></span>
+            <button onclick="window.location.href='pagina principal.html'">Página Principal</button>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+     <br><br><br><br><br><br>
+    <div class="main">
+        <h2>Visitas > Creación y edición</h2>
+
+        <div class="table-container">
+            <!-- Búsqueda y paginación -->
+            <div class="search-container">
+                <input type="text" placeholder="Buscar...">
+                <button><img src="search-icon.png" alt="Buscar" style="height: 20px;"></button>
+                <select id="page">
+                    <option value="1">Página 1</option>
+                    <option value="2">Página 2</option>
+                    <option value="3">Página 3</option>
+                </select>
+                <button class="add-record" onclick="window.location.href='visitas-creación y edición-edicion.html';">
+                    Agregar nuevo registro
+                </button>
+                
+            </div>
+
+            <!-- Tabla -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Documento</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Fecha inicio</th>
+                        <th>Fecha fin</th>
+                        <th>empresa origen</th>
+                        <th>Estado visita</th>
+                        <th>observaciones</th>
+                        <th>arl_checkbox</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Ejemplo de fila -->
+                    <tr>
+                        <td>1</td>
+                        <td contenteditable="true">79854219</td>
+                        <td contenteditable="true">Juan Carlos</td>
+                        <td contenteditable="true">Pérez Gómez</td>
+                        <td contenteditable="true">2024-10-15 08:00</td>
+                        <td contenteditable="true">2024-10-15 17:00</td>
+                        <td contenteditable="true">Empresa ABC</td>
+                        <td contenteditable="true">Activo</td>
+                        <td contenteditable="true">observaciones</td>
+                        <td contenteditable="true">Sí</td>
+                        <td>
+                            <button class="edit-button">Editar</button>
+                            <button class="delete-button">Borrar</button>
+                            <button class="movements-button">Movimientos</button>
+                            <button class="save-button" style="display: none;">Guardar</button>
+                        </td>
+                    </tr>
+                    <!-- Añadir más filas según los datos -->
+                </tbody>
+            </table>
+
+            <!-- Paginación -->
+            <div class="pagination-container">
+                <div>
+                    <label for="rows">Mostrar filas:</label>
+                    <select id="rows">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+                <div>
+                    <button onclick="irPagina()">Ir a página</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <!--inicio pie de página-->
+        <br><br><br><br><br><br><br>
+        <footer class="bg-dark" id="templatemo_footer">
+            <div class="container text-light">
+                <div class="row">
+                    <div class="col-md-4 pt-0">
+                        <h2 class="text-light bg-dark pb-3 light-logo">INVIZA control de acceso</h2>
+                        <p>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Local Principal - Madrid, Colombia
+                        </p>
+                        <p>
+                            <i class="fa fa-envelope mx-2"></i>
+                            <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">contacto: INVIZA@gmail.com</a>
+                        </p>
+                        <p>
+                            <i class="fa fa-phone mx-2"></i>
+                            <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 bg-dark py-3">
+                <div class="container">
+                    <div class="row pt-2">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2024 - ProdArt | Diseñado por: Rubiel Quintero - David Andres Correa
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+       
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

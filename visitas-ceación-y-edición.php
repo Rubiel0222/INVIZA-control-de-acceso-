@@ -13,6 +13,17 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
+// Validar claves 'estado' y 'arl' en $_GET
+$estado = isset($_GET['estado']) ? $_GET['estado'] : null; // Validación con isset()
+$arl = isset($_GET['arl']) ? $_GET['arl'] : null;          // Validación con isset()
+
+// Alternativamente, usando el operador de fusión nula
+$estado = $_GET['estado'] ?? null; // Validación más simple
+$arl = $_GET['arl'] ?? null;       // Validación más simple
+
+// Depuración: Imprimir el contenido de $_GET para verificar los datos recibidos
+print_r($_GET);
+
 // Función para listar visitas
 function listarVisitas($conn) {
     $sql = "SELECT * FROM visitas ORDER BY fecha_inicio DESC"; // Ordenar por fecha descendente
@@ -26,8 +37,8 @@ function listarVisitas($conn) {
                     <td contenteditable='true'>{$row['apellidos']}</td>
                     <td contenteditable='true'>{$row['fecha_inicio']}</td>
                     <td contenteditable='true'>{$row['fecha_fin']}</td>
-                    <td contenteditable='true'>{$row['estado']}</td>
-                    <td contenteditable='true'>{$row['arl']}</td>
+                     <td contenteditable='true'>{$row['estado_visita']}</td> 
+                    <td contenteditable='true'>{$row['arl_checkbox']}</td> 
                     <td contenteditable='true'>{$row['observaciones']}</td>
                     <td contenteditable='true'>{$row['id_zona']}</td>
                     <td>
@@ -41,30 +52,43 @@ function listarVisitas($conn) {
     }
 }
 
-// Manejar envíos POST para actualizar información
+// Manejo de envíos POST para actualizar información
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['numero_documento'])) {
-        $documento = $_POST['numero_documento'];
-        $nombres = $_POST['nombres'] ?? ''; // Validar clave
-        $apellidos = $_POST['apellidos'] ?? ''; // Validar clave
-        $fecha_inicio = $_POST['fecha_inicio'] ?? ''; // Validar clave
-        $fecha_fin = $_POST['fecha_fin'] ?? ''; // Validar clave
-        $estado = $_POST['estado'] ?? 'pendiente'; // Usar valor por defecto si falta
-        $arl = $_POST['arl'] ?? 0; // Usar valor por defecto si falta
-        $observaciones = $_POST['observaciones'] ?? ''; // Validar clave
-        $id_zona = $_POST['id_zona'] ?? ''; // Validar clave
+    $documento = $_POST['numero_documento'] ?? '';
+    $nombres = $_POST['nombres'] ?? '';
+    $apellidos = $_POST['apellidos'] ?? '';
+    $fecha_inicio = $_POST['fecha_inicio'] ?? '';
+    $fecha_fin = $_POST['fecha_fin'] ?? '';
+    $estado = $_POST['estado'] ?? 'pendiente'; // Valor predeterminado
+    $arl = $_POST['arl'] ?? 0;                 // Valor predeterminado
+    $observaciones = $_POST['observaciones'] ?? '';
+    $id_zona = $_POST['id_zona'] ?? '';
 
-        // Actualizar datos en la base de datos
-        $sql = "UPDATE visitas SET nombres='$nombres', apellidos='$apellidos', fecha_inicio='$fecha_inicio', fecha_fin='$fecha_fin', estado='$estado', arl='$arl', observaciones='$observaciones', id_zona='$id_zona' WHERE numero_documento='$documento'";
+    // Solo proceder si 'numero_documento' tiene un valor
+    if (!empty($documento)) {
+        $sql = "UPDATE visitas 
+                SET nombres = '$nombres', 
+                    apellidos = '$apellidos', 
+                    fecha_inicio = '$fecha_inicio', 
+                    fecha_fin = '$fecha_fin', 
+                    estado = '$estado', 
+                    arl = '$arl', 
+                    observaciones = '$observaciones', 
+                    id_zona = '$id_zona' 
+                WHERE numero_documento = '$documento'";
+
         if ($conn->query($sql) === TRUE) {
             echo "Registro actualizado correctamente";
         } else {
             echo "Error al actualizar: " . $conn->error;
         }
+    } else {
+        echo "Número de documento no proporcionado.";
     }
 }
 ?>
 
+<!-- Contenedor de la tabla -->
 <div class="table-container">
     <table>
         <thead>

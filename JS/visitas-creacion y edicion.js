@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (button.classList.contains('delete-button')) {
                     // Eliminar registro mediante número de documento
-                    fetch("visitas-creación-y-edición.php", {
+                    fetch("visitas-ceación y edición.php", {
                         method: "POST",
                         body: new URLSearchParams({
                             accion: "eliminar",

@@ -63,53 +63,51 @@
     <div class="main">
         <div class="form-container">
             <h2>Reportes > Movimientos de Vehículos</h2>
-
-            <!-- Formulario de ingreso de datos (centrado) -->
-            <form>
-                <div class="form-group">
-                    <label for="fecha-inicial">Fecha inicial:</label>
-                    <input type="datetime-local" id="fecha-inicial" name="fecha-inicial">
-                </div>
-
-                <div class="form-group">
-                    <label for="fecha-final">Fecha final:</label>
-                    <input type="datetime-local" id="fecha-final" name="fecha-final">
-                </div>
-
-                <div class="form-group">
-                    <label for="empresa">Empresa:</label>
-                    <input type="text" id="empresa" name="empresa">
-                </div>
-
-                <div class="form-group">
-                    <label for="sucursal">Sucursal:</label>
-                    <input type="text" id="sucursal" name="sucursal">
-                </div>
-
-                <div class="form-group">
-                    <label for="cedula">Cédula:</label>
-                    <input type="text" id="cedula" name="cedula">
-                </div>
-
-                <div class="form-group">
-                    <label for="placa">Placa:</label>
-                    <input type="text" id="placa" name="placa">
-                </div>
-
-                <!-- Checkbox para generar informe en Excel -->
-                <div class="checkbox-group">
-                    <input type="checkbox" id="excel" name="excel">
-                    <label for="excel">Generar informe en Excel</label>
-                </div>
-
-                <!-- Botones -->
-                <div class="button-group">
-                    <button type="submit">Generar Informe</button>
-                </div>
-            </form>
-        </div>
+         
+           <!-- Formulario de ingreso de datos -->
+<form id="form-informe" method="POST" action="#" data-json="false">
+    <div class="form-group">
+        <label for="fecha-inicial">Fecha inicial:</label>
+        <input type="datetime-local" id="fecha-inicial" name="fecha-inicial" required>
     </div>
-  
+
+    <div class="form-group">
+        <label for="fecha-final">Fecha final:</label>
+        <input type="datetime-local" id="fecha-final" name="fecha-final" required>
+    </div>
+
+    <div class="form-group">
+        <label for="empresa">Empresa:</label>
+        <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
+    </div>
+
+    <div class="form-group">
+        <label for="sucursal">Sucursal:</label>
+        <input type="text" id="sucursal" name="sucursal" placeholder="Sucursal donde se realizó el movimiento">
+    </div>
+
+    <div class="form-group">
+        <label for="cedula">Cédula:</label>
+        <input type="text" id="cedula" name="cedula" placeholder="Número de cédula">
+    </div>
+
+    <div class="form-group">
+        <label for="placa">Placa:</label>
+        <input type="text" id="placa" name="placa" placeholder="Placa del vehículo">
+    </div>
+
+    <!-- Checkbox para generar informe en Excel -->
+    <div class="checkbox-group">
+        <input type="checkbox" id="excel" name="excel">
+        <label for="excel">Generar informe en Excel</label>
+    </div>
+
+    <!-- Botones -->
+    <div class="button-group">
+        <button type="submit">Generar Informe</button>
+    </div>
+</form>
+
         <!--inicio pie de página-->
         <footer class="bg-dark" id="templatemo_footer">
             <div class="container text-light">

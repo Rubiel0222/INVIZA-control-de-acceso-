@@ -66,11 +66,24 @@ body {
         <h2>Inicio de Sesión</h2>
         <img src="IMAGENES/logo_inviza.jpg" alt="logo_inviza">
 
-        <form id="loginForm" method="POST" action="inicio secion.php">
-            <input type="text" name="username" placeholder="Usuario" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <button type="submit">Ingresar</button>
-        </form>
+        <!-- Primer formulario -->
+    <form id="loginForm" method="POST" action="inicio_secion.php">
+        <input type="text" name="username" placeholder="Usuario" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Ingresar</button>
+    </form>
+
+    <hr> <!-- Separador visual entre los formularios -->
+
+    <!-- Segundo formulario -->
+    <form method="POST" action="inicio secion.php">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Iniciar sesión</button>
         
         <div class="forgot-password">
             <a href="recuperar_contrasena.html">¿Olvidaste tu contraseña?</a>

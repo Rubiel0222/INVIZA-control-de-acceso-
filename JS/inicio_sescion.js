@@ -9,26 +9,31 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = document.querySelector('input[name="username"]').value;
         const password = document.querySelector('input[name="password"]').value;
 
-        const formData = new FormData();
-        formData.append('username', username);
-        formData.append('password', password);
-
+        // Validación utilizando fetch y la API en validate.php
         try {
-            const response = await fetch('inicio_sesion.php', {
-                method: 'POST',
-                body: formData
+            const response = await fetch("http://localhost/inviza/inicio_sesion.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: new URLSearchParams({
+                    username: username,
+                    password: password
+                })
             });
 
-            const result = await response.text();
+            const data = await response.json();
 
-            if (result === 'success') {
-                window.location.href = 'pagina_inicial.html';
+            // Manejo de la respuesta
+            if (data.status === "success") {
+                alert(data.message);
+                window.location.href = 'pagina_inicial.html'; // Redirige al usuario
             } else {
-                alert('Usuario o contraseña incorrectos');
+                alert(data.message); // Muestra mensaje de error
             }
         } catch (error) {
-            console.error('Error al realizar la solicitud:', error);
-            alert('Ocurrió un error. Inténtalo de nuevo más tarde.');
+            console.error("Error al realizar la solicitud:", error);
+            alert("Ocurrió un error. Inténtalo de nuevo más tarde.");
         }
     });
 });

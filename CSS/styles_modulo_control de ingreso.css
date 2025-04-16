@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Estilos generales */
 body {
     font-family: 'Arial', sans-serif;
@@ -199,3 +200,206 @@ td {
 td:hover {
     background-color: #f4f4f4;
 }
+=======
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/logo_inviza.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #f4f4f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+}
+
+/* Encabezado */
+header {
+    background-color: rgba(0, 0, 0, 0.8); 
+    padding: 15px 25px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    width: 80px;
+    border-radius: 5px;
+}
+
+header .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #eff0f1;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 20px;
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .actions .time {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+header .actions button {
+    background-color: #0db13e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+header .actions button:hover {
+    background-color: #218838;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    gap: 20px;
+}
+
+/* Contenedor de foto */
+.photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.photo-container video,
+.photo-container img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #000;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.photo-container img {
+    display: none;
+}
+
+#captureButton {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2ae061;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#captureButton:hover {
+    background-color: #2be472;
+}
+
+/* Formulario */
+.form-container {
+    width: 60%;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-container .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-container .form-group input,
+.form-container .form-group select,
+.form-container .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+.form-container .form-group input:focus,
+.form-container .form-group select:focus,
+.form-container .form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-footer {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-footer button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+.form-footer button:hover {
+    background-color: #218838;
+}
+
+/* Estilo de tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+td:hover {
+    background-color: #f4f4f4;
+}
+>>>>>>> 930ce47 (Actualiza repositorio con los últimos cambios)

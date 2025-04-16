@@ -16,49 +16,53 @@ if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
 
-// Verificar si se enviaron datos desde el formulario
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Recoger datos enviados desde el formulario
+// Capturar datos en JSON o POST
+$data = json_decode(file_get_contents("php://input"), true);
+
+if ($data) {
+    // Datos enviados en formato JSON
+    $username = $data['username'] ?? '';
+    $password = $data['password'] ?? '';
+} else {
+    // Datos enviados mediante formulario POST
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
+}
 
-    // Preparar la consulta SQL para buscar el usuario
-    $stmt = $conn->prepare("SELECT password, rol FROM usuarios WHERE nombre_usuario = ?");
-    $stmt->bind_param("s", $username); // Vincula el parámetro (nombre de usuario)
-    $stmt->execute();
-    $stmt->store_result();
+// Preparar la consulta SQL para buscar el usuario
+$stmt = $conn->prepare("SELECT password, rol FROM usuarios WHERE nombre_usuario = ?");
+$stmt->bind_param("s", $username); // Vincula el parámetro (nombre de usuario)
+$stmt->execute();
+$stmt->store_result();
 
-    if ($stmt->num_rows > 0) {
-        $stmt->bind_result($db_password, $rol);
-        $stmt->fetch();
+if ($stmt->num_rows > 0) {
+    $stmt->bind_result($db_password, $rol);
+    $stmt->fetch();
 
-        // Verificar si la contraseña ingresada coincide
-        if ($password === $db_password) { // En producción, usa password_verify().
-            // Guardar información en la sesión
-            $_SESSION["nombre_usuario"] = $username;
-            $_SESSION["rol"] = $rol;
+    // Verificar si la contraseña ingresada coincide (usa password_verify para seguridad)
+    if (password_verify($password, $db_password)) {
+        // Guardar información en la sesión
+        $_SESSION["nombre_usuario"] = $username;
+        $_SESSION["rol"] = $rol;
 
-            // Redirigir a la página principal
-            header("location:pagina principal.html");
-            exit();
-        } else {
-            // Contraseña incorrecta
-            echo "<script>
-                    alert('Contraseña incorrecta.');
-                    window.history.back();
-                  </script>";
-        }
+        // Redirigir a la página principal
+        header("location:pagina_principal.html");
+        exit();
     } else {
-        // Usuario no encontrado
+        // Contraseña incorrecta
         echo "<script>
-                alert('Usuario no encontrado.');
+                alert('Contraseña incorrecta.');
                 window.history.back();
               </script>";
     }
-
-    $stmt->close();
+} else {
+    // Usuario no encontrado
+    echo "<script>
+            alert('Usuario no encontrado.');
+            window.history.back();
+          </script>";
 }
 
-// Cerrar conexión con la base de datos
+$stmt->close();
 $conn->close();
 ?>

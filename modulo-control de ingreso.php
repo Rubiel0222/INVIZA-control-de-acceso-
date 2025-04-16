@@ -14,16 +14,34 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Capturar datos del formulario
-    $tipo_documento = $_POST['tipo_documento'] ?? null;
-    $numero_documento = $_POST['numero_documento'] ?? null;
-    $nombres_apellidos = $_POST['nombres_apellidos'] ?? null;
-    $telefono = $_POST['telefono'] ?? null;
-    $vehiculo = $_POST['vehiculo'] ?? null;
-    $observaciones = $_POST['observaciones'] ?? null;
-    $visita_a = $_POST['visita_a'] ?? null;
-    $foto_base64 = $_POST['foto'] ?? null;
-    $id_zona = $_POST['id_zona'] ?? null;
+    // Detectar si los datos vienen en JSON o desde un formulario POST
+    $data = json_decode(file_get_contents("php://input"), true);
+
+    if ($data) {
+        // Capturar datos en formato JSON
+        $tipo_documento = $data['tipo_documento'] ?? null;
+        $numero_documento = $data['numero_documento'] ?? null;
+        $nombres_apellidos = $data['nombres_apellidos'] ?? null;
+        $telefono = $data['telefono'] ?? null;
+        $vehiculo = $data['vehiculo'] ?? null;
+        $observaciones = $data['observaciones'] ?? null;
+        $visita_a = $data['visita_a'] ?? null;
+        $foto_base64 = $data['foto'] ?? null;
+        $id_zona = $data['id_zona'] ?? null;
+    } else {
+        // Capturar datos enviados desde el formulario
+        $tipo_documento = $_POST['tipo_documento'] ?? null;
+        $numero_documento = $_POST['numero_documento'] ?? null;
+        $nombres_apellidos = $_POST['nombres_apellidos'] ?? null;
+        $telefono = $_POST['telefono'] ?? null;
+        $vehiculo = $_POST['vehiculo'] ?? null;
+        $observaciones = $_POST['observaciones'] ?? null;
+        $visita_a = $_POST['visita_a'] ?? null;
+        $foto_base64 = $_POST['foto'] ?? null;
+        $id_zona = $_POST['id_zona'] ?? null;
+    }
+
+    // Registrar hora actual
     $hora_actual = date("Y-m-d H:i:s");
 
     // Revisar si el documento ya existe en la base de datos

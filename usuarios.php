@@ -1,9 +1,9 @@
 <?php
 // Datos para la conexión
-$servername = "localhost"; // Servidor local
-$username = "root"; // Usuario por defecto de XAMPP
-$password = ""; // Contraseña por defecto en XAMPP
-$dbname = "inviza"; // Cambia este nombre por el de tu base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "inviza";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,15 +13,28 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Capturar y sanitizar los datos enviados por el formulario
-$nombre_usuario = htmlspecialchars($_POST['nombre_usuario'], ENT_QUOTES, 'UTF-8');
-$documento = htmlspecialchars($_POST['documento'], ENT_QUOTES, 'UTF-8');
-$correo = filter_var($_POST['correo'], FILTER_VALIDATE_EMAIL);
-$telefono = htmlspecialchars($_POST['telefono'], ENT_QUOTES, 'UTF-8');
-$rol = htmlspecialchars($_POST['rol'], ENT_QUOTES, 'UTF-8');
-$password = htmlspecialchars($_POST['password'], ENT_QUOTES, 'UTF-8');
+// Verificar si los datos provienen de JSON o POST
+$data = json_decode(file_get_contents("php://input"), true);
 
-// Validaciones básicas en el servidor
+if ($data) {
+    // Datos enviados en formato JSON
+    $nombre_usuario = isset($data['nombre_usuario']) ? htmlspecialchars($data['nombre_usuario'], ENT_QUOTES, 'UTF-8') : '';
+    $documento = isset($data['documento']) ? htmlspecialchars($data['documento'], ENT_QUOTES, 'UTF-8') : '';
+    $correo = isset($data['correo']) ? filter_var($data['correo'], FILTER_VALIDATE_EMAIL) : '';
+    $telefono = isset($data['telefono']) ? htmlspecialchars($data['telefono'], ENT_QUOTES, 'UTF-8') : '';
+    $rol = isset($data['rol']) ? htmlspecialchars($data['rol'], ENT_QUOTES, 'UTF-8') : '';
+    $password = isset($data['password']) ? htmlspecialchars($data['password'], ENT_QUOTES, 'UTF-8') : '';
+} else {
+    // Datos enviados en formato POST
+    $nombre_usuario = isset($_POST['nombre_usuario']) ? htmlspecialchars($_POST['nombre_usuario'], ENT_QUOTES, 'UTF-8') : '';
+    $documento = isset($_POST['documento']) ? htmlspecialchars($_POST['documento'], ENT_QUOTES, 'UTF-8') : '';
+    $correo = isset($_POST['correo']) ? filter_var($_POST['correo'], FILTER_VALIDATE_EMAIL) : '';
+    $telefono = isset($_POST['telefono']) ? htmlspecialchars($_POST['telefono'], ENT_QUOTES, 'UTF-8') : '';
+    $rol = isset($_POST['rol']) ? htmlspecialchars($_POST['rol'], ENT_QUOTES, 'UTF-8') : '';
+    $password = isset($_POST['password']) ? htmlspecialchars($_POST['password'], ENT_QUOTES, 'UTF-8') : '';
+}
+
+// Validaciones básicas
 if (empty($nombre_usuario) || empty($documento) || empty($correo) || empty($rol) || empty($password)) {
     die("Error: Todos los campos obligatorios deben completarse.");
 }

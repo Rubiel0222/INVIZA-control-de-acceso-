@@ -34,7 +34,7 @@
 </head>
 </header>
 <nav class="navbar navbar-expand-lg bg-dark navbar-light" id="templatemo_nav_top">
-    <div class="container text-light">        
+    <div class="container text-light">
         <div class="w-1000 d-flex justify-content-between">
             <div>
                 <i class="fa fa-envelope mx-2"></i>
@@ -74,39 +74,39 @@
     <div class="main">
         <div class="form-container">
             <h2>Reportes > Movimientos > Terceros</h2>
-
+    
             <!-- Formulario de ingreso de datos -->
-            <form>
+            <form method="POST" action="reportes-movimientos-terceros.php">
                 <div class="form-group">
                     <label for="fecha-inicial">Fecha inicial:</label>
                     <input type="datetime-local" id="fecha-inicial" name="fecha-inicial">
                 </div>
-
+    
                 <div class="form-group">
                     <label for="fecha-final">Fecha final:</label>
                     <input type="datetime-local" id="fecha-final" name="fecha-final">
                 </div>
-
+    
                 <div class="form-group">
                     <label for="empresa">Empresa:</label>
                     <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
                 </div>
-
+    
                 <div class="form-group">
                     <label for="sucursal">Sucursal:</label>
                     <input type="text" id="sucursal" name="sucursal" placeholder="Sucursal donde se realizó el movimiento">
                 </div>
-
+    
                 <div class="form-group">
                     <label for="inmueble">Inmueble:</label>
                     <input type="text" id="inmueble" name="inmueble" placeholder="Inmueble relacionado">
                 </div>
-
+    
                 <div class="form-group">
                     <label for="cedula">Cédula:</label>
                     <input type="text" id="cedula" name="cedula" placeholder="Número de cédula del visitante">
                 </div>
-
+    
                 <!-- Desplegable para opciones de informes -->
                 <div class="dropdown-group">
                     <select id="seleccionar" name="seleccionar">
@@ -117,20 +117,21 @@
                         <option value="visitantes">Generar informe con visitante con más visitas</option>
                     </select>
                 </div>
-
-                <!-- Botones -->
+    
+                <!-- Botón para generar informe -->
                 <div class="button-group">
                     <button type="submit">Generar Informe</button>
                 </div>
             </form>
         </div>
     </div>
+    
     <footer>
-        <!--inicio pie pagina-->      
+        <!--inicio pie pagina-->
         <footer class="bg-dark" id="templatemo_footer">
          <div class="container text-light">
              <div class="row">
-                 <div class="col-md-4 pt-0">       
+                 <div class="col-md-4 pt-0">
                      <h2 class="text-light bg-dark pb-3 light-logo">INVIZA control de acceso</h2>
                      <div class="contact-info">
                          <div class="contact-item">

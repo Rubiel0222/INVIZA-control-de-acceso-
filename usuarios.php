@@ -1,9 +1,16 @@
 <?php
 // Datos para la conexión
+<<<<<<< HEAD
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "inviza";
+=======
+$servername = "localhost"; // Servidor local
+$username = "root"; // Usuario por defecto de XAMPP
+$password = ""; // Contraseña por defecto en XAMPP
+$dbname = "inviza"; // Cambia este nombre por el de tu base de datos
+>>>>>>> 930ce47964a342f1c23adbe71e71de8b45c0a5f0
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,6 +20,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
+<<<<<<< HEAD
 // Verificar si los datos provienen de JSON o POST
 $data = json_decode(file_get_contents("php://input"), true);
 
@@ -35,6 +43,17 @@ if ($data) {
 }
 
 // Validaciones básicas
+=======
+// Capturar y sanitizar los datos enviados por el formulario
+$nombre_usuario = filter_input(INPUT_POST, 'nombre_usuario', FILTER_SANITIZE_STRING);
+$documento = filter_input(INPUT_POST, 'documento', FILTER_SANITIZE_STRING);
+$correo = filter_input(INPUT_POST, 'correo', FILTER_VALIDATE_EMAIL);
+$telefono = filter_input(INPUT_POST, 'telefono', FILTER_SANITIZE_STRING);
+$rol = filter_input(INPUT_POST, 'rol', FILTER_SANITIZE_STRING);
+$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+
+// Validaciones básicas en el servidor
+>>>>>>> 930ce47964a342f1c23adbe71e71de8b45c0a5f0
 if (empty($nombre_usuario) || empty($documento) || empty($correo) || empty($rol) || empty($password)) {
     die("Error: Todos los campos obligatorios deben completarse.");
 }

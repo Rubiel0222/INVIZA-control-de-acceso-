@@ -1,9 +1,3 @@
 {
-<<<<<<< HEAD
   "presets": ["@babel/preset-env", "@babel/preset-react"]
 }
-=======
-    "presets": ["@babel/preset-env", "@babel/preset-react"]
-  }
-  
->>>>>>> 930ce47 (Actualiza repositorio con los últimos cambios)

@@ -1,56 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-{
-    "http.proxySupport": "off",
-    "http.proxy": null,
-    "http.proxyStrictSSL": false,
-    "liveServer.settings.port": 5502,
-=======
-{    "liveServer.settings.port": 5502,
->>>>>>> 64ff705 (Añadir archivo inicio_sesion.php)
-    "php.validate.executablePath": "C:\\php\\php.exe",
-    "netbeans.jdkhome": "c:\\Program Files\\Eclipse Adoptium\\jdk-21.0.6.7-hotspot",
-    "netbeans.project.jdkhome": "c:\\Program Files\\Eclipse Adoptium\\jdk-21.0.6.7-hotspot",
-    "java.jdt.ls.java.home": "c:\\Program Files\\Eclipse Adoptium\\jdk-21.0.6.7-hotspot",
-    "java.configuration.runtimes": [
-        {
-            "name": "JavaSE-1.8",
-            "path": "C:\\Users\\SEGURIDAD LASER\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\8"
-        },
-        {
-            "name": "JavaSE-11",
-            "path": "C:\\Users\\SEGURIDAD LASER\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\11"
-        },
-        {
-            "name": "JavaSE-17",
-            "path": "C:\\Users\\SEGURIDAD LASER\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\17"
-        },
-        {
-            "name": "JavaSE-21",
-            "path": "c:\\Program Files\\Eclipse Adoptium\\jdk-21.0.6.7-hotspot"
-        },
-        {
-            "name": "JavaSE-23",
-            "path": "c:\\Users\\SEGURIDAD LASER\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\latest",
-            "default": true
-        }
-    ],
-    "terminal.integrated.env.windows": {
-        "JAVA_HOME": "c:\\Program Files\\Eclipse Adoptium\\jdk-21.0.6.7-hotspot",
-        "PATH": "c:\\Program Files\\Eclipse Adoptium\\jdk-21.0.6.7-hotspot\\bin;${env:PATH}"
-    },
-    "maven.terminal.customEnv": [
-        {
-            "environmentVariable": "JAVA_HOME",
-            "value": "c:\\Program Files\\Eclipse Adoptium\\jdk-21.0.6.7-hotspot"
-        }
-    ]
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> 64ff705 (Añadir archivo inicio_sesion.php)
-=======
 {
     "http.proxySupport": "off",
     "http.proxy": null,
@@ -94,4 +41,3 @@
         }
     ]
 }
->>>>>>> 930ce47 (Actualiza repositorio con los últimos cambios)

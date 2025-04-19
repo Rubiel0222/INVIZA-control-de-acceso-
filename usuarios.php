@@ -18,20 +18,20 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 if ($data) {
     // Datos enviados en formato JSON
-    $nombre_usuario = isset($data['nombre_usuario']) ? htmlspecialchars($data['nombre_usuario'], ENT_QUOTES, 'UTF-8') : '';
-    $documento = isset($data['documento']) ? htmlspecialchars($data['documento'], ENT_QUOTES, 'UTF-8') : '';
-    $correo = isset($data['correo']) ? filter_var($data['correo'], FILTER_VALIDATE_EMAIL) : '';
-    $telefono = isset($data['telefono']) ? htmlspecialchars($data['telefono'], ENT_QUOTES, 'UTF-8') : '';
-    $rol = isset($data['rol']) ? htmlspecialchars($data['rol'], ENT_QUOTES, 'UTF-8') : '';
-    $password = isset($data['password']) ? htmlspecialchars($data['password'], ENT_QUOTES, 'UTF-8') : '';
+    $nombre_usuario = isset($data['nombre_usuario']) ? htmlspecialchars(trim($data['nombre_usuario']), ENT_QUOTES, 'UTF-8') : '';
+    $documento = isset($data['documento']) ? htmlspecialchars(trim($data['documento']), ENT_QUOTES, 'UTF-8') : '';
+    $correo = isset($data['correo']) ? filter_var(trim($data['correo']), FILTER_VALIDATE_EMAIL) : '';
+    $telefono = isset($data['telefono']) ? htmlspecialchars(trim($data['telefono']), ENT_QUOTES, 'UTF-8') : '';
+    $rol = isset($data['rol']) ? htmlspecialchars(trim($data['rol']), ENT_QUOTES, 'UTF-8') : '';
+    $password = isset($data['password']) ? htmlspecialchars(trim($data['password']), ENT_QUOTES, 'UTF-8') : '';
 } else {
     // Datos enviados en formato POST
-    $nombre_usuario = isset($_POST['nombre_usuario']) ? htmlspecialchars($_POST['nombre_usuario'], ENT_QUOTES, 'UTF-8') : '';
-    $documento = isset($_POST['documento']) ? htmlspecialchars($_POST['documento'], ENT_QUOTES, 'UTF-8') : '';
-    $correo = isset($_POST['correo']) ? filter_var($_POST['correo'], FILTER_VALIDATE_EMAIL) : '';
-    $telefono = isset($_POST['telefono']) ? htmlspecialchars($_POST['telefono'], ENT_QUOTES, 'UTF-8') : '';
-    $rol = isset($_POST['rol']) ? htmlspecialchars($_POST['rol'], ENT_QUOTES, 'UTF-8') : '';
-    $password = isset($_POST['password']) ? htmlspecialchars($_POST['password'], ENT_QUOTES, 'UTF-8') : '';
+    $nombre_usuario = isset($_POST['nombre_usuario']) ? htmlspecialchars(trim($_POST['nombre_usuario']), ENT_QUOTES, 'UTF-8') : '';
+    $documento = isset($_POST['documento']) ? htmlspecialchars(trim($_POST['documento']), ENT_QUOTES, 'UTF-8') : '';
+    $correo = isset($_POST['correo']) ? filter_var(trim($_POST['correo']), FILTER_VALIDATE_EMAIL) : '';
+    $telefono = isset($_POST['telefono']) ? htmlspecialchars(trim($_POST['telefono']), ENT_QUOTES, 'UTF-8') : '';
+    $rol = isset($_POST['rol']) ? htmlspecialchars(trim($_POST['rol']), ENT_QUOTES, 'UTF-8') : '';
+    $password = isset($_POST['password']) ? htmlspecialchars(trim($_POST['password']), ENT_QUOTES, 'UTF-8') : '';
 }
 
 // Validaciones básicas

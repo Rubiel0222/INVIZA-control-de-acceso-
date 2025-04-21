@@ -23,7 +23,7 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    margin-bottom: 30px; /* Separación entre el encabezado y el contenido principal */
+    margin-bottom: 5px; /* Separación entre el encabezado y el contenido principal */
 }
 
 .header img {
@@ -70,7 +70,7 @@ body {
     height: 80vh;
     border-radius: 8px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    margin-bottom: 30px; /* Separación entre el formulario y el pie de página */
+    margin-bottom: 5px; /* Separación entre el formulario y el pie de página */
 }
 
 .main h2 {
@@ -87,7 +87,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
 }
 
 .form-group {

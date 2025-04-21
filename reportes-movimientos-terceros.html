@@ -4,32 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control de Accesos - Reportes > Movimientos > Terceros</title>
-    <link rel="stylesheet" href="CSS/styles_reportes_movimientos_terceros.css">
+    <title>Control de Accesos - Reportes > Movimientos de Vehículos</title>
+    <link rel="stylesheet" href="CSS/styles_reportes_movimientos_vehiculos.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/templatemo.css">
     <link rel="stylesheet" href="css/fontawesome.css">
-    <link rel="stylesheet" href="css/slick.min.css">
-    <link rel="stylesheet" href="CSS/templatemo.min.css">
-    <script>
-        function updateTime() {
-            const now = new Date();
-            const timeElement = document.getElementById("current-time");
-            timeElement.textContent = now.toLocaleTimeString();
-        }
-
-        setInterval(updateTime, 1000);
-    </script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="JS/reportes movimientos vehiculos .js" defer></script>
     <style>
         body {
-    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
-    background-size: cover;
+            font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
-     
+    
     </style>
 </head>
 </header>
@@ -52,17 +43,17 @@
                         <i class="fab fa-twitter fa-sm fa-fw me-2"></i>
                     </a>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
 </nav>
-   </header>
+</header>
 
 <body>
 
     <!-- Encabezado superior -->
     <div class="header">
-        <img src="IMAGENES/logo_inviza.jpg" alt="Logo Inviza">
+        <img src="IMAGENES/logo_inviza.jpg" alt="Logo Inviza.jpg">
         <h1>Control de Accesos</h1>
         <div class="time">
             <span id="current-time"></span>
@@ -70,62 +61,56 @@
         </div>
     </div>
 
-   
+    <!-- Sección principal -->
     <div class="main">
         <div class="form-container">
-            <h2>Reportes > Movimientos > Terceros</h2>
-    
-            <form method="POST" action="#" data-json="false" id="form-terceros">
+            <h2>Reportes > Movimientos de Vehículos</h2>
+
+            <!-- Formulario de ingreso de datos -->
+            <form id="form-informe" method="POST" action="#" data-json="false">
                 <div class="form-group">
                     <label for="fecha-inicial">Fecha inicial:</label>
                     <input type="datetime-local" id="fecha-inicial" name="fecha-inicial" required>
                 </div>
-            
+
                 <div class="form-group">
                     <label for="fecha-final">Fecha final:</label>
                     <input type="datetime-local" id="fecha-final" name="fecha-final" required>
                 </div>
-            
+
                 <div class="form-group">
                     <label for="empresa">Empresa:</label>
                     <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
                 </div>
-            
+
                 <div class="form-group">
                     <label for="sucursal">Sucursal:</label>
                     <input type="text" id="sucursal" name="sucursal" placeholder="Sucursal donde se realizó el movimiento">
                 </div>
-            
-                <div class="form-group">
-                    <label for="inmueble">Inmueble:</label>
-                    <input type="text" id="inmueble" name="inmueble" placeholder="Inmueble relacionado">
-                </div>
-            
+
                 <div class="form-group">
                     <label for="cedula">Cédula:</label>
-                    <input type="text" id="cedula" name="cedula" placeholder="Número de cédula del visitante">
+                    <input type="text" id="cedula" name="cedula" placeholder="Número de cédula">
                 </div>
-            
-                <!-- Desplegable para opciones de informes -->
-                <div class="dropdown-group">
-                    <label for="seleccionar">Generar informe:</label>
-                    <select id="seleccionar" name="seleccionar" required>
-                        <option value="">Seleccionar</option>
-                        <option value="excel">Generar informe en Excel</option>
-                        <option value="areas">Generar informe con áreas de más visitas</option>
-                        <option value="usuarios">Generar informe con usuario con más visitas</option>
-                        <option value="visitantes">Generar informe con visitante con más visitas</option>
-                    </select>
+
+                <div class="form-group">
+                    <label for="placa">Placa:</label>
+                    <input type="text" id="placa" name="placa" placeholder="Placa del vehículo">
                 </div>
-            
-                <!-- Botón para generar informe -->
+
+                <!-- Checkbox para generar informe en Excel -->
+                <div class="checkbox-group">
+                    <input type="checkbox" id="excel" name="excel">
+                    <label for="excel">Generar informe en Excel</label>
+                </div>
+
+                <!-- Botones -->
                 <div class="button-group">
                     <button type="submit">Generar Informe</button>
                 </div>
             </form>
         </div>
     </div>
-
     <!-- Pie de página -->
     <footer class="bg-dark" id="templatemo_footer" style="margin-top: 30px;">
         <div class="container text-light">
@@ -163,4 +148,3 @@
 </body>
 
 </html>
-

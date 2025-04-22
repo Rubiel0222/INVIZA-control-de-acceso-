@@ -80,6 +80,7 @@ body {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    
 }
 
 /* Formulario */
@@ -90,6 +91,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil */
     max-width: 500px;
     width: 100%;
+    
 }
 
 .form-group {
@@ -173,3 +175,4 @@ ul {
 li {
     margin: 10px 0; /* Espaciado entre elementos de la lista */
 }
+

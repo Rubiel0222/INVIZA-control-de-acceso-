@@ -64,12 +64,12 @@
     <!-- Sección principal -->
     <div class="main">
         <div class="form-container">
-            <h2>Reportes > Movimientos de Vehículos</h2>
+            <h2>Reportes > Movimientos terceros</h2>
 
             <!-- Formulario de ingreso de datos -->
             <form id="form-informe" method="POST" action="#" data-json="false">
                 <div class="form-group">
-                    <label for="fecha-inicial">Fecha inicial:</label>
+                    <label for="fecha_ingreso">Fecha ingreso:</label>
                     <input type="datetime-local" id="fecha-inicial" name="fecha-inicial" required>
                 </div>
 
@@ -79,31 +79,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="empresa">Empresa:</label>
+                    <label for="nombre_apellidos">nombre apellidos:</label>
                     <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
                 </div>
 
                 <div class="form-group">
-                    <label for="sucursal">Sucursal:</label>
+                    <label for="id_zona">zona:</label>
                     <input type="text" id="sucursal" name="sucursal" placeholder="Sucursal donde se realizó el movimiento">
                 </div>
 
-                <div class="form-group">
-                    <label for="cedula">Cédula:</label>
-                    <input type="text" id="cedula" name="cedula" placeholder="Número de cédula">
-                </div>
 
-                <div class="form-group">
-                    <label for="placa">Placa:</label>
-                    <input type="text" id="placa" name="placa" placeholder="Placa del vehículo">
-                </div>
-
-                <!-- Checkbox para generar informe en Excel -->
-                <div class="checkbox-group">
-                    <input type="checkbox" id="excel" name="excel">
-                    <label for="excel">Generar informe en Excel</label>
-                </div>
-
+                
                 <!-- Botones -->
                 <div class="button-group">
                     <button type="submit">Generar Informe</button>

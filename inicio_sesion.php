@@ -3,35 +3,36 @@
 session_start();
 
 // Configuración de la conexión a la base de datos
-$servername = "localhost"; // Servidor (por defecto en XAMPP)
-$username_db = "root"; // Usuario MySQL (generalmente 'root' en XAMPP)
-$password_db = ""; // Contraseña MySQL (por defecto es vacía en XAMPP)
-$dbname = "inviza"; // Nombre de tu base de datos
+$servername = "localhost";
+$username_db = "root";
+$password_db = "";
+$dbname = "inviza";
 
 // Crear conexión con MySQL
 $conn = new mysqli($servername, $username_db, $password_db, $dbname);
 
 // Verificar la conexión
 if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+    die(json_encode(["status" => "error", "message" => "Error de conexión: " . $conn->connect_error]));
 }
+
+// Indicar que la respuesta será JSON
+header("Content-Type: application/json");
 
 // Capturar datos en JSON o POST
 $data = json_decode(file_get_contents("php://input"), true);
 
-if ($data) {
-    // Datos enviados en formato JSON
-    $username = $data['username'] ?? '';
-    $password = $data['password'] ?? '';
-} else {
-    // Datos enviados mediante formulario POST
+if (!$data) { // Si no llega JSON, usar $_POST
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
+} else {
+    $username = $data['username'] ?? '';
+    $password = $data['password'] ?? '';
 }
 
 // Preparar la consulta SQL para buscar el usuario
 $stmt = $conn->prepare("SELECT password, rol FROM usuarios WHERE nombre_usuario = ?");
-$stmt->bind_param("s", $username); // Vincula el parámetro (nombre de usuario)
+$stmt->bind_param("s", $username);
 $stmt->execute();
 $stmt->store_result();
 
@@ -39,30 +40,22 @@ if ($stmt->num_rows > 0) {
     $stmt->bind_result($db_password, $rol);
     $stmt->fetch();
 
-    // Verificar si la contraseña ingresada coincide (usa password_verify para seguridad)
+    // Verificar si la contraseña ingresada coincide con la almacenada en la base de datos
     if (password_verify($password, $db_password)) {
         // Guardar información en la sesión
         $_SESSION["nombre_usuario"] = $username;
         $_SESSION["rol"] = $rol;
 
-        // Redirigir a la página principal
-        header("location:pagina_inicial.html");
-        exit();
+        // Respuesta JSON de éxito
+        echo json_encode(["status" => "success", "message" => "Inicio de sesión exitoso"]);
     } else {
-        // Contraseña incorrecta
-        echo "<script>
-                alert('Contraseña incorrecta.');
-                window.history.back();
-              </script>";
+        echo json_encode(["status" => "error", "message" => "Contraseña incorrecta"]);
     }
 } else {
-    // Usuario no encontrado
-    echo "<script>
-            alert('Usuario no encontrado.');
-            window.history.back();
-          </script>";
+    echo json_encode(["status" => "error", "message" => "Usuario no encontrado"]); // Se añadió esta línea que faltaba
 }
 
+// Cerrar conexión
 $stmt->close();
 $conn->close();
 ?>

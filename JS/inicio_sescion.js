@@ -9,17 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = document.querySelector('input[name="username"]').value;
         const password = document.querySelector('input[name="password"]').value;
 
-        // Validación utilizando fetch y la API en validate.php
+        // Validación utilizando fetch y la API en inicio_sesion.php
         try {
             const response = await fetch("http://localhost/inviza/inicio_sesion.php", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
+                    "Content-Type": "application/json"
                 },
-                body: new URLSearchParams({
-                    username: username,
-                    password: password
-                })
+                body: JSON.stringify({ username: username, password: password })
             });
 
             const data = await response.json();

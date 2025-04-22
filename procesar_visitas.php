@@ -1,7 +1,17 @@
 <?php
-// Incluir conexión a la base de datos
-include 'conexion.php';
+// Configuración de la conexión
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "inviza";
 
+// Crear la conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die(json_encode(["error" => "Error de conexión: " . $conn->connect_error]));
+}
 // Validar y obtener datos del formulario
 $documento = $_POST['documento'];
 

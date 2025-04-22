@@ -17,7 +17,8 @@ if ($conn->connect_error) {
 require 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-require('fpdf/fpdf.php');
+require_once __DIR__ . "/fpdf/fpdf.php";
+
 
 // Manejar solicitudes POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

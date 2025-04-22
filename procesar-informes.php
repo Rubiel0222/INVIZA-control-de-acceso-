@@ -20,6 +20,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 require_once __DIR__ . "/fpdf/fpdf.php";
 
 
+
 // Manejar solicitudes POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = json_decode(file_get_contents("php://input"), true);
@@ -43,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $conn->close();
-}
+
 
 function generarInformeExcel($conn, $fecha_inicial, $fecha_final, $empresa, $sucursal, $inmueble, $cedula, $placa) {
     $spreadsheet = new Spreadsheet();
@@ -78,9 +79,23 @@ function generarInformeExcel($conn, $fecha_inicial, $fecha_final, $empresa, $suc
         $rowIndex++;
     }
 
+    // Asegurar que la carpeta `informes/` exista
+    $folder = __DIR__ . "/informes";
+    if (!file_exists($folder)) {
+        mkdir($folder, 0777, true);
+    }
+
+    // Guardar el archivo en la carpeta `informes/`
+    $fileName = $folder . '/Informe.xlsx';
+    $writer = new Xlsx($spreadsheet);
+    $writer->save($fileName);
+
+    echo json_encode(["status" => "success", "file_url" => "http://localhost/inviza/informes/Informe.xlsx"]);
+}
+
     // Guardar archivo Excel
     $writer = new Xlsx($spreadsheet);
-    $fileName = 'Informe.xlsx';
+    $fileName = 'informes/Informe.xlsx';
     $writer->save($fileName);
     echo "Informe Excel generado correctamente.";
 }

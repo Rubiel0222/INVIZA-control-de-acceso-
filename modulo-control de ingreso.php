@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombres_apellidos = $data['nombres_apellidos'] ?? null;
         $telefono = $data['telefono'] ?? null;
         $vehiculo = $data['vehiculo'] ?? null;
-        $observaciones = $data['observaciones'] ?? null;
+        $placa = $data['placa'] ?? null;
         $visita_a = $data['visita_a'] ?? null;
         $foto_base64 = $data['foto'] ?? null;
         $id_zona = $data['id_zona'] ?? null;
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombres_apellidos = $_POST['nombres_apellidos'] ?? null;
         $telefono = $_POST['telefono'] ?? null;
         $vehiculo = $_POST['vehiculo'] ?? null;
-        $observaciones = $_POST['observaciones'] ?? null;
+        $placa = $_POST['placa'] ?? null;
         $visita_a = $_POST['visita_a'] ?? null;
         $foto_base64 = $_POST['foto'] ?? null;
         $id_zona = $_POST['id_zona'] ?? null;
@@ -78,8 +78,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Insertar un nuevo registro en la base de datos
-        $sql = "INSERT INTO visitantes (tipo_documento, numero_documento, nombres_apellidos, telefono, vehiculo, observaciones, visita_a, foto, id_zona, hora_ingreso)
-                VALUES ('$tipo_documento', '$numero_documento', '$nombres_apellidos', '$telefono', '$vehiculo', '$observaciones', '$visita_a', '$nombreArchivo', '$id_zona', '$hora_actual')";
+        $sql = "INSERT INTO visitantes (tipo_documento, numero_documento, nombres_apellidos, telefono, vehiculo, placa, visita_a, foto, id_zona, hora_ingreso)
+                VALUES ('$tipo_documento', '$numero_documento', '$nombres_apellidos', '$telefono', '$vehiculo', '$placa', '$visita_a', '$nombreArchivo', '$id_zona', '$hora_actual')";
         if ($conn->query($sql) === TRUE) {
             echo "Registro insertado correctamente.";
         } else {

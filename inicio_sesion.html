@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/slick.min.css">
 <link rel="stylesheet" href="CSS/templatemo.min.css">
 <link rel="stylesheet" href="CSS/styles_inicio_sesion.css">
-    <script src="JS/inicio_sesion.js" defer></script>
+    <script src="JS/inicio_sescion.js" defer></script>
 </head>
 <body>
     <style>
@@ -67,16 +67,20 @@ body {
         <img src="IMAGENES/logo_inviza.jpg" alt="logo_inviza">
 
         <!-- Primer formulario -->
-    <form id="loginForm" method="POST" action="inicio_sesion.php">
-        <input type="text" name="username" placeholder="Usuario" required>
-        <input type="password" name="password" placeholder="Contraseña" required>
-        <button type="button" id="ingresarBtn">Ingresar</button>
-    </form>
-    
+        <form id="loginForm" method="POST" action="inicio_sesion.php">
+            <input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Usuario" required>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            <button type="submit" id="ingresarBtn">Ingresar</button>
+
+        </form>
+        
         <div class="forgot-password">
             <a href="recuperar_contrasena.html">¿Olvidaste tu contraseña?</a>
         </div>
-    </div>
+        
+        
+        <p id="currentTime"></p>
+        
 
     <!-- Script para la hora actual -->
     <script>
@@ -93,15 +97,10 @@ body {
     <script>
         document.getElementById("ingresarBtn").addEventListener("click", function() {
             // Captura los valores ingresados por el usuario
-            const username = document.getElementById("username").value;
+            const username = document.getElementById("nombre_usuario").value;
             const password = document.getElementById("password").value;
     
-            // Validación básica en el cliente
-            if (username === "" || password === "") {
-                alert("Por favor, completa todos los campos.");
-                return;
-            }
-    
+              
             // Simulación de validación (se puede ampliar con una solicitud al servidor)
             if (username === "admin" && password === "1234") {
                 // Redirigir a la página inicial

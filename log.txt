@@ -1,0 +1,16 @@
+{
+    "nombre_usuario": "Rubiel Caicedo",
+    "password": "Rubiel0222"
+}{
+    "nombre_usuario": "Rubiel Caicedo",
+    "password": "Rubiel0222"
+}{
+    "nombre_usuario": "Rubiel Caicedo",
+    "password": "Rubiel0222"
+}null{
+    "nombre_usuario": "yeison lozano",
+    "password": "123456789Y"
+}{
+    "nombre_usuario": "Rubiel Caicedo",
+    "password": "Rubiel0222"
+}

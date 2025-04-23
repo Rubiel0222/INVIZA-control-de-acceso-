@@ -1,0 +1,36 @@
+{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "123456789"
+}{
+    "Contrase\u00f1a en BD": "123456789"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "Rubiel0222"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "Rubiel0222"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "Rubiel0222"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "Rubiel0222"
+}{
+    "Usuario recibido": "yeison lozano",
+    "Contrase\u00f1a recibida": "123456789Y"
+}{
+    "Contrase\u00f1a en BD": "123456789Y"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$B6laMedhl1Tx8ex\/0Gl\/xOX2BLoX\/hDHqI8DUWs3DKVrQ2M0WpOJm"
+}

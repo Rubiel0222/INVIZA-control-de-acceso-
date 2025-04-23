@@ -1,61 +1,73 @@
 <?php
-// Iniciar la sesión
 session_start();
 
-// Configuración de la conexión a la base de datos
+// Configuración de la base de datos usando PDO
 $servername = "localhost";
 $username_db = "root";
 $password_db = "";
 $dbname = "inviza";
 
-// Crear conexión con MySQL
-$conn = new mysqli($servername, $username_db, $password_db, $dbname);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die(json_encode(["status" => "error", "message" => "Error de conexión: " . $conn->connect_error]));
-}
-
-// Indicar que la respuesta será JSON
+// Encabezados para JSON y CORS
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST");
 header("Content-Type: application/json");
 
-// Capturar datos en JSON o POST
-$data = json_decode(file_get_contents("php://input"), true);
-
-if (!$data) { // Si no llega JSON, usar $_POST
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
-} else {
-    $username = $data['username'] ?? '';
-    $password = $data['password'] ?? '';
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username_db, $password_db, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    ]);
+} catch (PDOException $e) {
+    echo json_encode(["status" => "error", "message" => "Error de conexión"]);
+    exit();
 }
 
-// Preparar la consulta SQL para buscar el usuario
+// Capturar los datos en JSON y verificar si llegaron correctamente
+$data = json_decode(file_get_contents("php://input"), true);
+file_put_contents("log.txt", json_encode($data, JSON_PRETTY_PRINT), FILE_APPEND);
+
+if (!$data || empty($data['nombre_usuario']) || empty($data['password'])) {
+    echo json_encode(["status" => "error", "message" => "Usuario y contraseña son requeridos"]);
+    exit();
+}
+
+$nombre_usuario = trim($data['nombre_usuario']);
+$password = trim($data['password']);
+
+// **Depuración adicional**: Guardar los datos recibidos
+file_put_contents("debug_log.txt", json_encode(["Usuario recibido" => $nombre_usuario, "Contraseña recibida" => $password], JSON_PRETTY_PRINT), FILE_APPEND);
+
+// Consulta segura con PDO
 $stmt = $conn->prepare("SELECT password, rol FROM usuarios WHERE nombre_usuario = ?");
-$stmt->bind_param("s", $username);
-$stmt->execute();
-$stmt->store_result();
+$stmt->execute([$nombre_usuario]);
 
-if ($stmt->num_rows > 0) {
-    $stmt->bind_result($db_password, $rol);
-    $stmt->fetch();
+if ($stmt->rowCount() > 0) {
+    $row = $stmt->fetch();
+    $db_password = $row['password'];
+    $rol = $row['rol'];
 
-    // Verificar si la contraseña ingresada coincide con la almacenada en la base de datos
+    // **Depuración**: Verificar la contraseña guardada en la BD antes de compararla
+    file_put_contents("debug_log.txt", json_encode(["Contraseña en BD" => $db_password], JSON_PRETTY_PRINT), FILE_APPEND);
+
+    // **Verificar si la contraseña en la BD está hasheada**
     if (password_verify($password, $db_password)) {
-        // Guardar información en la sesión
-        $_SESSION["nombre_usuario"] = $username;
+        $_SESSION["nombre_usuario"] = $nombre_usuario;
         $_SESSION["rol"] = $rol;
 
-        // Respuesta JSON de éxito
-        echo json_encode(["status" => "success", "message" => "Inicio de sesión exitoso"]);
+        echo json_encode(["status" => "success", "message" => "Inicio de sesión exitoso", "rol" => $rol]);
     } else {
-        echo json_encode(["status" => "error", "message" => "Contraseña incorrecta"]);
+        // Si la contraseña está en texto plano, actualizarla a una versión hasheada
+        if ($db_password === $password) {
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+            $stmt_update = $conn->prepare("UPDATE usuarios SET password = ? WHERE nombre_usuario = ?");
+            $stmt_update->execute([$hashed_password, $nombre_usuario]);
+
+            echo json_encode(["status" => "success", "message" => "Contraseña actualizada a formato seguro. Inicia sesión nuevamente.", "rol" => $rol]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "Contraseña incorrecta"]);
+        }
     }
 } else {
-    echo json_encode(["status" => "error", "message" => "Usuario no encontrado"]); // Se añadió esta línea que faltaba
+    echo json_encode(["status" => "error", "message" => "Usuario no encontrado"]);
 }
-
-// Cerrar conexión
-$stmt->close();
-$conn->close();
 ?>

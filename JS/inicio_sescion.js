@@ -1,43 +1,55 @@
-document.addEventListener('DOMContentLoaded', () => {
-    updateTime();
-    setInterval(updateTime, 1000); // Actualiza la hora cada segundo
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.getElementById("loginForm");
 
-    const loginForm = document.getElementById('loginForm');
-    loginForm.addEventListener('submit', async function (event) {
+    if (!loginForm) {
+        console.error("Error: No se encontró el formulario 'loginForm'.");
+        return;
+    }
+
+    loginForm.addEventListener("submit", async function(event) {
         event.preventDefault(); // Evita el envío normal del formulario
 
-        const username = document.querySelector('input[name="username"]').value;
+        const nombre_usuario = document.querySelector('input[name="nombre_usuario"]').value;
         const password = document.querySelector('input[name="password"]').value;
 
-        // Validación utilizando fetch y la API en inicio_sesion.php
+        console.log("Usuario ingresado:", nombre_usuario);
+        console.log("Contraseña ingresada:", password);
+
+        // Validación antes de enviar los datos
+        if (!nombre_usuario || !password) {
+            alert("Por favor, completa todos los campos.");
+            return;
+        }
+
         try {
+            const requestBody = JSON.stringify({ nombre_usuario, password });
+            console.log("Enviando:", requestBody);
+
             const response = await fetch("http://localhost/inviza/inicio_sesion.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ username: username, password: password })
+                body: requestBody
             });
 
-            const data = await response.json();
+            // Validar si la respuesta es válida antes de parsearla
+            if (!response.ok) {
+                throw new Error(`Error HTTP: ${response.status}`);
+            }
 
-            // Manejo de la respuesta
+            const data = await response.json();
+            console.log("Respuesta del servidor:", data);
+
             if (data.status === "success") {
-                alert(data.message);
-                window.location.href = 'pagina_inicial.html'; // Redirige al usuario
+                alert("Inicio de sesión exitoso");
+                window.location.href = "pagina_inicial.html"; // Redirige al usuario
             } else {
-                alert(data.message); // Muestra mensaje de error
+                alert(data.message);
             }
         } catch (error) {
             console.error("Error al realizar la solicitud:", error);
-            alert("Ocurrió un error. Inténtalo de nuevo más tarde.");
+            alert("Error al conectar con el servidor. Inténtalo de nuevo.");
         }
     });
 });
-
-function updateTime() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    document.getElementById('currentTime').textContent = `${hours}:${minutes}`;
-}

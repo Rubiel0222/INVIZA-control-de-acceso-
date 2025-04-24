@@ -19,4 +19,31 @@
 }nullnull{
     "nombre_usuario": "Rubiel Caicedo",
     "password": "Rubiel0222"
+}{
+    "nombre_usuario": "admin",
+    "password": "12345"
+}{
+    "nombre_usuario": "Rubiel Caicedo",
+    "password": "Rubiel0222"
+}{
+    "nombre_usuario": "David Andres Correa rivera",
+    "password": "password123*"
+}{
+    "nombre_usuario": "ubiel Caicedo",
+    "password": "Rubiel0222"
+}{
+    "nombre_usuario": "Rubiel Caicedo",
+    "password": "Rubiel0222"
+}{
+    "nombre_usuario": "David Andres Correa rivera",
+    "password": "password123*"
+}{
+    "nombre_usuario": "Rubiel Caicedo",
+    "password": "Rubiel0222"
+}{
+    "nombre_usuario": "ubiel Caicedo",
+    "password": "Rubiel0222"
+}{
+    "nombre_usuario": "Rubiel Caicedo",
+    "password": "Rubiel0222"
 }

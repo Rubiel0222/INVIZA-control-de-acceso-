@@ -43,4 +43,43 @@
     "Contrase\u00f1a recibida": "Rubiel0222"
 }{
     "Contrase\u00f1a en BD": "$2y$10$B6laMedhl1Tx8ex\/0Gl\/xOX2BLoX\/hDHqI8DUWs3DKVrQ2M0WpOJm"
+}{
+    "Usuario recibido": "admin",
+    "Contrase\u00f1a recibida": "12345"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "Rubiel0222"
+}{
+    "Usuario recibido": "David Andres Correa rivera",
+    "Contrase\u00f1a recibida": "password123*"
+}{
+    "Contrase\u00f1a en BD": "password123*"
+}{
+    "Usuario recibido": "ubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
+}{
+    "Usuario recibido": "David Andres Correa rivera",
+    "Contrase\u00f1a recibida": "password123*"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$3oDdXRZutF9KNWTOkkQrk.4eeOgk\/M0JB\/Th6IBYHnX.xnJ3aeJa6"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
+}{
+    "Usuario recibido": "ubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
 }

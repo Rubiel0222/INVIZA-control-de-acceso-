@@ -26,24 +26,24 @@ print_r($_GET);
 
 // Función para listar visitas
 function listarVisitas($conn) {
-    $sql = "SELECT * FROM visitas ORDER BY fecha_inicio DESC"; // Ordenar por fecha descendente
+    $sql = "SELECT * FROM visitas ORDER BY fecha_ingreso DESC"; // Ordenar por fecha descendente
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<tr>
-                    <td contenteditable='true'>{$row['numero_documento']}</td>
+                    <td contenteditable='true'>{$row['documento']}</td>
                     <td contenteditable='true'>{$row['nombres']}</td>
                     <td contenteditable='true'>{$row['apellidos']}</td>
-                    <td contenteditable='true'>{$row['fecha_inicio']}</td>
+                    <td contenteditable='true'>{$row['fecha_ingreso']}</td>
                     <td contenteditable='true'>{$row['fecha_fin']}</td>
                      <td contenteditable='true'>{$row['estado_visita']}</td> 
                     <td contenteditable='true'>{$row['arl_checkbox']}</td> 
-                    <td contenteditable='true'>{$row['observaciones']}</td>
+                    <td contenteditable='true'>{$row['placa']}</td>
                     <td contenteditable='true'>{$row['id_zona']}</td>
                     <td>
-                        <button class='edit-button' onclick=\"editarVisita('{$row['numero_documento']}')\">Editar</button>
-                        <button class='delete-button' onclick=\"eliminarVisita('{$row['numero_documento']}')\">Borrar</button>
+                        <button class='edit-button' onclick=\"editarVisita('{$row['documento']}')\">Editar</button>
+                        <button class='delete-button' onclick=\"eliminarVisita('{$row['documento']}')\">Borrar</button>
                     </td>
                   </tr>";
         }
@@ -54,14 +54,14 @@ function listarVisitas($conn) {
 
 // Manejo de envíos POST para actualizar información
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $documento = $_POST['numero_documento'] ?? '';
+    $documento = $_POST['documento'] ?? '';
     $nombres = $_POST['nombres'] ?? '';
     $apellidos = $_POST['apellidos'] ?? '';
-    $fecha_inicio = $_POST['fecha_inicio'] ?? '';
+    $fecha_ingreso = $_POST['fecha_ingreso'] ?? '';
     $fecha_fin = $_POST['fecha_fin'] ?? '';
     $estado = $_POST['estado'] ?? 'pendiente'; // Valor predeterminado
     $arl = $_POST['arl'] ?? 0;                 // Valor predeterminado
-    $observaciones = $_POST['observaciones'] ?? '';
+    $placa = $_POST['placa'] ?? '';
     $id_zona = $_POST['id_zona'] ?? '';
 
     // Solo proceder si 'numero_documento' tiene un valor
@@ -69,13 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql = "UPDATE visitas 
                 SET nombres = '$nombres', 
                     apellidos = '$apellidos', 
-                    fecha_inicio = '$fecha_inicio', 
+                    fecha_ingreso = '$fecha_ingreso', 
                     fecha_fin = '$fecha_fin', 
                     estado = '$estado', 
                     arl = '$arl', 
-                    observaciones = '$observaciones', 
+                    placa = '$placa', 
                     id_zona = '$id_zona' 
-                WHERE numero_documento = '$documento'";
+                WHERE documento = '$documento'";
 
         if ($conn->query($sql) === TRUE) {
             echo "Registro actualizado correctamente";
@@ -96,11 +96,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <th>Documento</th>
                 <th>Nombres</th>
                 <th>Apellidos</th>
-                <th>Fecha Inicio</th>
+                <th>fecha_ingreso</th>
                 <th>Fecha Fin</th>
                 <th>Estado</th>
                 <th>ARL</th>
-                <th>Observaciones</th>
+                <th>placa</th>
                 <th>ID Zona</th>
                 <th>Acciones</th>
             </tr>

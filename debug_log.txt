@@ -82,4 +82,42 @@
     "Contrase\u00f1a recibida": "Rubiel0222"
 }{
     "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
+}{
+    "Usuario recibido": "ubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel022"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel0222"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "Rubiel222"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
 }

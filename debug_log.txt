@@ -120,4 +120,14 @@
     "Contrase\u00f1a recibida": "Rubiel222"
 }{
     "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "123456789"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$CqeXvMv5BReLP9lPdF3rFOd0TAO.BEqV3I.ArzySlezcnjR38WMxe"
+}{
+    "Usuario recibido": "rubiel quintero osorio",
+    "Contrase\u00f1a recibida": "R123456789"
+}{
+    "Contrase\u00f1a en BD": "R123456789"
 }

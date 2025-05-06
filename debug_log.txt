@@ -130,4 +130,14 @@
     "Contrase\u00f1a recibida": "R123456789"
 }{
     "Contrase\u00f1a en BD": "R123456789"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "123456789"
+}{
+    "Contrase\u00f1a en BD": "123456789"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "123456789"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$mrLQ1dF8OG6WcCb2u7yHZ.IFc0DseKGkkToSjlcXXLhynWNjDqQ5S"
 }

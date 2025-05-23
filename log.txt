@@ -82,4 +82,16 @@
 }null{
     "nombre_usuario": "Rubiel Caicedo",
     "password": "123456789"
+}{
+    "nombre_usuario": "Rubiel Caicedo",
+    "password": "R1234567889"
+}{
+    "nombre_usuario": "Rubiel Caicedo",
+    "password": "R123456789"
+}{
+    "nombre_usuario": "Rubiel Caicedo",
+    "password": "123456789"
+}null{
+    "nombre_usuario": "rubiel quintero osorio",
+    "password": "123456789"
 }

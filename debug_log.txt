@@ -160,4 +160,19 @@
     "Contrase\u00f1a recibida": "123456789"
 }{
     "Contrase\u00f1a en BD": "123456789"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "R123456789"
+}{
+    "Contrase\u00f1a en BD": "$2y$10$m.00GxqiY\/SXbR0hEUPrn.Jnrx\/xeLWdo27WVyf5wag6Dd5XyDVxW"
+}{
+    "Usuario recibido": "Rubiel Caicedo",
+    "Contrase\u00f1a recibida": "123456789"
+}{
+    "Contrase\u00f1a en BD": "123456789"
+}{
+    "Usuario recibido": "rubiel quintero",
+    "Contrase\u00f1a recibida": "R123456789"
+}{
+    "Contrase\u00f1a en BD": "R123456789"
 }

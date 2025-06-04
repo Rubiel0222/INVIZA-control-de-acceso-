@@ -22,25 +22,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $documento = htmlspecialchars($_POST['documento'], ENT_QUOTES, 'UTF-8');
     $nombres = htmlspecialchars($_POST['nombres'], ENT_QUOTES, 'UTF-8');
     $apellidos = htmlspecialchars($_POST['apellidos'], ENT_QUOTES, 'UTF-8');
-    $fecha_inicio = $_POST['fecha_inicio'];
+
+    // Validar que fecha_ingreso no esté vacía antes de asignarla
+    if (isset($_POST['fecha_ingreso']) && !empty($_POST['fecha_ingreso'])) {
+        $fecha_ingreso = $_POST['fecha_ingreso'];
+    } 
     $fecha_fin = $_POST['fecha_fin'];
     $estado_visita = htmlspecialchars($_POST['estado_visita'], ENT_QUOTES, 'UTF-8');
     $arl_checkbox = isset($_POST['arl_checkbox']) ? 1 : 0;
+    $placa = isset($_POST['placa']) ? htmlspecialchars($_POST['placa'], ENT_QUOTES, 'UTF-8') : null;
     $observaciones = htmlspecialchars($_POST['observaciones'], ENT_QUOTES, 'UTF-8');
-    $id_zona = (int) $_POST['id_zona']; // Convertir a entero para mayor seguridad
+    $id_zona = isset($_POST['id_zona']) ? (int) $_POST['id_zona'] : null;
 
-    // Consulta con sentencia preparada
-    $stmt = $conn->prepare("INSERT INTO visitas (numero_documento, nombres, apellidos, fecha_inicio, fecha_fin, estado_visita, arl_checkbox, observaciones, id_zona)
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssisi", $documento, $nombres, $apellidos, $fecha_inicio, $fecha_fin, $estado_visita, $arl_checkbox, $observaciones, $id_zona);
+    // Verificar conexión
+    if (!$conn) {
+        die("Error de conexión: " . mysqli_connect_error());
+    }
 
+    // Definir la consulta SQL
+    $sql = "INSERT INTO visitas (documento, nombres, apellidos, fecha_ingreso, fecha_fin, estado_visita, arl_checkbox, placa, id_zona)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    // Preparar la consulta
+    $stmt = $conn->prepare($sql);
+    
+    // Verificar si la preparación fue exitosa
+    if (!$stmt) {
+        die("Error en la preparación de la consulta: " . $conn->error);
+    }
+
+    // Enlazar parámetros y ejecutar
+    $stmt->bind_param("ssssssisi", $documento, $nombres, $apellidos, $fecha_ingreso, $fecha_fin, $estado_visita, $arl_checkbox, $placa, $id_zona);
+    
     if ($stmt->execute()) {
-        echo "Información guardada con éxito";
+        echo "Información guardada con éxito.";
     } else {
         echo "Error al guardar la información: " . $stmt->error;
     }
 
-    // Cerrar la conexión
+    // Cerrar la consulta y la conexión
     $stmt->close();
     $conn->close();
 }

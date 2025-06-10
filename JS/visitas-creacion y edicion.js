@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Obtener y mostrar los datos en la tabla
-    fetch("actualizar_visita.php")
+    fetch("visitas-ceación-y-edición.php")
         .then(response => response.json())
         .then(data => {
             let tbody = document.querySelector("tbody");

@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (agregarButton) {
         agregarButton.addEventListener('click', function (event) {
             event.preventDefault();
-            window.location.href = 'visitas-creación-y-edición-edición.html';
+            window.location.href = 'visitas-creación y edición-edición.html';
         });
     }
 

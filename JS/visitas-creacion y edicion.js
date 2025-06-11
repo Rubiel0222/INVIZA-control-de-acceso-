@@ -85,7 +85,7 @@ function guardarEdicion(event) {
         id_zona: fila.children[8].innerText
     };
 
-    fetch("actualizar_visita.php", {
+    fetch("visitas-ceación-y-edición.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(datos)

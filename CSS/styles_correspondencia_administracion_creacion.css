@@ -66,10 +66,14 @@ header .actions button:hover {
 
 /* Estilo del formulario */
 .form-container {
-       width: 40%;
+           width: 40%;
     padding: 20px;
-    background-color: white;
-    border-radius: 15px;
+    justify-content: center;
+  align-items: center;
+    background-color: rgb(247, 244, 244);
+    border-radius: 15px;    
+    max-width: 1200px;
+    margin: 30px auto;
     }
 
 .form-container label {

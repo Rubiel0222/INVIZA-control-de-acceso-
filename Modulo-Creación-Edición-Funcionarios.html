@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVIZA Control de Accesos</title>
+    <link rel="stylesheet" href="CSS/styles_pagina_principal.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/templatemo.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <link rel="stylesheet" href="CSS/styles_modulo_creación_edición_funcionarios.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <script src="JS/pagina_principal.js" defer></script>
+</head>
+<body>
+    <style>
+        body {
+            font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light">
+        <div class="container text-light">        
+            <div class="w-d-flex justify-content-between">
+                <i class="fa fa-envelope mx-2"></i>
+                <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">infoINVIZA.com</a>
+                <i class="fa fa-phone mx-2"></i>
+                <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+            </div>
+            <div class="social-icons">
+                <a class="text-light" href="https://fb.com/templatemo"><i class="fab fa-facebook-f"></i></a>
+                <a class="text-light" href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a class="text-light" href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="logo">
+            <img src="IMAGENES/logo_inviza.jpg" alt="Logo de INVIZA">
+        </div>
+        <div class="title">INVIZA CONTROL DE ACCESOS</div>
+        <div class="actions">
+            <div class="time" id="currentTime"></div>
+            <button onclick="window.location.href='pagina_inicial.html'">Página Inicial</button>
+        </div>
+    </header>
+
+    <main>
+        
+    <div class="container">
+        <form>
+             <h1>Modulos > Creación / Edición de Funcionarios</h1>
+        <label for="documento">Documento:</label>
+        <select id="documento" name="documento">
+            <option value="CC">CC</option>
+            <input type="text" id="documento" name="documento">
+        </select>
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres" name="nombres">
+        <label for="sucursales">Sucursales asignadas:</label>
+        <input type="text" id="documento" name="documento">
+        </select>
+        <label for="zona">Zona:</label>
+        <select id="zona" name="zona">
+            <option value="zona1">Zona 1</option>
+            <option value="zona2">Zona 2</option>
+            <option value="zona3">Zona 3</option>
+        </select>
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado">
+            <option value="activo">Activo</option>
+            <option value="inactivo">Inactivo</option>
+        </select>
+        <label for="fecha_inicio">Fecha Inicio:</label>
+        <input type="datetime-local" id="fecha_inicio" name="fecha_inicio">
+        <label for="fecha_fin">Fecha Fin:</label>
+        <input type="datetime-local" id="fecha_fin" name="fecha_fin">
+        <a href="#">Descargar base de datos de Funcionarios activos</a>
+        <br><br>
+        <button type="submit">Guardar</button>
+        <button type="reset">Limpiar</button>
+        </form>
+    </div>
+</main>
+    <footer class="bg-dark">
+        <div class="container text-light">
+            <h2>INVIZA control de acceso</h2>
+            <div class="contact-info">
+                <div><i class="fas fa-map-marker-alt"></i> Local Principal - Madrid, Colombia</div>
+                <div><i class="fa fa-envelope mx-2"></i> <a href="publicidad.html">contacto: INVIZA@gmail.com</a></div>
+                <div><i class="fa fa-phone mx-2"></i> <a href="tel:3125843540">3125843540</a></div>
+            </div>
+        </div>
+        <div class="w-100 bg-dark py-3">
+            <p class="text-left text-light">Copyright &copy; 2024 - ProdArt | Diseñado por: Rubiel Quintero - David Andres Correa</p>
+        </div>
+    </footer>
+</body>
+</html>

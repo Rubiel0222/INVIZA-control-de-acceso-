@@ -13,7 +13,8 @@
 <link rel="stylesheet" href="css/slick-theme.css">
 <link rel="stylesheet" href="css/slick.min.css">
 <link rel="stylesheet" href="CSS/templatemo.min.css">
-    <link rel="stylesheet" href="CSS/styles_modulo_horarios_edicion.css">
+<link rel="stylesheet" href="CSS/styles_modulo_horarios_edicion.css">
+<link rel="stylesheet" href="JS/modulos-horarios-edición.js">
 </head>
 <style>
     body {
@@ -71,22 +72,22 @@ background-size: cover;
         <h1>Módulos > Horarios > Edición</h1>
 
         <!-- Formulario de edición de horarios -->
-        <form>
+        <form action="modulo-horarios-edición.php" method="POST">
             <label for="id_horario">ID de Horario:</label>
-            <input type="text" id="id_horario" placeholder="Ingrese el ID del horario">
+            <input type="text" id="id_horario" name="id_horario" required>
 
             <label for="nombre_horario">Nombre:</label>
-            <input type="text" id="nombre_horario" placeholder="Ingrese el nombre del horario">
+           <input type="text" id="nombre_horario" name="nombre_horario" required>
 
             <label for="gabela">Tiempo de Gabela (minutos):</label>
-            <input type="number" id="gabela" placeholder="Ingrese el tiempo de gabela">
+            <input type="number" id="gabela" name="gabela" required>
 
-            <label for="aplicar_horas">
-                <input type="checkbox" id="aplicar_horas"> Aplicar por horas
+            <labe for="aplicar_horas">
+                <input type="checkbox" id="aplicar_horas" name="aplicar_horas"> Aplicar por horas
             </label>
 
             <label for="estado">Estado:</label>
-            <select id="estado">
+            <select id="estado" name="estado">
                 <option value="activo">Activo</option>
                 <option value="inactivo">Inactivo</option>
             </select>
@@ -97,7 +98,7 @@ background-size: cover;
             <!-- Botones -->
             <div class="buttons">
                 <button type="submit">Guardar Información</button>
-                <button type="button" onclick="window.location.href='menu_principal.html'">Regresar</button>
+                <button type="button" onclick="window.location.href='pagina_inicial.html'">Regresar</button>
             </div>
         </form>
     </div>

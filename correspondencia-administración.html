@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="CSS/templatemo.min.css">
     <link rel="stylesheet" href="CSS/styles_correspondencia_administracion.css">    
     <script src="JS/correspondencia-administracion.js" defer></script>
+
 </head>
 <style>
     body {
@@ -65,60 +66,60 @@ background-size: cover;
             <button onclick="window.location.href='pagina principal.html'">Página Principal</button>
         </div>
     </header>
+<div class="container">
+    <h2 style="text-align: center;">Correspondencia > Administración</h2>
 
-    <div class="container">
-        <h2 style="text-align: center;">Correspondencia > Administración</h2>
-
-        <!-- Controles de búsqueda y opciones -->
-        <div class="table-header">
-            <div class="search">
-                <input type="text" placeholder="Buscar..." id="searchInput">
-                <button onclick="searchFunction()">🔍</button>
-            </div>
-            <div>
-                <label for="showRows">Mostrar:</label>
-                <select id="showRows" onchange="updateRows()">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                </select>
-                <button class="add-button" onclick="addCorrespondence()">Agregar Correspondencia</button>
-            </div>
+    <!-- Controles de búsqueda y opciones -->
+    <div class="table-header">
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Buscar...">
+            <button class="search-button">🔍</button>
         </div>
-        <tbody id="correspondencia-table">
-                <!-- Se llenará dinámicamente con PHP -->
-            </tbody>
-
-        <!-- Tabla de correspondencia con datos organizados según la base de datos -->
-        <table>
-            <thead>
-                <tr>
-                    <th>Descripción</th>
-                    <th>Destinatario</th>
-                    <th>Propietario</th>
-                    <th>Ubicación</th>
-                    <th>Teléfono</th>
-                    <th>Código de Envío</th>
-                    <th>Entregado por</th>
-                    <th>Enviar Correo</th>
-                </tr>
-            </thead>
-            <tbody id="correspondenceTableBody">
-                <!-- Datos se insertarán dinámicamente -->
-            </tbody>
-        </table>
-
-        <!-- Paginación -->
-        <div class="pagination">
-            <label for="pageNumber">Página:</label>
-            <select id="pageNumber">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+        <div>
+            <label for="showRows">Mostrar:</label>
+            <select id="showRows">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
             </select>
-            <button onclick="goToPage()">Ir a página</button>
+            <button class="add-button">Agregar Correspondencia</button>
         </div>
     </div>
+
+    <!-- Tabla dinámica -->
+    <table>
+        <thead>
+            <tr>
+                <th>Descripción</th>
+                <th>Destinatario</th>
+                <th>Propietario</th>
+                <th>Ubicación</th>
+                <th>Teléfono</th>
+                <th>Código de Envío</th>
+                <th>Entregado por</th>
+                <th>Enviar Correo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="correspondencia-table">
+            <!-- Datos se insertarán dinámicamente -->
+        </tbody>
+    </table>
+
+    <!-- Paginación -->
+    <div class="pagination">
+        <label for="pageNumber">Página:</label>
+        <select id="pageNumber">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <button id="goToPage">Ir a página</button>
+    </div>
+</div>
+
+  
+        
 
    </body>
 

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="CSS/slick-theme.css">
      <link rel="stylesheet" href="CSS/styles_modulos_horarios.css">
     <script src="JS/modulos-horarios.js" defer></script>
+    
     </script>
                  
 </head>
@@ -64,59 +65,41 @@
     <br><br><br><br><br><br>
     <div class="container">
         <h1>Módulos > Horarios</h1>
-        <button class="add-button">Agregar horario</button>
+        <button class="add-record add-button" onclick="window.location.href='modulos-horarios-edición.html'">Agregar horario</button>
 
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Asignado a</th>
+                    <th>Tiempo Gabela</th>
+                    <th>Aplicar Horas</th>
                     <th>Estado</th>
+                    <th>Horas Laborales</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Horario 1</td>
-                    <td>Juan Pérez</td>
-                    <td>Activo</td>
-                    <td class="actions">
-                        <button class="edit-button">Editar</button>
-                        <button class="delete-button">Borrar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Horario 2</td>
-                    <td>María Gómez</td>
-                    <td>Inactivo</td>
-                    <td class="actions">
-                        <button class="edit-button">Editar</button>
-                        <button class="delete-button">Borrar</button>
-                    </td>
-                </tr>
-                <!-- Más filas de ejemplo -->
+            <tbody id="horarios-table">
+                <!-- Se llenará dinámicamente con PHP -->
             </tbody>
         </table>
 
         <div class="footer-controls">
-            <input type="text" placeholder="Buscar...">
+            <input type="text" placeholder="Buscar..." id="search">
             <div>
                 Mostrar filas:
-                <select>
+                <select id="rowsPerPage">
                     <option value="10">10</option>
                     <option value="25">25</option>
                     <option value="50">50</option>
                 </select>
                 Página:
-                <select>
+                <select id="pageNumber">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>
-                <button>Ir a página</button>
+                <button onclick="goToPage()">Ir a página</button>
             </div>
         </div>
     </div>

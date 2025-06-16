@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 // Solo ejecutar si hay una solicitud POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener datos y validar que existen
-    $nombre_horario = isset($_POST["id_horario"]) ? trim($_POST["id_horario"]) : null;
+    $nombre_horario = isset($_POST["nombre_horario"]) ? trim($_POST["nombre_horario"]) : null;
     $gabela = isset($_POST["gabela"]) ? trim($_POST["gabela"]) : null;
     $estado = isset($_POST["estado"]) ? trim($_POST["estado"]) : null;
     $horas_laborales = isset($_POST["horas_laborales"]) ? trim($_POST["horas_laborales"]) : null;

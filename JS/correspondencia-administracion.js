@@ -1,15 +1,18 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Función para actualizar la hora actual
+document.addEventListener('DOMContentLoaded', function () {
+    // 🕐 Actualizar la hora actual en tiempo real
     function updateTime() {
+        const timeElement = document.getElementById('currentTime');
+        if (!timeElement) return;
+
         const now = new Date();
         const hours = String(now.getHours()).padStart(2, '0');
         const minutes = String(now.getMinutes()).padStart(2, '0');
-        document.getElementById('currentTime').textContent = `${hours}:${minutes}`;
+        timeElement.textContent = `${hours}:${minutes}`;
     }
     setInterval(updateTime, 1000);
-    updateTime(); // Llama la función al cargar la página
+    updateTime();
 
-    // Obtener referencias a los elementos de la interfaz
+    // 🔗 Obtener referencias a los elementos de la interfaz
     const searchInput = document.getElementById('searchInput');
     const searchButton = document.querySelector('.search button');
     const addCorrespondenceButton = document.querySelector('.add-button');
@@ -18,74 +21,74 @@ document.addEventListener('DOMContentLoaded', function() {
     const goToPageButton = document.querySelector('.pagination button');
     const tableBody = document.getElementById('correspondenceTableBody');
 
-    // Función de búsqueda
-    searchButton.addEventListener('click', function(event) {
+    // 🔍 Función de búsqueda optimizada
+    searchButton?.addEventListener('click', function (event) {
         event.preventDefault();
         const query = searchInput.value.toLowerCase();
-        const rows = tableBody.querySelectorAll('tr');
-
-        rows.forEach(row => {
-            const cells = row.querySelectorAll('td');
-            const rowData = Array.from(cells).map(cell => cell.textContent.toLowerCase());
-            const matches = rowData.some(data => data.includes(query));
-
-            row.style.display = matches ? '' : 'none';
+        document.querySelectorAll('#correspondenceTableBody tr').forEach(row => {
+            row.style.display = row.innerText.toLowerCase().includes(query) ? '' : 'none';
         });
     });
 
-    // Función para agregar nueva correspondencia
-    addCorrespondenceButton.addEventListener('click', function(event) {
+    // 🔄 Función para cargar datos desde la base de datos con `fetch()`
+    function fetchCorrespondencias() {
+        fetch('cargar_correspondencia.php')
+            .then(response => response.json())
+            .then(data => {
+                tableBody.innerHTML = ""; // Limpia la tabla antes de insertar nuevos datos
+
+                if (!data || data.length === 0) {
+                    tableBody.innerHTML = `<tr><td colspan="8">❌ No hay correspondencias registradas.</td></tr>`;
+                    return;
+                }
+
+                data.forEach(correspondencia => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${correspondencia.descripcion || '-'}</td>
+                        <td>${correspondencia.destinatario || '-'}</td>
+                        <td>${correspondencia.propietario || '-'}</td>
+                        <td>${correspondencia.ubicacion || '-'}</td>
+                        <td>${correspondencia.telefono || '-'}</td>
+                        <td>${correspondencia.codigo_envio || '-'}</td>
+                        <td>${correspondencia.entregado_por || '-'}</td>
+                        <td>${correspondencia.enviar_correo === "1" ? '✔' : '❌'}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error("❌ Error al cargar datos:", error));
+    }
+
+    // ➕ Función para agregar nueva correspondencia manualmente
+    addCorrespondenceButton?.addEventListener('click', function (event) {
         event.preventDefault();
         const newRow = document.createElement('tr');
         newRow.innerHTML = `
-            <td contenteditable="true">3</td>
-            <td contenteditable="true">Nueva Correspondencia</td>
-            <td contenteditable="true">Nuevo Responsable</td>
-            <td contenteditable="true">Nuevo Destino</td>
-            <td>
-                <button class="edit-button">Editar</button>
-                <button class="delete-button">Borrar</button>
-                <button class="save-button" style="display: none;">Guardar</button>
-            </td>
+            <td contenteditable="true">Nueva</td>
+            <td contenteditable="true">Descripción</td>
+            <td contenteditable="true">Propietario</td>
+            <td contenteditable="true">Ubicación</td>
+            <td contenteditable="true">Teléfono</td>
+            <td contenteditable="true">Código de Envío</td>
+            <td contenteditable="true">Entregado por</td>
+            <td contenteditable="true">Enviar Correo</td>
         `;
         tableBody.appendChild(newRow);
         alert('Nueva correspondencia agregada');
     });
 
-    // Funcionalidades de los botones en las filas de la tabla (editar, borrar)
-    tableBody.addEventListener('click', function(event) {
-        if (event.target.tagName === 'BUTTON') {
-            const button = event.target;
-            const row = button.closest('tr');
-
-            if (button.classList.contains('edit-button')) {
-                const cells = row.querySelectorAll('td[contenteditable]');
-                cells.forEach(cell => cell.contentEditable = 'true');
-                row.querySelector('.edit-button').style.display = 'none';
-                row.querySelector('.save-button').style.display = 'inline-block';
-            } else if (button.classList.contains('delete-button')) {
-                row.remove();
-                alert('Correspondencia eliminada');
-            } else if (button.classList.contains('save-button')) {
-                const cells = row.querySelectorAll('td[contenteditable]');
-                cells.forEach(cell => cell.contentEditable = 'false');
-                row.querySelector('.edit-button').style.display = 'inline-block';
-                row.querySelector('.save-button').style.display = 'none';
-                alert('Correspondencia guardada');
-            }
-        }
+    // 📄 Función para actualizar el número de filas mostradas (placeholder)
+    rowsSelect?.addEventListener('change', function (event) {
+        alert(`Mostrar ${event.target.value} filas por página - funcionalidad pendiente.`);
     });
 
-    // Función para actualizar el número de filas mostradas (placeholder)
-    rowsSelect.addEventListener('change', function(event) {
-        const selectedValue = event.target.value;
-        alert(`Mostrar ${selectedValue} filas por página - funcionalidad no implementada aún.`);
-    });
-
-    // Función para manejar la paginación (placeholder)
-    goToPageButton.addEventListener('click', function(event) {
+    // ⏩ Función de paginación (placeholder)
+    goToPageButton?.addEventListener('click', function (event) {
         event.preventDefault();
-        const selectedPage = pageSelect.value;
-        alert(`Ir a página ${selectedPage} - funcionalidad no implementada aún.`);
+        alert(`Ir a página ${pageSelect.value} - funcionalidad pendiente.`);
     });
+
+    // 🔃 Cargar correspondencias al iniciar la página
+    fetchCorrespondencias();
 });

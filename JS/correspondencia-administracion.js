@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     addCorrespondenceButton?.addEventListener('click', function () {
         const newRow = document.createElement('tr');
         newRow.innerHTML = `
-            <td contenteditable="true">Nueva</td>
+            
             <td contenteditable="true">Descripción</td>
             <td contenteditable="true">Propietario</td>
             <td contenteditable="true">Ubicación</td>

@@ -14,6 +14,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT descripcion, destinatario, propietario, ubicacion, telefono, codigo_envio, entregado_por, enviar_correo FROM correspondencia";
+
 $result = $conn->query($sql);
 
 if (!$result) {

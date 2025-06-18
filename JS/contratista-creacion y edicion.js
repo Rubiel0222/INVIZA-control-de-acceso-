@@ -9,6 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateTime, 1000);
     updateTime(); // Llama la función al cargar la página
 
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".add-button").addEventListener("click", function () {
+        window.location.href = "contratista.html";
+    });
+});
+
+
     // Función de búsqueda
     const searchInput = document.getElementById('searchInput');
     searchInput.addEventListener('input', function() {

@@ -1,0 +1,152 @@
+
+/* Estilo global del body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* ====== ENCABEZADO ====== */
+header {
+    background-color: #232423;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+header .logo img {
+    width: 50px;
+    border-radius: 5px;
+}
+
+header .title {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    flex: 1;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+}
+
+header .actions .time {
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+header .actions button {
+    background-color: #119e11;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header .actions button:hover {
+    background-color: #1cac1c;
+}
+
+/* ====== CONTENEDOR PRINCIPAL ====== */
+main {
+    padding-top: 30px; /* Espacio para evitar que el contenido suba al header */
+}
+
+/* Contenedor específico del formulario */
+.container {
+    padding: 30px;
+    background-color: #d9dfd7;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    margin: 20px auto;
+}
+
+.container h2 {
+    font-size: 28px;
+    color: #0b0c0c;
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* ====== FORMULARIO ====== */
+#empresaForm label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #1f1f1f;
+}
+
+#empresaForm input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+#empresaForm input[type="text"]:focus {
+    border-color: #2dac42;
+    outline: none;
+}
+
+#empresaForm button {
+    background-color: #2e8b57;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#empresaForm button:hover {
+    background-color: #247a43;
+}
+
+#mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #0b0c0c;
+    text-align: center;
+}
+
+.footer-custom {
+    background-color: #232423;
+    padding: 30px;
+}
+.footer-content {
+    max-width: 400px; /* ancho controlado al lado izquierdo */
+    padding-left: 30px;
+}
+.footer-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.contact-info .contact-item {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.footer-bottom {
+    background-color: #1c1c1c;
+    padding: 15px 30px;
+    font-size: 14px;
+    color: #ccc;
+}

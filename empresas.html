@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVIZA Control de Accesos</title>
+    <link rel="stylesheet" href="CSS/styles_empresas.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/templatemo.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <link rel="stylesheet" href="CSS/templatemo.min.css">
+    <script src="JS/empresas.js" defer></script>
+</head>
+<body>
+    <style>
+  body {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('IMAGENES/innovacion\ y\ \ seguridad.jpg') no-repeat center center fixed;
+    background-size: cover;
+   
+}      
+    </style>
+<nav class="navbar navbar-expand-lg bg-dark navbar-light" id="templatemo_nav_top">          
+        <div class="w-d-flex justify-content-between">
+                <i class="fa fa-envelope mx-2"></i>
+                <a class="navbar-sa-brand text-light text-decoration-none" href="publicidad.html">infoINVIZA.com</a>
+                <i class="fa fa-phone mx-2"></i>
+                <a class="navbar-sa-brand text-light text-decoration-none" href="tel:3125843540">3125843540</a>
+            </div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored">
+                        <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i>
+                    </a>
+                    <a class="text-light" href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram fa-sm fa-fw me-2"></i>
+                    </a>
+                    <a class="text-light" href="https://www.twitter.com" target="_blank">
+                        <i class="fab fa-twitter fa-sm fa-fw me-2"></i>
+                    </a>
+                </div>
+              </div>
+        </div>                                                                                                       
+        </div>
+</nav>
+<header>
+    <div class="logo editable">
+        <img src="IMAGENES/logo_inviza.jpg" alt="Logo de INVIZA">
+    </div>
+    <div class="title editable">
+        INVIZA CONTROL DE ACCESOS
+    </div>
+    <div class="actions">
+           <div class="time" id="currentTime"></div>
+        <button onclick="window.location.href='pagina_inicial.html'">Página Inicial</button>
+            <button class="save-button" style="display: none;">Guardar</button>
+    </div>
+</header>
+<!-- Contenido principal -->
+<div class="container">
+    <h2>empresas > Creación y Edición</h2>
+  <form id="empresaForm">
+  <label for="nombre">Nombre Empresa:</label>
+  <input type="text" id="nombre" name="nombre_empresa" required><br>
+
+  <label for="nit">NIT:</label>
+  <input type="text" id="nit" name="nit" required><br>
+
+  <label for="telefono">Teléfono:</label>
+  <input type="text" id="telefono" name="telefono_empresa" required><br>
+
+  <label for="direccion">Dirección:</label>
+  <input type="text" id="direccion" name="direccion_empresa" required><br>
+
+  <button type="submit">Guardar</button>
+</form>
+
+<div id="mensaje"></div>
+  
+</div>
+<!-- Script para la hora actual -->
+<script>
+    function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        document.getElementById('currentTime').textContent = `${hours}:${minutes}`;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+</script>
+ <footer class="footer-custom bg-dark text-light">
+    <div class="footer-content">
+        <h2 class="footer-title">INVIZA control de acceso</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt fa-fw"></i> Local Principal - Madrid, Colombia
+            </div>
+            <div class="contact-item">
+                <i class="fa fa-envelope mx-2"></i>
+                <a href="publicidad.html" class="text-light text-decoration-none">contacto: INVIZA@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fa fa-phone mx-2"></i>
+                <a href="tel:3125843540" class="text-light text-decoration-none">3125843540</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom bg-dark py-3">
+        <p class="m-0">&copy; 2024 - ProdArt | Diseñado por: Rubiel Quintero - David Andres Correa</p>
+    </div>
+</footer>

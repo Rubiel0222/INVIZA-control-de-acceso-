@@ -9,10 +9,16 @@ document.getElementById('empresaForm').addEventListener('submit', function(e) {
   })
   .then(res => res.text())
   .then(data => {
-    document.getElementById('mensaje').innerText = data;
+    if (data.includes('exitosamente')) {
+      // Redirige automáticamente a la página deseada
+      window.location.href = 'terceros-empresas.html';
+    } else {
+      document.getElementById('mensaje').innerText = data;
+    }
     this.reset();
-  })
+  })  
   .catch(error => {
     console.error('Error:', error);
+    document.getElementById('mensaje').innerText = 'Ocurrió un error inesperado.';
   });
 });

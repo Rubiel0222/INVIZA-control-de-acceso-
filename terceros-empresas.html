@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/slick.min.css">
 <link rel="stylesheet" href="CSS/templatemo.min.css">
     <link rel="stylesheet" href="CSS/styles_terceros_empresas.css">
-    <script src="JS/terceros-empresas.js" defer></script> <!-- Enlace al archivo script.js -->
+    <script src="JS/tercero_empresa.js" defer></script> <!-- Enlace al archivo script.js -->
     <script>
         function updateTime() {
             const now = new Date();
@@ -81,7 +81,7 @@
             <!-- Búsqueda y paginación -->
             <div class="search-container">
                 <input type="text" placeholder="Buscar...">
-                <button><img src="search-icon.png" alt="Buscar" style="height: 20px;"></button>
+                <button><img src="IMAGENES/empresas (1).jpg" alt="Buscar" style="height: 20px;"></button>
                                 <select id="page">
                     <option value="1">Página 1</option>
                     <option value="2">Página 2</option>
@@ -90,34 +90,22 @@
                 <button class="add-button" onclick="window.location.href='empresas.html'">Agregar Nuevo Registro</button>
             </div>
 
-            <!-- Tabla -->
-            <table>
-                <thead>
-                    <tr>
-      <th>ID</th>
-      <th>Nombre Empresa</th>
-      <th>NIT</th>
-      <th>Teléfono</th>
-      <th>Dirección</th>
-      <th>Acciones</th>
-    </tr>
-                </thead>
-<tbody>
-    <?php include 'mostrar_empresas.php'; ?>
-  </tbody>
-                    <!-- Fila de ejemplo -->
-    <tr>
-      <td>1</td>
-      <td>Empresa XYZ</td>
-      <td>123456789</td>
-      <td>3123456789</td>
-      <td>Calle 123 #45-67</td>
-      <td>
-        <button class="editar">Editar</button>
-        <button class="eliminar">Eliminar</button>
-      </td>
-    </tr>
-                </tbody>
+     <!-- Tabla -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre Empresa</th>
+          <th>NIT</th>
+          <th>Teléfono</th>
+          <th>Dirección</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php include 'mostrar_empresas.php'; ?>
+      </tbody>
+    </table>    
             </table>
 
             <!-- Paginación -->

@@ -4,31 +4,40 @@ $username = "root";
 $password = "";
 $dbname = "inviza";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+// Crear conexión
+$conexion = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
 }
 
-$sql = "SELECT id_empresa, nombre_empresa, nit, telefono_empresa, direccion_empresa FROM empresa";
-$result = $conn->query($sql);
+// Consulta a la base de datos
+$query = "SELECT * FROM empresa ORDER BY id_empresa ASC";
+$resultado = mysqli_query($conexion, $query);
 
-if ($result->num_rows > 0) {
-    while ($fila = $result->fetch_assoc()) {
+// Verificar si la consulta fue exitosa
+if (!$resultado) {
+    echo "<tr><td colspan='6'>Error en la consulta: " . mysqli_error($conexion) . "</td></tr>";
+    return;
+}
+
+// Mostrar los resultados
+if (mysqli_num_rows($resultado) > 0) {
+    while ($empresa = mysqli_fetch_assoc($resultado)) {
         echo "<tr>";
-        echo "<td>" . $fila['id_empresa'] . "</td>";
-        echo "<td>" . htmlspecialchars($fila['nombre_empresa']) . "</td>";
-        echo "<td>" . htmlspecialchars($fila['nit']) . "</td>";
-        echo "<td>" . htmlspecialchars($fila['telefono_empresa']) . "</td>";
-        echo "<td>" . htmlspecialchars($fila['direccion_empresa']) . "</td>";
+        echo "<td>{$empresa['id_empresa']}</td>";
+        echo "<td>{$empresa['nombre_empresa']}</td>";
+        echo "<td>{$empresa['nit']}</td>";
+        echo "<td>{$empresa['telefono_empresa']}</td>";
+        echo "<td>{$empresa['direccion_empresa']}</td>";
         echo "<td>
-                <button class='editar' data-id='" . $fila['id_empresa'] . "'>Editar</button>
-                <button class='eliminar' data-id='" . $fila['id_empresa'] . "'>Eliminar</button>
+                <button class='editar' data-id='{$empresa['id_empresa']}'>Editar</button>
+                <button class='eliminar' data-id='{$empresa['id_empresa']}'>Eliminar</button>
               </td>";
         echo "</tr>";
     }
 } else {
-    echo "<tr><td colspan='6'>No hay empresas registradas.</td></tr>";
+    echo "<tr><td colspan='6'>No hay registros disponibles.</td></tr>";
 }
-
-$conn->close();
 ?>

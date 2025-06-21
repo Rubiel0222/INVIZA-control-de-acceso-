@@ -57,11 +57,14 @@ background-size: cover;
         <div class="title">
             INVIZA CONTROL DE ACCESOS
         </div>
+        <button id="logoutBtn">Cerrar Sesión</button>
+        
         <div class="actions">
             
             <div class="time" id="currentTime"></div>
             
         </div>
+        
     </header>
 
     <!-- Contenido principal -->
@@ -129,6 +132,18 @@ background-size: cover;
         setInterval(updateTime, 1000);
         updateTime();
     </script>
+    
+<script>
+document.getElementById("logoutBtn").addEventListener("click", () => {
+    fetch("logout.php", { method: "POST" })
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === "success") {
+                window.location.href = "login.html";
+            }
+        });
+});
+</script>
  <footer>
     <!--inicio pie de página-->
     <br><br><br><br><br><br>

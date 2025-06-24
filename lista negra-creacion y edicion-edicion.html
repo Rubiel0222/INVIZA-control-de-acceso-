@@ -13,8 +13,7 @@
 <link rel="stylesheet" href="css/slick.min.css">
 <link rel="stylesheet" href="CSS/templatemo.min.css">   
     <link rel="stylesheet" href="CSS/styles_listanegra.css">
-    <!-- Fuentes de Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
 </head>
 <style>
     body {
@@ -73,7 +72,7 @@ background-size: cover;
         <h2>Lista Negra > Creación y Edición > Edición</h2>
 
         <!-- Formulario de ingreso de datos -->
-         <br><br>
+      
         <form>
             <label for="documento">Documento:</label>
             <input type="number" id="documento" name="documento" placeholder="Número de identificación" required>
@@ -102,12 +101,29 @@ background-size: cover;
 
             <!-- Contenedor de botones -->
             <div class="button-container">
-                <button type="submit">💾 Guardar Información</button>
-                <button type="button" onclick="window.location.href='menu_principal.html'">Regresar</button>
+                <button type="submit"> Guardar Información</button>
+                <button type="button" onclick="window.location.href='lista negra-creacion y Edición.html'">Regresar</button>
             </div>
         </form>
     </div>
+    <script>
+document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
+  const formData = new FormData(this);
+
+  fetch("guardar_lista_negra.php", {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.text())
+  .then(msg => {
+    alert(msg);
+    this.reset();
+  })
+  .catch(err => alert("Error al guardar"));
+});
+</script>
     <!-- Script para mostrar la hora actual -->
     <script>
         // Función para actualizar la hora actual
@@ -122,7 +138,7 @@ background-size: cover;
         updateTime(); // Llama la función al cargar la página
     </script>
 <!-- Pie de página -->
-<br><br>
+<br><br><br><br>
 <footer>
     <footer class="bg-dark" id="templatemo_footer">
      <div class="text-light">

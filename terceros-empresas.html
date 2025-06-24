@@ -124,6 +124,42 @@
             </div>
         </div>
     </div>
+    <script>
+function cargarEmpresas() {
+  fetch('mostrar_empresas.php')
+    .then(response => response.text())
+    .then(data => {
+      document.querySelector("tbody").innerHTML = data;
+      agregarListeners(); // Vuelve a asignar los eventos de editar/eliminar
+    });
+}
+
+function agregarListeners() {
+  document.querySelectorAll(".editar").forEach(boton => {
+    boton.addEventListener("click", function () {
+      const id = this.dataset.id;
+      alert(`Editar empresa ID: ${id}`);
+    });
+  });
+
+  document.querySelectorAll(".eliminar").forEach(boton => {
+    boton.addEventListener("click", function () {
+      const id = this.dataset.id;
+      if (confirm(`¿Estás seguro de eliminar la empresa con ID ${id}?`)) {
+        // Aquí puedes integrar una llamada AJAX para eliminar
+        console.log(`Eliminar empresa ID: ${id}`);
+        // Después de eliminar:
+        cargarEmpresas(); 
+      }
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  cargarEmpresas();
+});
+</script>
+
     <footer>
         <!--inicio pie pagina-->
         <br><br><br><br><br><br><br><br><br><br>

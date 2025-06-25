@@ -65,7 +65,7 @@ background-size: cover;
     </header>
     <!-- Contenedor principal de la interfaz -->
     <div class="container my-4">
-        <h2 class="text-center mb-4">Terceros > Empresas</h2>
+        <h2 class="text-center mb-4">Consulta de Lista Negra</h2>
 
         <!-- Barra de búsqueda y controles -->
         <div class="search-container mb-4">
@@ -81,44 +81,74 @@ background-size: cover;
                         <option value="2">2</option>
                         <option value="3">3</option>
                     </select>
-                    <button class="btn btn-success ms-3" onclick="addNewRecord()">➕ Agregar Nuevo Registro</button>
+                   <button class="btn btn-success ms-3" onclick="window.location.href='lista negra-creacion y edicion-edicion.html'">
+  Agregar Nuevo Registro
+</button>
+
                 </div>
             </div>
         </div>
+   
+  <table class="table table-striped table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Documento</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Tipo</th>
+        <th>Motivo</th>
+        <th>Fecha Registro</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td contenteditable="true">1</td>
+        <td contenteditable="true">12345678</td>
+        <td contenteditable="true">Juan</td>
+        <td contenteditable="true">Pérez</td>
+        <td contenteditable="true">Visitante</td>
+        <td contenteditable="true">Sin restricciones</td>
+        <td contenteditable="true">2025-06-24 12:30:00</td>
+        <td contenteditable="true">Activo</td>
+        <td>
+          <button class="btn btn-warning btn-sm" onclick="editRecord(this)">Editar</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteRecord(this)">Borrar</button>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="true">2</td>
+        <td contenteditable="true">87654321</td>
+        <td contenteditable="true">María</td>
+        <td contenteditable="true">López</td>
+        <td contenteditable="true">Proveedor</td>
+        <td contenteditable="true">Acceso restringido</td>
+        <td contenteditable="true">2025-01-01 09:00:00</td>
+        <td contenteditable="true">Inactivo</td>
+        <td>
+          <button class="btn btn-warning btn-sm" onclick="editRecord(this)">Editar</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteRecord(this)">Borrar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<tbody id="contenido-lista-negra">
+  <!-- Aquí se insertarán los registros desde PHP -->
+</tbody>
+<script>
+function cargarRegistrosListaNegra() {
+  fetch("mostrar_lista_negra.php")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("contenido-lista-negra").innerHTML = data;
+    });
+}
 
-        <!-- Tabla de datos -->
-        <table class="table table-striped table-bordered">
-            <thead class="table-dark">
-                <tr>
-                    <th>Identificador</th>
-                    <th>Datos</th>
-                    <th>Inf Adicional</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td contenteditable="true">1</td>
-                    <td contenteditable="true">Juan Pérez, Activo</td>
-                    <td contenteditable="true">Sin restricciones, - , Ninguna</td>
-                    <td>
-                        <button class="btn btn-warning btn-sm" onclick="editRecord(this)">Editar</button>
-                        <button class="btn btn-danger btn-sm" onclick="deleteRecord(this)">Borrar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td contenteditable="true">2</td>
-                    <td contenteditable="true">María López, Inactivo</td>
-                    <td contenteditable="true">Restricción de acceso, 01/01/2025, Observaciones aquí</td>
-                    <td>
-                        <button class="btn btn-warning btn-sm" onclick="editRecord(this)">Editar</button>
-                        <button class="btn btn-danger btn-sm" onclick="deleteRecord(this)">Borrar</button>
-                    </td>
-                </tr>
-                <!-- Agregar más filas según sea necesario -->
-            </tbody>
-        </table>
-    </div>
+document.addEventListener("DOMContentLoaded", cargarRegistrosListaNegra);
+</script>
 
       <!-- Script para mostrar la hora actual -->
 <script>

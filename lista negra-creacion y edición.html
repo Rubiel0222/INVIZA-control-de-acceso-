@@ -103,47 +103,19 @@ background-size: cover;
         <th>Acciones</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td contenteditable="true">1</td>
-        <td contenteditable="true">12345678</td>
-        <td contenteditable="true">Juan</td>
-        <td contenteditable="true">Pérez</td>
-        <td contenteditable="true">Visitante</td>
-        <td contenteditable="true">Sin restricciones</td>
-        <td contenteditable="true">2025-06-24 12:30:00</td>
-        <td contenteditable="true">Activo</td>
-        <td>
-          <button class="btn btn-warning btn-sm" onclick="editRecord(this)">Editar</button>
-          <button class="btn btn-danger btn-sm" onclick="deleteRecord(this)">Borrar</button>
-        </td>
-      </tr>
-      <tr>
-        <td contenteditable="true">2</td>
-        <td contenteditable="true">87654321</td>
-        <td contenteditable="true">María</td>
-        <td contenteditable="true">López</td>
-        <td contenteditable="true">Proveedor</td>
-        <td contenteditable="true">Acceso restringido</td>
-        <td contenteditable="true">2025-01-01 09:00:00</td>
-        <td contenteditable="true">Inactivo</td>
-        <td>
-          <button class="btn btn-warning btn-sm" onclick="editRecord(this)">Editar</button>
-          <button class="btn btn-danger btn-sm" onclick="deleteRecord(this)">Borrar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<tbody id="contenido-lista-negra">
-  <!-- Aquí se insertarán los registros desde PHP -->
+    <tbody id="contenido-lista_negra">
+  <!-- Los datos se insertan desde PHP con JavaScript -->
 </tbody>
+
+     </table>
+</div>
+
 <script>
 function cargarRegistrosListaNegra() {
   fetch("mostrar_lista_negra.php")
     .then(response => response.text())
     .then(data => {
-      document.getElementById("contenido-lista-negra").innerHTML = data;
+      document.getElementById("contenido-lista_negra").innerHTML = data;
     });
 }
 
@@ -162,62 +134,34 @@ document.addEventListener("DOMContentLoaded", cargarRegistrosListaNegra);
     setInterval(updateTime, 1000); // Actualiza cada segundo
     updateTime(); // Llama la función al cargar la página
 </script>                          
-    <script>    
-        // Función de búsqueda
-        function searchFunction() {
-            const input = document.querySelector('.search-container input[aria-label="Buscar"]').value.toLowerCase();
-            const rows = document.querySelectorAll('table tbody tr');
-            rows.forEach(row => {
-                const cells = row.querySelectorAll('td');
-                const rowData = Array.from(cells).map(cell => cell.textContent.toLowerCase());
-                row.style.display = rowData.some(data => data.includes(input)) ? '' : 'none';
-            });
-        }
+   <script>
+function cargarRegistrosListaNegra() {
+  fetch("mostrar_lista_negra.php")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("contenido-lista_negra").innerHTML = data;
+    });
+}
 
-        // Función para agregar un nuevo registro
-        function addNewRecord() {
-            const tableBody = document.querySelector('table tbody');
-            const newRow = document.createElement('tr');
-            newRow.innerHTML = `
-                <td contenteditable="true">Nuevo ID</td>
-                <td contenteditable="true">Nuevo Dato</td>
-                <td contenteditable="true">Nueva Información</td>
-                <td>
-                    <button class="btn btn-warning btn-sm" onclick="editRecord(this)">Editar</button>
-                    <button class="btn btn-danger btn-sm" onclick="deleteRecord(this)">Borrar</button>
-                </td>
-            `;
-            tableBody.appendChild(newRow);
-            alert('Nuevo registro agregado');
-        }
+// Búsqueda en tiempo real
+document.addEventListener("DOMContentLoaded", function () {
+  cargarRegistrosListaNegra();
 
-        // Función para editar un registro
-        function editRecord(button) {
-            const row = button.closest('tr');
-            const cells = row.querySelectorAll('td[contenteditable]');
-            
-            if (button.textContent === 'Editar') {
-                cells.forEach(cell => {
-                    const originalText = cell.textContent;
-                    cell.innerHTML = `<input type="text" class="form-control" value="${originalText}">`;
-                });
-                button.textContent = 'Guardar';
-            } else if (button.textContent === 'Guardar') {
-                cells.forEach(cell => {
-                    const input = cell.querySelector('input');
-                    cell.textContent = input.value;
-                });
-                button.textContent = 'Editar';
-            }
-        }
+  const searchInput = document.querySelector('.search-container input[aria-label="Buscar"]');
+  searchInput.addEventListener('input', function () {
+    const query = searchInput.value.toLowerCase();
+    const rows = document.querySelectorAll('#contenido-lista_negra tr');
 
-        // Función para eliminar un registro
-        function deleteRecord(button) {
-            const row = button.closest('tr');
-            row.remove();
-            alert('Registro eliminado');
-        }
-    </script>
+    rows.forEach(row => {
+      const cells = row.querySelectorAll('td');
+      const rowData = Array.from(cells).map(cell => cell.textContent.toLowerCase());
+      const matches = rowData.some(data => data.includes(query));
+      row.style.display = matches ? '' : 'none';
+    });
+  });
+});
+</script>
+
     <!-- Pie de página -->
      <br><br><br><br><br><br><br><br><br>
     <footer>
